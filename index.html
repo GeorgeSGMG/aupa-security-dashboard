@@ -1,0 +1,918 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AUPA · Security Dashboard</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Bebas+Neue&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:       #080c10;
+  --bg2:      #0d1117;
+  --bg3:      #141b24;
+  --border:   #1e2d3d;
+  --accent:   #00d4ff;
+  --green:    #00ff88;
+  --red:      #ff3b3b;
+  --orange:   #ff8c00;
+  --yellow:   #ffd600;
+  --blue:     #2979ff;
+  --muted:    #4a5568;
+  --text:     #c9d1d9;
+  --text2:    #8b949e;
+  --mono:     'Share Tech Mono', monospace;
+  --display:  'Bebas Neue', sans-serif;
+  --body:     'DM Sans', sans-serif;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--body);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Scanline overlay */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0,0,0,.08) 2px,
+    rgba(0,0,0,.08) 4px
+  );
+  pointer-events: none;
+  z-index: 9999;
+}
+
+/* Grid noise bg */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(0,212,255,.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,212,255,.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ── HEADER ─────────────────────────────────────────────── */
+header {
+  position: relative;
+  z-index: 10;
+  padding: 2rem 3rem 1.5rem;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.header-left { flex: 1; }
+
+.logo-line {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: .3rem;
+}
+
+.logo-dot {
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  background: var(--green);
+  box-shadow: 0 0 12px var(--green);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%,100% { opacity: 1; box-shadow: 0 0 12px var(--green); }
+  50% { opacity: .4; box-shadow: 0 0 4px var(--green); }
+}
+
+h1 {
+  font-family: var(--display);
+  font-size: 3.2rem;
+  letter-spacing: .15em;
+  color: #fff;
+  line-height: 1;
+}
+
+h1 span { color: var(--accent); }
+
+.header-meta {
+  font-family: var(--mono);
+  font-size: .72rem;
+  color: var(--text2);
+  letter-spacing: .08em;
+}
+
+.header-meta span { color: var(--accent); }
+
+.live-badge {
+  font-family: var(--mono);
+  font-size: .7rem;
+  letter-spacing: .12em;
+  color: var(--green);
+  border: 1px solid var(--green);
+  padding: .3rem .8rem;
+  text-transform: uppercase;
+  position: relative;
+  overflow: hidden;
+}
+
+.live-badge::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--green);
+  opacity: .07;
+}
+
+/* ── MAIN GRID ──────────────────────────────────────────── */
+main {
+  position: relative;
+  z-index: 10;
+  padding: 2rem 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* ── KPI ROW ────────────────────────────────────────────── */
+.kpi-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.kpi {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  padding: 1.4rem 1.6rem;
+  position: relative;
+  overflow: hidden;
+  cursor: default;
+  transition: border-color .3s, transform .2s;
+}
+
+.kpi:hover {
+  border-color: var(--accent);
+  transform: translateY(-2px);
+}
+
+.kpi::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+}
+
+.kpi.red::before    { background: var(--red); box-shadow: 0 0 8px var(--red); }
+.kpi.orange::before { background: var(--orange); box-shadow: 0 0 8px var(--orange); }
+.kpi.yellow::before { background: var(--yellow); box-shadow: 0 0 8px var(--yellow); }
+.kpi.green::before  { background: var(--green); box-shadow: 0 0 8px var(--green); }
+
+.kpi-label {
+  font-family: var(--mono);
+  font-size: .65rem;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  color: var(--text2);
+  margin-bottom: .6rem;
+}
+
+.kpi-value {
+  font-family: var(--display);
+  font-size: 3.5rem;
+  line-height: 1;
+  color: #fff;
+}
+
+.kpi.red    .kpi-value { color: var(--red); text-shadow: 0 0 20px rgba(255,59,59,.4); }
+.kpi.orange .kpi-value { color: var(--orange); text-shadow: 0 0 20px rgba(255,140,0,.4); }
+.kpi.yellow .kpi-value { color: var(--yellow); text-shadow: 0 0 20px rgba(255,214,0,.4); }
+.kpi.green  .kpi-value { color: var(--green); text-shadow: 0 0 20px rgba(0,255,136,.4); }
+
+.kpi-sub {
+  font-size: .72rem;
+  color: var(--text2);
+  margin-top: .4rem;
+  font-family: var(--mono);
+}
+
+.kpi-trend {
+  position: absolute;
+  top: 1.2rem; right: 1.2rem;
+  font-size: .75rem;
+  font-family: var(--mono);
+}
+
+.trend-up   { color: var(--red); }
+.trend-down { color: var(--green); }
+.trend-flat { color: var(--text2); }
+
+/* ── BODY GRID ──────────────────────────────────────────── */
+.body-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+/* ── PANEL ──────────────────────────────────────────────── */
+.panel {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  overflow: hidden;
+}
+
+.panel-header {
+  padding: .9rem 1.4rem;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--bg3);
+}
+
+.panel-title {
+  font-family: var(--mono);
+  font-size: .72rem;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.panel-body { padding: 1.4rem; }
+
+/* ── REPO TABS ──────────────────────────────────────────── */
+.repo-tabs {
+  display: flex;
+  gap: 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.tab {
+  font-family: var(--mono);
+  font-size: .68rem;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  padding: .75rem 1.4rem;
+  cursor: pointer;
+  border: none;
+  background: transparent;
+  color: var(--text2);
+  border-bottom: 2px solid transparent;
+  transition: all .2s;
+  position: relative;
+  top: 1px;
+}
+
+.tab:hover { color: var(--text); }
+
+.tab.active {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+  background: rgba(0,212,255,.04);
+}
+
+.tab-content { display: none; padding: 1.4rem; }
+.tab-content.active { display: block; }
+
+/* ── SEVERITY BARS ──────────────────────────────────────── */
+.sev-row {
+  display: flex;
+  align-items: center;
+  gap: .8rem;
+  margin-bottom: .8rem;
+}
+
+.sev-label {
+  font-family: var(--mono);
+  font-size: .68rem;
+  letter-spacing: .08em;
+  width: 70px;
+  flex-shrink: 0;
+  color: var(--text2);
+}
+
+.sev-bar-bg {
+  flex: 1;
+  height: 6px;
+  background: var(--bg3);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.sev-bar {
+  height: 100%;
+  border-radius: 3px;
+  transition: width 1.2s cubic-bezier(.16,1,.3,1);
+  width: 0;
+}
+
+.sev-bar.red    { background: var(--red); box-shadow: 0 0 6px var(--red); }
+.sev-bar.orange { background: var(--orange); box-shadow: 0 0 6px var(--orange); }
+.sev-bar.yellow { background: var(--yellow); box-shadow: 0 0 6px var(--yellow); }
+.sev-bar.blue   { background: var(--blue); box-shadow: 0 0 6px var(--blue); }
+
+.sev-count {
+  font-family: var(--mono);
+  font-size: .75rem;
+  width: 24px;
+  text-align: right;
+  flex-shrink: 0;
+}
+
+.sev-count.red    { color: var(--red); }
+.sev-count.orange { color: var(--orange); }
+.sev-count.yellow { color: var(--yellow); }
+.sev-count.blue   { color: var(--blue); }
+
+/* ── FINDINGS LIST ──────────────────────────────────────── */
+.finding {
+  border: 1px solid var(--border);
+  margin-bottom: .6rem;
+  cursor: pointer;
+  transition: border-color .2s, background .2s;
+  overflow: hidden;
+}
+
+.finding:hover {
+  border-color: var(--accent);
+  background: rgba(0,212,255,.03);
+}
+
+.finding-header {
+  display: flex;
+  align-items: center;
+  gap: .8rem;
+  padding: .75rem 1rem;
+}
+
+.finding-badge {
+  font-family: var(--mono);
+  font-size: .6rem;
+  letter-spacing: .08em;
+  padding: .2rem .5rem;
+  border-radius: 2px;
+  flex-shrink: 0;
+  text-transform: uppercase;
+}
+
+.badge-alto    { background: rgba(255,140,0,.15); color: var(--orange); border: 1px solid rgba(255,140,0,.3); }
+.badge-medio   { background: rgba(255,214,0,.1);  color: var(--yellow); border: 1px solid rgba(255,214,0,.3); }
+.badge-critico { background: rgba(255,59,59,.15); color: var(--red);    border: 1px solid rgba(255,59,59,.3); }
+.badge-hot     { background: rgba(41,121,255,.15);color: var(--blue);   border: 1px solid rgba(41,121,255,.3); }
+
+.finding-desc {
+  font-size: .8rem;
+  color: var(--text);
+  flex: 1;
+  line-height: 1.3;
+  font-family: var(--mono);
+}
+
+.finding-file {
+  font-size: .65rem;
+  color: var(--text2);
+  font-family: var(--mono);
+  flex-shrink: 0;
+}
+
+.finding-detail {
+  display: none;
+  padding: .75rem 1rem;
+  border-top: 1px solid var(--border);
+  background: var(--bg3);
+}
+
+.finding-detail.open { display: block; }
+
+.detail-row {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: .35rem;
+  font-size: .72rem;
+}
+
+.detail-key {
+  font-family: var(--mono);
+  color: var(--text2);
+  width: 100px;
+  flex-shrink: 0;
+  letter-spacing: .05em;
+}
+
+.detail-val {
+  font-family: var(--mono);
+  color: var(--text);
+}
+
+/* ── CHART ──────────────────────────────────────────────── */
+.chart-wrap {
+  position: relative;
+  height: 180px;
+  margin-top: .5rem;
+}
+
+canvas { width: 100% !important; }
+
+/* ── HOTSPOT STATUS ─────────────────────────────────────── */
+.hotspot-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: .7rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.hotspot-row:last-child { border-bottom: none; }
+
+.hotspot-repo {
+  font-family: var(--mono);
+  font-size: .72rem;
+  color: var(--text2);
+  letter-spacing: .08em;
+}
+
+.hotspot-status {
+  font-family: var(--mono);
+  font-size: .7rem;
+  padding: .2rem .6rem;
+}
+
+.status-ok    { color: var(--green); border: 1px solid rgba(0,255,136,.3); background: rgba(0,255,136,.05); }
+.status-warn  { color: var(--yellow); border: 1px solid rgba(255,214,0,.3); background: rgba(255,214,0,.05); }
+.status-alert { color: var(--orange); border: 1px solid rgba(255,140,0,.3); background: rgba(255,140,0,.05); }
+
+/* ── FOOTER ─────────────────────────────────────────────── */
+footer {
+  position: relative;
+  z-index: 10;
+  padding: 1rem 3rem;
+  border-top: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: var(--mono);
+  font-size: .65rem;
+  color: var(--muted);
+  letter-spacing: .08em;
+}
+
+/* ── ANIMATIONS ─────────────────────────────────────────── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in { animation: fadeUp .5s ease both; }
+.delay-1 { animation-delay: .1s; }
+.delay-2 { animation-delay: .2s; }
+.delay-3 { animation-delay: .3s; }
+.delay-4 { animation-delay: .4s; }
+.delay-5 { animation-delay: .5s; }
+.delay-6 { animation-delay: .6s; }
+
+@keyframes countUp {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-left">
+    <div class="logo-line">
+      <div class="logo-dot"></div>
+      <span class="header-meta">SISTEMA ACTIVO · <span>VERTICAL CIBERSEGURIDAD</span></span>
+    </div>
+    <h1>AUPA <span>//</span> SECURITY OPS</h1>
+    <div class="header-meta" style="margin-top:.4rem">
+      DESAFÍO TRIPULACIONES · INETUM · EQUIPO 4 &nbsp;·&nbsp;
+      <span id="live-date"></span>
+    </div>
+  </div>
+  <div class="live-badge">● ANÁLISIS ACTIVO · DÍA 3</div>
+</header>
+
+<main>
+
+  <!-- KPI ROW -->
+  <div class="kpi-row">
+    <div class="kpi orange fade-in delay-1">
+      <div class="kpi-label">// Issues activos</div>
+      <div class="kpi-value" data-target="18">0</div>
+      <div class="kpi-sub">3 repos · hoy</div>
+      <div class="kpi-trend trend-up">↑ +2 vs ayer</div>
+    </div>
+    <div class="kpi yellow fade-in delay-2">
+      <div class="kpi-label">// Resueltos hoy</div>
+      <div class="kpi-value" data-target="2">0</div>
+      <div class="kpi-sub">issues cerrados</div>
+      <div class="kpi-trend trend-down">↓ mejora</div>
+    </div>
+    <div class="kpi green fade-in delay-3">
+      <div class="kpi-label">// Hotspots</div>
+      <div class="kpi-value" data-target="1">0</div>
+      <div class="kpi-sub">nuevos · baja prob.</div>
+      <div class="kpi-trend trend-down">↓ -1 vs ayer</div>
+    </div>
+    <div class="kpi red fade-in delay-4">
+      <div class="kpi-label">// Críticos</div>
+      <div class="kpi-value" data-target="0">0</div>
+      <div class="kpi-sub">todos los repos</div>
+      <div class="kpi-trend trend-flat">— sin cambios</div>
+    </div>
+  </div>
+
+  <!-- BODY GRID -->
+  <div class="body-grid">
+
+    <!-- Panel izquierdo: repos -->
+    <div class="panel fade-in delay-3" style="grid-row: span 2;">
+      <div class="panel-header">
+        <span class="panel-title">// Hallazgos por repositorio</span>
+        <span style="font-family:var(--mono);font-size:.65rem;color:var(--text2)">DÍA 3 · 02/06/2026</span>
+      </div>
+
+      <div class="repo-tabs">
+        <button class="tab active" onclick="switchTab('data')">aupa-data</button>
+        <button class="tab" onclick="switchTab('backend')">aupa-backend</button>
+        <button class="tab" onclick="switchTab('frontend')">aupa-frontend</button>
+      </div>
+
+      <!-- DATA -->
+      <div class="tab-content active" id="tab-data">
+        <div style="margin-bottom:1.2rem">
+          <div style="font-family:var(--mono);font-size:.65rem;color:var(--text2);margin-bottom:.8rem;letter-spacing:.1em">DISTRIBUCIÓN DE SEVERIDAD</div>
+          <div class="sev-row">
+            <div class="sev-label red">Crítico</div>
+            <div class="sev-bar-bg"><div class="sev-bar red" data-w="0"></div></div>
+            <div class="sev-count red">0</div>
+          </div>
+          <div class="sev-row">
+            <div class="sev-label orange">Alto</div>
+            <div class="sev-bar-bg"><div class="sev-bar orange" data-w="0"></div></div>
+            <div class="sev-count orange">0</div>
+          </div>
+          <div class="sev-row">
+            <div class="sev-label yellow">Medio</div>
+            <div class="sev-bar-bg"><div class="sev-bar yellow" data-w="100"></div></div>
+            <div class="sev-count yellow">1</div>
+          </div>
+          <div class="sev-row">
+            <div class="sev-label blue">Bajo</div>
+            <div class="sev-bar-bg"><div class="sev-bar blue" data-w="0"></div></div>
+            <div class="sev-count blue">0</div>
+          </div>
+        </div>
+        <div style="font-family:var(--mono);font-size:.65rem;color:var(--text2);margin-bottom:.8rem;letter-spacing:.1em">HALLAZGOS ACTIVOS · 1 ISSUE</div>
+        <div class="finding" onclick="toggleFinding(this)">
+          <div class="finding-header">
+            <span class="finding-badge badge-medio">MEDIO</span>
+            <span class="finding-desc">Merge this RUN instruction with the consecutive ones.</span>
+            <span class="finding-file">Dockerfile:78</span>
+          </div>
+          <div class="finding-detail">
+            <div class="detail-row"><span class="detail-key">Tipo</span><span class="detail-val">CODE_SMELL</span></div>
+            <div class="detail-row"><span class="detail-key">Impacto</span><span class="detail-val">MAINTAINABILITY (LOW)</span></div>
+            <div class="detail-row"><span class="detail-key">OWASP</span><span class="detail-val">Revisar manualmente</span></div>
+            <div class="detail-row"><span class="detail-key">Prioridad</span><span class="detail-val">Backlog</span></div>
+          </div>
+        </div>
+        <div style="margin-top:1rem;padding:.7rem;background:rgba(0,255,136,.04);border:1px solid rgba(0,255,136,.15)">
+          <span style="font-family:var(--mono);font-size:.65rem;color:var(--green)">✓ Sin hotspots · Estado más limpio registrado</span>
+        </div>
+      </div>
+
+      <!-- BACKEND -->
+      <div class="tab-content" id="tab-backend">
+        <div style="margin-bottom:1.2rem">
+          <div style="font-family:var(--mono);font-size:.65rem;color:var(--text2);margin-bottom:.8rem;letter-spacing:.1em">DISTRIBUCIÓN DE SEVERIDAD</div>
+          <div class="sev-row">
+            <div class="sev-label red">Crítico</div>
+            <div class="sev-bar-bg"><div class="sev-bar red" data-w="0"></div></div>
+            <div class="sev-count red">0</div>
+          </div>
+          <div class="sev-row">
+            <div class="sev-label orange">Alto</div>
+            <div class="sev-bar-bg"><div class="sev-bar orange" data-w="14"></div></div>
+            <div class="sev-count orange">2</div>
+          </div>
+          <div class="sev-row">
+            <div class="sev-label yellow">Medio</div>
+            <div class="sev-bar-bg"><div class="sev-bar yellow" data-w="86"></div></div>
+            <div class="sev-count yellow">12</div>
+          </div>
+          <div class="sev-row">
+            <div class="sev-label blue">Bajo</div>
+            <div class="sev-bar-bg"><div class="sev-bar blue" data-w="0"></div></div>
+            <div class="sev-count blue">0</div>
+          </div>
+        </div>
+        <div style="font-family:var(--mono);font-size:.65rem;color:var(--text2);margin-bottom:.8rem;letter-spacing:.1em">HALLAZGOS PRIORITARIOS · 2 PENDIENTES</div>
+        <div class="finding" onclick="toggleFinding(this)">
+          <div class="finding-header">
+            <span class="finding-badge badge-alto">ALTO</span>
+            <span class="finding-desc">Optional chain en middleware de autenticación.</span>
+            <span class="finding-file">auth.middleware.ts:56</span>
+          </div>
+          <div class="finding-detail">
+            <div class="detail-row"><span class="detail-key">Tipo</span><span class="detail-val">CODE_SMELL</span></div>
+            <div class="detail-row"><span class="detail-key">Impacto</span><span class="detail-val">MAINTAINABILITY (MEDIUM)</span></div>
+            <div class="detail-row"><span class="detail-key">Riesgo</span><span class="detail-val">Código de autenticación — revisión manual</span></div>
+            <div class="detail-row"><span class="detail-key">Prioridad</span><span class="detail-val">Esta semana</span></div>
+          </div>
+        </div>
+        <div class="finding" onclick="toggleFinding(this)">
+          <div class="finding-header">
+            <span class="finding-badge badge-alto">ALTO</span>
+            <span class="finding-desc">Asignación inútil a variable "cultura".</span>
+            <span class="finding-file">seed.ts:112</span>
+          </div>
+          <div class="finding-detail">
+            <div class="detail-row"><span class="detail-key">Tipo</span><span class="detail-val">CODE_SMELL</span></div>
+            <div class="detail-row"><span class="detail-key">Impacto</span><span class="detail-val">MAINTAINABILITY (MEDIUM)</span></div>
+            <div class="detail-row"><span class="detail-key">Riesgo</span><span class="detail-val">Fichero de seed — revisar antes de producción</span></div>
+            <div class="detail-row"><span class="detail-key">Prioridad</span><span class="detail-val">Esta semana</span></div>
+          </div>
+        </div>
+        <div style="margin-top:1rem;padding:.7rem;background:rgba(0,255,136,.04);border:1px solid rgba(0,255,136,.15)">
+          <span style="font-family:var(--mono);font-size:.65rem;color:var(--green)">✓ Hotspot X-Powered-By resuelto hoy</span>
+        </div>
+      </div>
+
+      <!-- FRONTEND -->
+      <div class="tab-content" id="tab-frontend">
+        <div style="margin-bottom:1.2rem">
+          <div style="font-family:var(--mono);font-size:.65rem;color:var(--text2);margin-bottom:.8rem;letter-spacing:.1em">DISTRIBUCIÓN DE SEVERIDAD</div>
+          <div class="sev-row">
+            <div class="sev-label red">Crítico</div>
+            <div class="sev-bar-bg"><div class="sev-bar red" data-w="0"></div></div>
+            <div class="sev-count red">0</div>
+          </div>
+          <div class="sev-row">
+            <div class="sev-label orange">Alto</div>
+            <div class="sev-bar-bg"><div class="sev-bar orange" data-w="67"></div></div>
+            <div class="sev-count orange">2</div>
+          </div>
+          <div class="sev-row">
+            <div class="sev-label yellow">Medio</div>
+            <div class="sev-bar-bg"><div class="sev-bar yellow" data-w="33"></div></div>
+            <div class="sev-count yellow">1</div>
+          </div>
+          <div class="sev-row">
+            <div class="sev-label blue">Bajo</div>
+            <div class="sev-bar-bg"><div class="sev-bar blue" data-w="0"></div></div>
+            <div class="sev-count blue">0</div>
+          </div>
+        </div>
+        <div style="font-family:var(--mono);font-size:.65rem;color:var(--text2);margin-bottom:.8rem;letter-spacing:.1em">HALLAZGOS PRIORITARIOS · 2 PENDIENTES</div>
+        <div class="finding" onclick="toggleFinding(this)">
+          <div class="finding-header">
+            <span class="finding-badge badge-alto">ALTO</span>
+            <span class="finding-desc">Código comentado en fichero de entrada.</span>
+            <span class="finding-file">main.tsx:3</span>
+          </div>
+          <div class="finding-detail">
+            <div class="detail-row"><span class="detail-key">Tipo</span><span class="detail-val">CODE_SMELL</span></div>
+            <div class="detail-row"><span class="detail-key">Impacto</span><span class="detail-val">MAINTAINABILITY (MEDIUM)</span></div>
+            <div class="detail-row"><span class="detail-key">Riesgo</span><span class="detail-val">Puede contener lógica sensible</span></div>
+            <div class="detail-row"><span class="detail-key">Prioridad</span><span class="detail-val">Esta semana</span></div>
+          </div>
+        </div>
+        <div class="finding" onclick="toggleFinding(this)">
+          <div class="finding-header">
+            <span class="finding-badge badge-alto">ALTO · BUG</span>
+            <span class="finding-desc">Variable "Error" sobrescribe objeto global JS.</span>
+            <span class="finding-file">Error.tsx:1</span>
+          </div>
+          <div class="finding-detail">
+            <div class="detail-row"><span class="detail-key">Tipo</span><span class="detail-val">BUG</span></div>
+            <div class="detail-row"><span class="detail-key">Impacto</span><span class="detail-val">RELIABILITY (MEDIUM)</span></div>
+            <div class="detail-row"><span class="detail-key">Riesgo</span><span class="detail-val">Manejo de errores comprometido en producción</span></div>
+            <div class="detail-row"><span class="detail-key">Prioridad</span><span class="detail-val">Esta semana</span></div>
+          </div>
+        </div>
+        <div style="margin-top:1rem;padding:.7rem;background:rgba(255,214,0,.04);border:1px solid rgba(255,214,0,.15)">
+          <span style="font-family:var(--mono);font-size:.65rem;color:var(--yellow)">⚠ Nuevo hotspot · vite.config.ts:18 · http vs https</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Panel derecho arriba: evolución -->
+    <div class="panel fade-in delay-4">
+      <div class="panel-header">
+        <span class="panel-title">// Evolución acumulada · Issues totales</span>
+      </div>
+      <div class="panel-body">
+        <div class="chart-wrap">
+          <canvas id="evolutionChart"></canvas>
+        </div>
+      </div>
+    </div>
+
+    <!-- Panel derecho abajo: hotspots -->
+    <div class="panel fade-in delay-5">
+      <div class="panel-header">
+        <span class="panel-title">// Estado de hotspots · Hoy</span>
+      </div>
+      <div class="panel-body">
+        <div class="hotspot-row">
+          <div>
+            <div style="font-family:var(--mono);font-size:.72rem;color:var(--text);margin-bottom:.2rem">aupa-data</div>
+            <div class="hotspot-repo">main · Dockerfile · permisos COPY</div>
+          </div>
+          <span class="hotspot-status status-ok">✓ RESUELTO</span>
+        </div>
+        <div class="hotspot-row">
+          <div>
+            <div style="font-family:var(--mono);font-size:.72rem;color:var(--text);margin-bottom:.2rem">aupa-backend</div>
+            <div class="hotspot-repo">dev · src/index.ts · X-Powered-By</div>
+          </div>
+          <span class="hotspot-status status-ok">✓ RESUELTO HOY</span>
+        </div>
+        <div class="hotspot-row">
+          <div>
+            <div style="font-family:var(--mono);font-size:.72rem;color:var(--text);margin-bottom:.2rem">aupa-frontend</div>
+            <div class="hotspot-repo">dev · vite.config.ts:18 · http protocol</div>
+          </div>
+          <span class="hotspot-status status-warn">⚠ NUEVO · BAJA</span>
+        </div>
+        <div style="margin-top:1.2rem;display:grid;grid-template-columns:1fr 1fr 1fr;gap:.6rem;text-align:center">
+          <div style="padding:.8rem;background:var(--bg3);border:1px solid var(--border)">
+            <div style="font-family:var(--mono);font-size:1.4rem;color:var(--green)">2</div>
+            <div style="font-family:var(--mono);font-size:.6rem;color:var(--text2);margin-top:.2rem">RESUELTOS</div>
+          </div>
+          <div style="padding:.8rem;background:var(--bg3);border:1px solid var(--border)">
+            <div style="font-family:var(--mono);font-size:1.4rem;color:var(--yellow)">1</div>
+            <div style="font-family:var(--mono);font-size:.6rem;color:var(--text2);margin-top:.2rem">ACTIVOS</div>
+          </div>
+          <div style="padding:.8rem;background:var(--bg3);border:1px solid var(--border)">
+            <div style="font-family:var(--mono);font-size:1.4rem;color:var(--accent)">0</div>
+            <div style="font-family:var(--mono);font-size:.6rem;color:var(--text2);margin-top:.2rem">CRÍTICOS</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /body-grid -->
+</main>
+
+<footer>
+  <span>VERTICAL CIBERSEGURIDAD · EQUIPO 4 · DESAFÍO TRIPULACIONES · INETUM 2026</span>
+  <span>SAST: SONARQUBE + SEMGREP · DEPS: PIP-AUDIT / NPM-AUDIT · SECRETS: GREP</span>
+  <span id="footer-time"></span>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
+<script>
+// ── DATE ────────────────────────────────────────────────────────────
+document.getElementById('live-date').textContent = '02/06/2026 · ANÁLISIS DÍA 3';
+document.getElementById('footer-time').textContent = 'GENERADO: 02/06/2026';
+
+// ── COUNTER ANIMATION ───────────────────────────────────────────────
+function animateCounter(el) {
+  const target = parseInt(el.dataset.target);
+  const duration = 1200;
+  const start = performance.now();
+  const update = (now) => {
+    const t = Math.min((now - start) / duration, 1);
+    const ease = 1 - Math.pow(1 - t, 3);
+    el.textContent = Math.round(ease * target);
+    if (t < 1) requestAnimationFrame(update);
+  };
+  requestAnimationFrame(update);
+}
+
+window.addEventListener('load', () => {
+  document.querySelectorAll('[data-target]').forEach(el => {
+    setTimeout(() => animateCounter(el), 400);
+  });
+
+  // Animar barras
+  setTimeout(() => {
+    document.querySelectorAll('.sev-bar').forEach(bar => {
+      bar.style.width = bar.dataset.w + '%';
+    });
+  }, 600);
+});
+
+// ── TABS ─────────────────────────────────────────────────────────────
+function switchTab(repo) {
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+
+  event.target.classList.add('active');
+  document.getElementById('tab-' + repo).classList.add('active');
+
+  // Reanimar barras del tab activo
+  setTimeout(() => {
+    document.querySelectorAll('#tab-' + repo + ' .sev-bar').forEach(bar => {
+      bar.style.width = '0';
+      setTimeout(() => { bar.style.width = bar.dataset.w + '%'; }, 50);
+    });
+  }, 10);
+}
+
+// ── FINDING TOGGLE ───────────────────────────────────────────────────
+function toggleFinding(el) {
+  const detail = el.querySelector('.finding-detail');
+  detail.classList.toggle('open');
+}
+
+// ── CHART ────────────────────────────────────────────────────────────
+const ctx = document.getElementById('evolutionChart').getContext('2d');
+
+Chart.defaults.color = '#4a5568';
+Chart.defaults.font.family = "'Share Tech Mono', monospace";
+Chart.defaults.font.size = 10;
+
+new Chart(ctx, {
+  type: 'line',
+  data: {
+    labels: ['Día 1', 'Día 2', 'Día 3'],
+    datasets: [
+      {
+        label: 'data',
+        data: [null, 3, 1],
+        borderColor: '#00ff88',
+        backgroundColor: 'rgba(0,255,136,.08)',
+        borderWidth: 2,
+        pointBackgroundColor: '#00ff88',
+        pointRadius: 5,
+        pointHoverRadius: 7,
+        tension: .3,
+        fill: true,
+      },
+      {
+        label: 'backend',
+        data: [null, 12, 14],
+        borderColor: '#ff8c00',
+        backgroundColor: 'rgba(255,140,0,.06)',
+        borderWidth: 2,
+        pointBackgroundColor: '#ff8c00',
+        pointRadius: 5,
+        pointHoverRadius: 7,
+        tension: .3,
+        fill: true,
+      },
+      {
+        label: 'frontend',
+        data: [null, 4, 3],
+        borderColor: '#00d4ff',
+        backgroundColor: 'rgba(0,212,255,.06)',
+        borderWidth: 2,
+        pointBackgroundColor: '#00d4ff',
+        pointRadius: 5,
+        pointHoverRadius: 7,
+        tension: .3,
+        fill: true,
+      },
+    ],
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: false,
+    animation: { duration: 1400, easing: 'easeOutQuart' },
+    plugins: {
+      legend: {
+        position: 'bottom',
+        labels: { color: '#8b949e', boxWidth: 10, padding: 16 },
+      },
+      tooltip: {
+        backgroundColor: '#0d1117',
+        borderColor: '#1e2d3d',
+        borderWidth: 1,
+        titleColor: '#00d4ff',
+        bodyColor: '#c9d1d9',
+      },
+    },
+    scales: {
+      x: {
+        grid: { color: 'rgba(30,45,61,.6)' },
+        ticks: { color: '#4a5568' },
+      },
+      y: {
+        grid: { color: 'rgba(30,45,61,.6)' },
+        ticks: { color: '#4a5568' },
+        beginAtZero: true,
+      },
+    },
+  },
+});
+</script>
+</body>
+</html>
