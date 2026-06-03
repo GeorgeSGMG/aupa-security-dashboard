@@ -8,577 +8,144 @@
 <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Bebas+Neue&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 :root {
-  --bg:       #080c10;
-  --bg2:      #0d1117;
-  --bg3:      #141b24;
-  --border:   #1e2d3d;
-  --accent:   #00d4ff;
-  --green:    #00ff88;
-  --red:      #ff3b3b;
-  --orange:   #ff8c00;
-  --yellow:   #ffd600;
-  --blue:     #2979ff;
-  --muted:    #4a5568;
-  --text:     #c9d1d9;
-  --text2:    #8b949e;
-  --mono:     'Share Tech Mono', monospace;
-  --display:  'Bebas Neue', sans-serif;
-  --body:     'DM Sans', sans-serif;
+  --bg:#080c10;--bg2:#0d1117;--bg3:#141b24;--border:#1e2d3d;
+  --accent:#00d4ff;--green:#00ff88;--red:#ff3b3b;--orange:#ff8c00;
+  --yellow:#ffd600;--blue:#2979ff;--muted:#4a5568;--text:#c9d1d9;--text2:#8b949e;
+  --mono:'Share Tech Mono',monospace;--display:'Bebas Neue',sans-serif;--body:'DM Sans',sans-serif;
 }
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:var(--bg);color:var(--text);font-family:var(--body);min-height:100vh;overflow-x:hidden;}
+body::before{content:'';position:fixed;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(0,0,0,.08) 2px,rgba(0,0,0,.08) 4px);pointer-events:none;z-index:9999;}
+body::after{content:'';position:fixed;inset:0;background-image:linear-gradient(rgba(0,212,255,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(0,212,255,.03) 1px,transparent 1px);background-size:40px 40px;pointer-events:none;z-index:0;}
 
-* { margin: 0; padding: 0; box-sizing: border-box; }
+header{position:relative;z-index:10;padding:2rem 3rem 1.5rem;border-bottom:1px solid var(--border);display:flex;align-items:flex-end;justify-content:space-between;gap:2rem;}
+.header-left{flex:1;}
+.logo-line{display:flex;align-items:center;gap:1rem;margin-bottom:.3rem;}
+.logo-dot{width:10px;height:10px;border-radius:50%;background:var(--green);box-shadow:0 0 12px var(--green);animation:pulse 2s infinite;}
+@keyframes pulse{0%,100%{opacity:1;box-shadow:0 0 12px var(--green);}50%{opacity:.4;box-shadow:0 0 4px var(--green);}}
+h1{font-family:var(--display);font-size:3.2rem;letter-spacing:.15em;color:#fff;line-height:1;}
+h1 span{color:var(--accent);}
+.header-meta{font-family:var(--mono);font-size:.72rem;color:var(--text2);letter-spacing:.08em;}
+.header-meta span{color:var(--accent);}
+.live-badge{font-family:var(--mono);font-size:.7rem;letter-spacing:.12em;color:var(--green);border:1px solid var(--green);padding:.3rem .8rem;text-transform:uppercase;position:relative;overflow:hidden;}
+.live-badge::before{content:'';position:absolute;inset:0;background:var(--green);opacity:.07;}
 
-body {
-  background: var(--bg);
-  color: var(--text);
-  font-family: var(--body);
-  min-height: 100vh;
-  overflow-x: hidden;
+main{position:relative;z-index:10;padding:2rem 3rem;display:flex;flex-direction:column;gap:2rem;}
+
+/* KPI */
+.kpi-row{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;}
+.kpi{background:var(--bg2);border:1px solid var(--border);padding:1.4rem 1.6rem;position:relative;overflow:hidden;cursor:default;display:flex;flex-direction:column;}
+.kpi::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;}
+.kpi.red::before{background:var(--red);box-shadow:0 0 8px var(--red);}
+.kpi.orange::before{background:var(--orange);box-shadow:0 0 8px var(--orange);}
+.kpi.yellow::before{background:var(--yellow);box-shadow:0 0 8px var(--yellow);}
+.kpi.green::before{background:var(--green);box-shadow:0 0 8px var(--green);}
+.kpi.accent::before{background:var(--accent);box-shadow:0 0 8px var(--accent);}
+.kpi-label{font-family:var(--mono);font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;color:var(--text2);margin-bottom:.6rem;}
+.kpi-value{font-family:var(--display);font-size:3.5rem;line-height:1;color:#fff;}
+.kpi.red .kpi-value{color:var(--red);text-shadow:0 0 20px rgba(255,59,59,.4);}
+.kpi.orange .kpi-value{color:var(--orange);text-shadow:0 0 20px rgba(255,140,0,.4);}
+.kpi.yellow .kpi-value{color:var(--yellow);text-shadow:0 0 20px rgba(255,214,0,.4);}
+.kpi.green .kpi-value{color:var(--green);text-shadow:0 0 20px rgba(0,255,136,.4);}
+.kpi.accent .kpi-value{color:var(--accent);text-shadow:0 0 20px rgba(0,212,255,.4);}
+.kpi-sub{font-size:.72rem;color:var(--text2);margin-top:.4rem;font-family:var(--mono);}
+.kpi-trend{font-size:.68rem;font-family:var(--mono);margin-top:.5rem;display:block;}
+.trend-up{color:var(--red);}.trend-down{color:var(--green);}.trend-flat{color:var(--text2);}
+
+/* LAYOUT */
+.body-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;}
+.panel{background:var(--bg2);border:1px solid var(--border);}
+.panel-header{padding:.9rem 1.4rem;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;background:var(--bg3);}
+.panel-title{font-family:var(--mono);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);}
+.panel-body{padding:1.4rem;}
+
+/* TABS */
+.repo-tabs{display:flex;border-bottom:1px solid var(--border);overflow-x:auto;overflow-y:hidden;}
+.tab{font-family:var(--mono);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;padding:.75rem 1.4rem;cursor:pointer;border:none;background:transparent;color:var(--text2);border-bottom:2px solid transparent;transition:all .2s;position:relative;top:1px;white-space:nowrap;flex-shrink:0;}
+.tab:hover{color:var(--text);}
+.tab.active{color:var(--accent);border-bottom-color:var(--accent);background:rgba(0,212,255,.04);}
+.tab-content{display:none;padding:1.4rem;overflow-y:auto;max-height:560px;}
+.tab-content.active{display:block;}
+
+/* SEVERITY BARS */
+.sev-row{display:flex;align-items:center;gap:.8rem;margin-bottom:.8rem;}
+.sev-label{font-family:var(--mono);font-size:.68rem;letter-spacing:.08em;width:70px;flex-shrink:0;color:var(--text2);}
+.sev-bar-bg{flex:1;height:6px;background:var(--bg3);border-radius:3px;overflow:hidden;}
+.sev-bar{height:100%;border-radius:3px;transition:width 1.2s cubic-bezier(.16,1,.3,1);width:0;}
+.sev-bar.red{background:var(--red);box-shadow:0 0 6px var(--red);}
+.sev-bar.orange{background:var(--orange);box-shadow:0 0 6px var(--orange);}
+.sev-bar.yellow{background:var(--yellow);box-shadow:0 0 6px var(--yellow);}
+.sev-bar.blue{background:var(--blue);box-shadow:0 0 6px var(--blue);}
+.sev-count{font-family:var(--mono);font-size:.75rem;width:24px;text-align:right;flex-shrink:0;}
+.sev-count.red{color:var(--red);}.sev-count.orange{color:var(--orange);}.sev-count.yellow{color:var(--yellow);}.sev-count.blue{color:var(--blue);}
+
+/* FINDINGS */
+.finding{border:1px solid var(--border);margin-bottom:.6rem;cursor:pointer;transition:border-color .2s,background .2s;}
+.finding:hover{border-color:var(--accent);background:rgba(0,212,255,.03);}
+.finding-header{display:flex;align-items:center;gap:.8rem;padding:.75rem 1rem;}
+.finding-badge{font-family:var(--mono);font-size:.6rem;letter-spacing:.08em;padding:.2rem .5rem;border-radius:2px;flex-shrink:0;text-transform:uppercase;}
+.badge-critico{background:rgba(255,59,59,.15);color:var(--red);border:1px solid rgba(255,59,59,.3);}
+.badge-alto{background:rgba(255,140,0,.15);color:var(--orange);border:1px solid rgba(255,140,0,.3);}
+.badge-medio{background:rgba(255,214,0,.1);color:var(--yellow);border:1px solid rgba(255,214,0,.3);}
+.badge-bajo{background:rgba(41,121,255,.1);color:var(--blue);border:1px solid rgba(41,121,255,.3);}
+.finding-desc{font-size:.8rem;color:var(--text);flex:1;line-height:1.3;font-family:var(--mono);}
+.finding-file{font-size:.65rem;color:var(--text2);font-family:var(--mono);flex-shrink:0;}
+.finding-detail{display:none;padding:.75rem 1rem;border-top:1px solid var(--border);background:var(--bg3);}
+.finding-detail.open{display:block;}
+.detail-row{display:flex;gap:1rem;margin-bottom:.35rem;font-size:.72rem;}
+.detail-key{font-family:var(--mono);color:var(--text2);width:100px;flex-shrink:0;letter-spacing:.05em;}
+.detail-val{font-family:var(--mono);color:var(--text);}
+
+/* CHART */
+.chart-wrap{position:relative;height:180px;margin-top:.5rem;}
+canvas{width:100%!important;}
+
+/* REPO STATUS */
+.repo-status-row{display:flex;align-items:center;justify-content:space-between;padding:.9rem 0;border-bottom:1px solid var(--border);}
+.repo-status-row:last-of-type{border-bottom:none;}
+.repo-status-left{display:flex;flex-direction:column;gap:.3rem;}
+.repo-status-name{font-family:var(--mono);font-size:.78rem;color:var(--text);letter-spacing:.06em;}
+.repo-status-meta{font-family:var(--mono);font-size:.62rem;color:var(--text2);}
+.repo-status-right{display:flex;align-items:center;gap:.8rem;}
+.repo-health{font-size:1.1rem;line-height:1;}
+.repo-health-label{font-family:var(--mono);font-size:.62rem;padding:.2rem .5rem;}
+.health-clean{color:var(--green);border:1px solid rgba(0,255,136,.3);background:rgba(0,255,136,.05);}
+.health-medio{color:var(--yellow);border:1px solid rgba(255,214,0,.3);background:rgba(255,214,0,.05);}
+.health-alto{color:var(--orange);border:1px solid rgba(255,140,0,.3);background:rgba(255,140,0,.05);}
+.health-critico{color:var(--red);border:1px solid rgba(255,59,59,.3);background:rgba(255,59,59,.05);}
+
+.loading{display:flex;align-items:center;justify-content:center;padding:3rem;font-family:var(--mono);font-size:.8rem;color:var(--text2);letter-spacing:.1em;}
+
+footer{position:relative;z-index:10;padding:1rem 3rem;border-top:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;font-family:var(--mono);font-size:.65rem;color:var(--muted);letter-spacing:.08em;}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px);}to{opacity:1;transform:translateY(0);}}
+.fade-in{animation:fadeUp .5s ease both;}
+.delay-1{animation-delay:.1s;}.delay-2{animation-delay:.2s;}.delay-3{animation-delay:.3s;}
+.delay-4{animation-delay:.4s;}.delay-5{animation-delay:.5s;}
+
+@media(max-width:768px){
+  header{padding:1.2rem 1.4rem 1rem;flex-direction:column;align-items:flex-start;gap:.8rem;}
+  h1{font-size:2.2rem;}.live-badge{align-self:flex-start;}
+  main{padding:1.2rem 1.4rem;gap:1.2rem;}
+  .kpi-row{grid-template-columns:repeat(2,1fr);}
+  .kpi-value{font-size:2.8rem;}
+  .body-grid{grid-template-columns:1fr;}
+  footer{padding:.8rem 1.4rem;flex-direction:column;gap:.3rem;text-align:center;}
 }
-
-/* Scanline overlay */
-body::before {
-  content: '';
-  position: fixed;
-  inset: 0;
-  background: repeating-linear-gradient(
-    0deg,
-    transparent,
-    transparent 2px,
-    rgba(0,0,0,.08) 2px,
-    rgba(0,0,0,.08) 4px
-  );
-  pointer-events: none;
-  z-index: 9999;
+@media(max-width:480px){
+  header{padding:1rem 1rem .8rem;}
+  h1{font-size:1.7rem;letter-spacing:.08em;}.header-meta{font-size:.6rem;}
+  main{padding:.8rem 1rem;gap:1rem;}
+  .kpi-row{grid-template-columns:repeat(2,1fr);gap:.6rem;}
+  .kpi{padding:1rem;}.kpi-value{font-size:2.2rem;}
+  .kpi-label{font-size:.58rem;}.kpi-sub{font-size:.62rem;}.kpi-trend{font-size:.6rem;margin-top:.3rem;}
+  .panel-header{padding:.7rem 1rem;}.panel-title{font-size:.62rem;}.panel-body{padding:1rem;}
+  .tab{font-size:.6rem;padding:.6rem 1rem;}
+  .finding-header{flex-wrap:wrap;gap:.4rem;}.finding-file{width:100%;font-size:.6rem;}
+  .detail-key{width:80px;font-size:.65rem;}.detail-val{font-size:.65rem;}
+  .sev-label{font-size:.6rem;width:58px;}.chart-wrap{height:140px;}
+  footer{font-size:.55rem;}
 }
-
-/* Grid noise bg */
-body::after {
-  content: '';
-  position: fixed;
-  inset: 0;
-  background-image:
-    linear-gradient(rgba(0,212,255,.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0,212,255,.03) 1px, transparent 1px);
-  background-size: 40px 40px;
-  pointer-events: none;
-  z-index: 0;
-}
-
-/* ── HEADER ─────────────────────────────────────────────── */
-header {
-  position: relative;
-  z-index: 10;
-  padding: 2rem 3rem 1.5rem;
-  border-bottom: 1px solid var(--border);
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-  gap: 2rem;
-}
-
-.header-left { flex: 1; }
-
-.logo-line {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  margin-bottom: .3rem;
-}
-
-.logo-dot {
-  width: 10px; height: 10px;
-  border-radius: 50%;
-  background: var(--green);
-  box-shadow: 0 0 12px var(--green);
-  animation: pulse 2s infinite;
-}
-
-@keyframes pulse {
-  0%,100% { opacity: 1; box-shadow: 0 0 12px var(--green); }
-  50% { opacity: .4; box-shadow: 0 0 4px var(--green); }
-}
-
-h1 {
-  font-family: var(--display);
-  font-size: 3.2rem;
-  letter-spacing: .15em;
-  color: #fff;
-  line-height: 1;
-}
-
-h1 span { color: var(--accent); }
-
-.header-meta {
-  font-family: var(--mono);
-  font-size: .72rem;
-  color: var(--text2);
-  letter-spacing: .08em;
-}
-
-.header-meta span { color: var(--accent); }
-
-.live-badge {
-  font-family: var(--mono);
-  font-size: .7rem;
-  letter-spacing: .12em;
-  color: var(--green);
-  border: 1px solid var(--green);
-  padding: .3rem .8rem;
-  text-transform: uppercase;
-  position: relative;
-  overflow: hidden;
-}
-
-.live-badge::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: var(--green);
-  opacity: .07;
-}
-
-/* ── MAIN GRID ──────────────────────────────────────────── */
-main {
-  position: relative;
-  z-index: 10;
-  padding: 2rem 3rem;
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-}
-
-/* ── KPI ROW ────────────────────────────────────────────── */
-.kpi-row {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1rem;
-}
-
-.kpi {
-  background: var(--bg2);
-  border: 1px solid var(--border);
-  padding: 1.4rem 1.6rem;
-  position: relative;
-  overflow: hidden;
-  cursor: default;
-  user-select: none;
-  transition: border-color .3s, transform .2s;
-  display: flex;
-  flex-direction: column;
-}
-
-.kpi:hover {
-  border-color: var(--border);
-  transform: none;
-}
-
-.kpi::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0;
-  height: 2px;
-}
-
-.kpi.red::before    { background: var(--red); box-shadow: 0 0 8px var(--red); }
-.kpi.orange::before { background: var(--orange); box-shadow: 0 0 8px var(--orange); }
-.kpi.yellow::before { background: var(--yellow); box-shadow: 0 0 8px var(--yellow); }
-.kpi.green::before  { background: var(--green); box-shadow: 0 0 8px var(--green); }
-
-.kpi-label {
-  font-family: var(--mono);
-  font-size: .65rem;
-  letter-spacing: .15em;
-  text-transform: uppercase;
-  color: var(--text2);
-  margin-bottom: .6rem;
-}
-
-.kpi-value {
-  font-family: var(--display);
-  font-size: 3.5rem;
-  line-height: 1;
-  color: #fff;
-}
-
-.kpi.red    .kpi-value { color: var(--red); text-shadow: 0 0 20px rgba(255,59,59,.4); }
-.kpi.orange .kpi-value { color: var(--orange); text-shadow: 0 0 20px rgba(255,140,0,.4); }
-.kpi.yellow .kpi-value { color: var(--yellow); text-shadow: 0 0 20px rgba(255,214,0,.4); }
-.kpi.green  .kpi-value { color: var(--green); text-shadow: 0 0 20px rgba(0,255,136,.4); }
-
-.kpi-sub {
-  font-size: .72rem;
-  color: var(--text2);
-  margin-top: .4rem;
-  font-family: var(--mono);
-}
-
-.kpi-trend {
-  font-size: .68rem;
-  font-family: var(--mono);
-  margin-top: .5rem;
-  display: block;
-}
-
-.trend-up   { color: var(--red); }
-.trend-down { color: var(--green); }
-.trend-flat { color: var(--text2); }
-
-/* ── BODY GRID ──────────────────────────────────────────── */
-.body-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1.5rem;
-}
-
-/* ── PANEL ──────────────────────────────────────────────── */
-.panel {
-  background: var(--bg2);
-  border: 1px solid var(--border);
-  overflow: visible;
-}
-
-.panel .repo-tabs,
-.panel .tab-content,
-.panel-header,
-.panel-body {
-  overflow: hidden;
-}
-
-.panel-header {
-  padding: .9rem 1.4rem;
-  border-bottom: 1px solid var(--border);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background: var(--bg3);
-}
-
-.panel-title {
-  font-family: var(--mono);
-  font-size: .72rem;
-  letter-spacing: .15em;
-  text-transform: uppercase;
-  color: var(--accent);
-}
-
-.panel-body { padding: 1.4rem; }
-
-/* ── REPO TABS ──────────────────────────────────────────── */
-.repo-tabs {
-  display: flex;
-  gap: 0;
-  border-bottom: 1px solid var(--border);
-}
-
-.tab {
-  font-family: var(--mono);
-  font-size: .68rem;
-  letter-spacing: .1em;
-  text-transform: uppercase;
-  padding: .75rem 1.4rem;
-  cursor: pointer;
-  border: none;
-  background: transparent;
-  color: var(--text2);
-  border-bottom: 2px solid transparent;
-  transition: all .2s;
-  position: relative;
-  top: 1px;
-}
-
-.tab:hover { color: var(--text); }
-
-.tab.active {
-  color: var(--accent);
-  border-bottom-color: var(--accent);
-  background: rgba(0,212,255,.04);
-}
-
-.tab-content { display: none; padding: 1.4rem; overflow-y: auto; max-height: 520px; }
-.tab-content.active { display: block; }
-
-/* ── SEVERITY BARS ──────────────────────────────────────── */
-.sev-row {
-  display: flex;
-  align-items: center;
-  gap: .8rem;
-  margin-bottom: .8rem;
-}
-
-.sev-label {
-  font-family: var(--mono);
-  font-size: .68rem;
-  letter-spacing: .08em;
-  width: 70px;
-  flex-shrink: 0;
-  color: var(--text2);
-}
-
-.sev-bar-bg {
-  flex: 1;
-  height: 6px;
-  background: var(--bg3);
-  border-radius: 3px;
-  overflow: hidden;
-}
-
-.sev-bar {
-  height: 100%;
-  border-radius: 3px;
-  transition: width 1.2s cubic-bezier(.16,1,.3,1);
-  width: 0;
-}
-
-.sev-bar.red    { background: var(--red); box-shadow: 0 0 6px var(--red); }
-.sev-bar.orange { background: var(--orange); box-shadow: 0 0 6px var(--orange); }
-.sev-bar.yellow { background: var(--yellow); box-shadow: 0 0 6px var(--yellow); }
-.sev-bar.blue   { background: var(--blue); box-shadow: 0 0 6px var(--blue); }
-
-.sev-count {
-  font-family: var(--mono);
-  font-size: .75rem;
-  width: 24px;
-  text-align: right;
-  flex-shrink: 0;
-}
-
-.sev-count.red    { color: var(--red); }
-.sev-count.orange { color: var(--orange); }
-.sev-count.yellow { color: var(--yellow); }
-.sev-count.blue   { color: var(--blue); }
-
-/* ── FINDINGS LIST ──────────────────────────────────────── */
-.finding {
-  border: 1px solid var(--border);
-  margin-bottom: .6rem;
-  cursor: pointer;
-  transition: border-color .2s, background .2s;
-  overflow: hidden;
-}
-
-.finding:hover {
-  border-color: var(--accent);
-  background: rgba(0,212,255,.03);
-}
-
-.finding-header {
-  display: flex;
-  align-items: center;
-  gap: .8rem;
-  padding: .75rem 1rem;
-}
-
-.finding-badge {
-  font-family: var(--mono);
-  font-size: .6rem;
-  letter-spacing: .08em;
-  padding: .2rem .5rem;
-  border-radius: 2px;
-  flex-shrink: 0;
-  text-transform: uppercase;
-}
-
-.badge-alto    { background: rgba(255,140,0,.15); color: var(--orange); border: 1px solid rgba(255,140,0,.3); }
-.badge-medio   { background: rgba(255,214,0,.1);  color: var(--yellow); border: 1px solid rgba(255,214,0,.3); }
-.badge-critico { background: rgba(255,59,59,.15); color: var(--red);    border: 1px solid rgba(255,59,59,.3); }
-.badge-hot     { background: rgba(41,121,255,.15);color: var(--blue);   border: 1px solid rgba(41,121,255,.3); }
-
-.finding-desc {
-  font-size: .8rem;
-  color: var(--text);
-  flex: 1;
-  line-height: 1.3;
-  font-family: var(--mono);
-}
-
-.finding-file {
-  font-size: .65rem;
-  color: var(--text2);
-  font-family: var(--mono);
-  flex-shrink: 0;
-}
-
-.finding-detail {
-  display: none;
-  padding: .75rem 1rem;
-  border-top: 1px solid var(--border);
-  background: var(--bg3);
-}
-
-.finding-detail.open { display: block; }
-
-.detail-row {
-  display: flex;
-  gap: 1rem;
-  margin-bottom: .35rem;
-  font-size: .72rem;
-}
-
-.detail-key {
-  font-family: var(--mono);
-  color: var(--text2);
-  width: 100px;
-  flex-shrink: 0;
-  letter-spacing: .05em;
-}
-
-.detail-val {
-  font-family: var(--mono);
-  color: var(--text);
-}
-
-/* ── CHART ──────────────────────────────────────────────── */
-.chart-wrap {
-  position: relative;
-  height: 180px;
-  margin-top: .5rem;
-}
-
-canvas { width: 100% !important; }
-
-/* ── HOTSPOT STATUS ─────────────────────────────────────── */
-.hotspot-row {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: .7rem 0;
-  border-bottom: 1px solid var(--border);
-}
-
-.hotspot-row:last-child { border-bottom: none; }
-
-.hotspot-repo {
-  font-family: var(--mono);
-  font-size: .72rem;
-  color: var(--text2);
-  letter-spacing: .08em;
-}
-
-.hotspot-status {
-  font-family: var(--mono);
-  font-size: .7rem;
-  padding: .2rem .6rem;
-}
-
-.status-ok    { color: var(--green); border: 1px solid rgba(0,255,136,.3); background: rgba(0,255,136,.05); }
-.status-warn  { color: var(--yellow); border: 1px solid rgba(255,214,0,.3); background: rgba(255,214,0,.05); }
-.status-alert { color: var(--orange); border: 1px solid rgba(255,140,0,.3); background: rgba(255,140,0,.05); }
-
-/* ── FOOTER ─────────────────────────────────────────────── */
-footer {
-  position: relative;
-  z-index: 10;
-  padding: 1rem 3rem;
-  border-top: 1px solid var(--border);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  font-family: var(--mono);
-  font-size: .65rem;
-  color: var(--muted);
-  letter-spacing: .08em;
-}
-
-/* ── ANIMATIONS ─────────────────────────────────────────── */
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(16px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-
-.fade-in { animation: fadeUp .5s ease both; }
-.delay-1 { animation-delay: .1s; }
-.delay-2 { animation-delay: .2s; }
-.delay-3 { animation-delay: .3s; }
-.delay-4 { animation-delay: .4s; }
-.delay-5 { animation-delay: .5s; }
-.delay-6 { animation-delay: .6s; }
-
-@keyframes countUp {
-  from { opacity: 0; }
-  to   { opacity: 1; }
-}
-
-/* ── RESPONSIVE ─────────────────────────────────────────── */
-
-/* Tablet (≤768px) */
-@media (max-width: 768px) {
-  header {
-    padding: 1.2rem 1.4rem 1rem;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: .8rem;
-  }
-
-  h1 { font-size: 2.2rem; }
-
-  .live-badge { align-self: flex-start; }
-
-  main { padding: 1.2rem 1.4rem; gap: 1.2rem; }
-
-  .kpi-row {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .kpi-value { font-size: 2.8rem; }
-
-  .body-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .panel[style*="grid-row"] { grid-row: unset !important; }
-
-  footer {
-    padding: .8rem 1.4rem;
-    flex-direction: column;
-    gap: .3rem;
-    text-align: center;
-  }
-
-  .repo-tabs { overflow-x: auto; overflow-y: hidden; }
-  .tab { white-space: nowrap; }
-}
-
-/* Móvil (≤480px) */
-@media (max-width: 480px) {
-  header { padding: 1rem 1rem .8rem; }
-
-  h1 { font-size: 1.7rem; letter-spacing: .08em; }
-
-  .header-meta { font-size: .6rem; }
-
-  main { padding: .8rem 1rem; gap: 1rem; }
-
-  .kpi-row {
-    grid-template-columns: repeat(2, 1fr);
-    gap: .6rem;
-  }
-
-  .kpi { padding: 1rem; }
-  .kpi-value { font-size: 2.2rem; }
-  .kpi-label { font-size: .58rem; }
-  .kpi-sub   { font-size: .62rem; }
-  .kpi-trend { font-size: .6rem; margin-top: .3rem; }
-
-  .panel-header { padding: .7rem 1rem; }
-  .panel-title  { font-size: .62rem; }
-  .panel-body   { padding: 1rem; }
-
-  .tab { font-size: .6rem; padding: .6rem 1rem; }
-
-  .finding-header { flex-wrap: wrap; gap: .4rem; }
-  .finding-file   { width: 100%; font-size: .6rem; }
-
-  .detail-key { width: 80px; font-size: .65rem; }
-  .detail-val { font-size: .65rem; }
-
-  .sev-label { font-size: .6rem; width: 58px; }
-
-  .chart-wrap { height: 140px; }
-
-  footer { font-size: .55rem; }
-}
-
 </style>
 </head>
 <body>
@@ -591,419 +158,349 @@ footer {
     </div>
     <h1>AUPA <span>//</span> SECURITY OPS</h1>
     <div class="header-meta" style="margin-top:.4rem">
-      DESAFÍO TRIPULACIONES · INETUM · EQUIPO 4 &nbsp;·&nbsp;
-      <span id="live-date"></span>
+      DESAFÍO TRIPULACIONES · INETUM · EQUIPO 4 &nbsp;·&nbsp; <span id="live-date">—</span>
     </div>
   </div>
-  <div class="live-badge">● ANÁLISIS ACTIVO · DÍA 3</div>
+  <div class="live-badge" id="live-badge">● CARGANDO</div>
 </header>
 
 <main>
-
-  <!-- KPI ROW -->
   <div class="kpi-row">
     <div class="kpi orange fade-in delay-1">
-      <div class="kpi-label">// Issues activos</div>
-      <div class="kpi-value" data-target="18">0</div>
+      <div class="kpi-label">// Total issues</div>
+      <div class="kpi-value" id="kpi-issues">—</div>
       <div class="kpi-sub">3 repos · hoy</div>
-      <div class="kpi-trend trend-up">↑ +2 vs ayer</div>
+      <div class="kpi-trend" id="kpi-issues-trend"></div>
     </div>
-    <div class="kpi yellow fade-in delay-2">
-      <div class="kpi-label">// Resueltos hoy</div>
-      <div class="kpi-value" data-target="2">0</div>
-      <div class="kpi-sub">issues cerrados</div>
-      <div class="kpi-trend trend-down">↓ mejora</div>
+    <div class="kpi green fade-in delay-2">
+      <div class="kpi-label">// Total hotspots</div>
+      <div class="kpi-value" id="kpi-hotspots">—</div>
+      <div class="kpi-sub">activos · todos los repos</div>
+      <div class="kpi-trend" id="kpi-hotspots-trend"></div>
     </div>
-    <div class="kpi green fade-in delay-3">
-      <div class="kpi-label">// Hotspots</div>
-      <div class="kpi-value" data-target="1">0</div>
-      <div class="kpi-sub">nuevos · baja prob.</div>
-      <div class="kpi-trend trend-down">↓ -1 vs ayer</div>
+    <div class="kpi accent fade-in delay-3">
+      <div class="kpi-label">// Último análisis</div>
+      <div class="kpi-value" id="kpi-date" style="font-size:1.8rem;margin-top:.2rem;">—</div>
+      <div class="kpi-sub" id="kpi-date-sub">—</div>
+      <div class="kpi-trend" style="color:var(--text2)" id="kpi-date-meta"></div>
     </div>
-    <div class="kpi red fade-in delay-4">
-      <div class="kpi-label">// Críticos</div>
-      <div class="kpi-value" data-target="0">0</div>
-      <div class="kpi-sub">todos los repos</div>
-      <div class="kpi-trend trend-flat">— sin cambios</div>
+    <div class="kpi yellow fade-in delay-4">
+      <div class="kpi-label">// Categorías OWASP</div>
+      <div class="kpi-value" id="kpi-owasp">—</div>
+      <div class="kpi-sub">Top 10 2025 · hoy</div>
+      <div class="kpi-trend" id="kpi-owasp-trend"></div>
     </div>
   </div>
 
-  <!-- BODY GRID -->
   <div class="body-grid">
 
-    <!-- Panel izquierdo: repos -->
-    <div class="panel fade-in delay-3" style="grid-row: span 2;">
+    <div class="panel fade-in delay-3" style="grid-row:span 2;">
       <div class="panel-header">
         <span class="panel-title">// Hallazgos por repositorio</span>
-        <span style="font-family:var(--mono);font-size:.65rem;color:var(--text2)">DÍA 3 · 02/06/2026</span>
+        <span style="font-family:var(--mono);font-size:.65rem;color:var(--text2)" id="panel-date">—</span>
       </div>
-
-      <div class="repo-tabs">
-        <button class="tab active" onclick="switchTab('data')">aupa-data</button>
-        <button class="tab" onclick="switchTab('backend')">aupa-backend</button>
-        <button class="tab" onclick="switchTab('frontend')">aupa-frontend</button>
-      </div>
-
-      <!-- DATA -->
-      <div class="tab-content active" id="tab-data">
-        <div style="margin-bottom:1.2rem">
-          <div style="font-family:var(--mono);font-size:.65rem;color:var(--text2);margin-bottom:.8rem;letter-spacing:.1em">DISTRIBUCIÓN DE SEVERIDAD</div>
-          <div class="sev-row">
-            <div class="sev-label red">Crítico</div>
-            <div class="sev-bar-bg"><div class="sev-bar red" data-w="0"></div></div>
-            <div class="sev-count red">0</div>
-          </div>
-          <div class="sev-row">
-            <div class="sev-label orange">Alto</div>
-            <div class="sev-bar-bg"><div class="sev-bar orange" data-w="0"></div></div>
-            <div class="sev-count orange">0</div>
-          </div>
-          <div class="sev-row">
-            <div class="sev-label yellow">Medio</div>
-            <div class="sev-bar-bg"><div class="sev-bar yellow" data-w="100"></div></div>
-            <div class="sev-count yellow">1</div>
-          </div>
-          <div class="sev-row">
-            <div class="sev-label blue">Bajo</div>
-            <div class="sev-bar-bg"><div class="sev-bar blue" data-w="0"></div></div>
-            <div class="sev-count blue">0</div>
-          </div>
-        </div>
-        <div style="font-family:var(--mono);font-size:.65rem;color:var(--text2);margin-bottom:.8rem;letter-spacing:.1em">HALLAZGOS ACTIVOS · 1 ISSUE</div>
-        <div class="finding" onclick="toggleFinding(this)">
-          <div class="finding-header">
-            <span class="finding-badge badge-medio">MEDIO</span>
-            <span class="finding-desc">Merge this RUN instruction with the consecutive ones.</span>
-            <span class="finding-file">Dockerfile:78</span>
-          </div>
-          <div class="finding-detail">
-            <div class="detail-row"><span class="detail-key">Tipo</span><span class="detail-val">CODE_SMELL</span></div>
-            <div class="detail-row"><span class="detail-key">Impacto</span><span class="detail-val">MAINTAINABILITY (LOW)</span></div>
-            <div class="detail-row"><span class="detail-key">OWASP</span><span class="detail-val">Revisar manualmente</span></div>
-            <div class="detail-row"><span class="detail-key">Prioridad</span><span class="detail-val">Backlog</span></div>
-          </div>
-        </div>
-        <div style="margin-top:1rem;padding:.7rem;background:rgba(0,255,136,.04);border:1px solid rgba(0,255,136,.15)">
-          <span style="font-family:var(--mono);font-size:.65rem;color:var(--green)">✓ Sin hotspots · Estado más limpio registrado</span>
-        </div>
-      </div>
-
-      <!-- BACKEND -->
-      <div class="tab-content" id="tab-backend">
-        <div style="margin-bottom:1.2rem">
-          <div style="font-family:var(--mono);font-size:.65rem;color:var(--text2);margin-bottom:.8rem;letter-spacing:.1em">DISTRIBUCIÓN DE SEVERIDAD</div>
-          <div class="sev-row">
-            <div class="sev-label red">Crítico</div>
-            <div class="sev-bar-bg"><div class="sev-bar red" data-w="0"></div></div>
-            <div class="sev-count red">0</div>
-          </div>
-          <div class="sev-row">
-            <div class="sev-label orange">Alto</div>
-            <div class="sev-bar-bg"><div class="sev-bar orange" data-w="14"></div></div>
-            <div class="sev-count orange">2</div>
-          </div>
-          <div class="sev-row">
-            <div class="sev-label yellow">Medio</div>
-            <div class="sev-bar-bg"><div class="sev-bar yellow" data-w="86"></div></div>
-            <div class="sev-count yellow">12</div>
-          </div>
-          <div class="sev-row">
-            <div class="sev-label blue">Bajo</div>
-            <div class="sev-bar-bg"><div class="sev-bar blue" data-w="0"></div></div>
-            <div class="sev-count blue">0</div>
-          </div>
-        </div>
-        <div style="font-family:var(--mono);font-size:.65rem;color:var(--text2);margin-bottom:.8rem;letter-spacing:.1em">HALLAZGOS PRIORITARIOS · 2 PENDIENTES</div>
-        <div class="finding" onclick="toggleFinding(this)">
-          <div class="finding-header">
-            <span class="finding-badge badge-alto">ALTO</span>
-            <span class="finding-desc">Optional chain en middleware de autenticación.</span>
-            <span class="finding-file">auth.middleware.ts:56</span>
-          </div>
-          <div class="finding-detail">
-            <div class="detail-row"><span class="detail-key">Tipo</span><span class="detail-val">CODE_SMELL</span></div>
-            <div class="detail-row"><span class="detail-key">Impacto</span><span class="detail-val">MAINTAINABILITY (MEDIUM)</span></div>
-            <div class="detail-row"><span class="detail-key">Riesgo</span><span class="detail-val">Código de autenticación — revisión manual</span></div>
-            <div class="detail-row"><span class="detail-key">Prioridad</span><span class="detail-val">Esta semana</span></div>
-          </div>
-        </div>
-        <div class="finding" onclick="toggleFinding(this)">
-          <div class="finding-header">
-            <span class="finding-badge badge-alto">ALTO</span>
-            <span class="finding-desc">Asignación inútil a variable "cultura".</span>
-            <span class="finding-file">seed.ts:112</span>
-          </div>
-          <div class="finding-detail">
-            <div class="detail-row"><span class="detail-key">Tipo</span><span class="detail-val">CODE_SMELL</span></div>
-            <div class="detail-row"><span class="detail-key">Impacto</span><span class="detail-val">MAINTAINABILITY (MEDIUM)</span></div>
-            <div class="detail-row"><span class="detail-key">Riesgo</span><span class="detail-val">Fichero de seed — revisar antes de producción</span></div>
-            <div class="detail-row"><span class="detail-key">Prioridad</span><span class="detail-val">Esta semana</span></div>
-          </div>
-        </div>
-        <div style="margin-top:1rem;padding:.7rem;background:rgba(0,255,136,.04);border:1px solid rgba(0,255,136,.15)">
-          <span style="font-family:var(--mono);font-size:.65rem;color:var(--green)">✓ Hotspot X-Powered-By resuelto hoy</span>
-        </div>
-      </div>
-
-      <!-- FRONTEND -->
-      <div class="tab-content" id="tab-frontend">
-        <div style="margin-bottom:1.2rem">
-          <div style="font-family:var(--mono);font-size:.65rem;color:var(--text2);margin-bottom:.8rem;letter-spacing:.1em">DISTRIBUCIÓN DE SEVERIDAD</div>
-          <div class="sev-row">
-            <div class="sev-label red">Crítico</div>
-            <div class="sev-bar-bg"><div class="sev-bar red" data-w="0"></div></div>
-            <div class="sev-count red">0</div>
-          </div>
-          <div class="sev-row">
-            <div class="sev-label orange">Alto</div>
-            <div class="sev-bar-bg"><div class="sev-bar orange" data-w="67"></div></div>
-            <div class="sev-count orange">2</div>
-          </div>
-          <div class="sev-row">
-            <div class="sev-label yellow">Medio</div>
-            <div class="sev-bar-bg"><div class="sev-bar yellow" data-w="33"></div></div>
-            <div class="sev-count yellow">1</div>
-          </div>
-          <div class="sev-row">
-            <div class="sev-label blue">Bajo</div>
-            <div class="sev-bar-bg"><div class="sev-bar blue" data-w="0"></div></div>
-            <div class="sev-count blue">0</div>
-          </div>
-        </div>
-        <div style="font-family:var(--mono);font-size:.65rem;color:var(--text2);margin-bottom:.8rem;letter-spacing:.1em">HALLAZGOS PRIORITARIOS · 2 PENDIENTES</div>
-        <div class="finding" onclick="toggleFinding(this)">
-          <div class="finding-header">
-            <span class="finding-badge badge-alto">ALTO</span>
-            <span class="finding-desc">Código comentado en fichero de entrada.</span>
-            <span class="finding-file">main.tsx:3</span>
-          </div>
-          <div class="finding-detail">
-            <div class="detail-row"><span class="detail-key">Tipo</span><span class="detail-val">CODE_SMELL</span></div>
-            <div class="detail-row"><span class="detail-key">Impacto</span><span class="detail-val">MAINTAINABILITY (MEDIUM)</span></div>
-            <div class="detail-row"><span class="detail-key">Riesgo</span><span class="detail-val">Puede contener lógica sensible</span></div>
-            <div class="detail-row"><span class="detail-key">Prioridad</span><span class="detail-val">Esta semana</span></div>
-          </div>
-        </div>
-        <div class="finding" onclick="toggleFinding(this)">
-          <div class="finding-header">
-            <span class="finding-badge badge-alto">ALTO · BUG</span>
-            <span class="finding-desc">Variable "Error" sobrescribe objeto global JS.</span>
-            <span class="finding-file">Error.tsx:1</span>
-          </div>
-          <div class="finding-detail">
-            <div class="detail-row"><span class="detail-key">Tipo</span><span class="detail-val">BUG</span></div>
-            <div class="detail-row"><span class="detail-key">Impacto</span><span class="detail-val">RELIABILITY (MEDIUM)</span></div>
-            <div class="detail-row"><span class="detail-key">Riesgo</span><span class="detail-val">Manejo de errores comprometido en producción</span></div>
-            <div class="detail-row"><span class="detail-key">Prioridad</span><span class="detail-val">Esta semana</span></div>
-          </div>
-        </div>
-        <div style="margin-top:1rem;padding:.7rem;background:rgba(255,214,0,.04);border:1px solid rgba(255,214,0,.15)">
-          <span style="font-family:var(--mono);font-size:.65rem;color:var(--yellow)">⚠ Nuevo hotspot · vite.config.ts:18 · http vs https</span>
-        </div>
-      </div>
+      <div class="repo-tabs" id="repo-tabs"><div class="loading">Cargando</div></div>
+      <div id="tab-contents"></div>
     </div>
 
-    <!-- Panel derecho arriba: evolución -->
     <div class="panel fade-in delay-4">
       <div class="panel-header">
-        <span class="panel-title">// Evolución acumulada · Issues totales</span>
+        <span class="panel-title">// Evolución · Issues totales por repo</span>
       </div>
       <div class="panel-body">
-        <div class="chart-wrap">
-          <canvas id="evolutionChart"></canvas>
-        </div>
+        <div class="chart-wrap"><canvas id="evolutionChart"></canvas></div>
       </div>
     </div>
 
-    <!-- Panel derecho abajo: hotspots -->
     <div class="panel fade-in delay-5">
       <div class="panel-header">
-        <span class="panel-title">// Estado de hotspots · Hoy</span>
+        <span class="panel-title">// Estado de repositorios · Último análisis</span>
       </div>
-      <div class="panel-body">
-        <div class="hotspot-row">
-          <div>
-            <div style="font-family:var(--mono);font-size:.72rem;color:var(--text);margin-bottom:.2rem">aupa-data</div>
-            <div class="hotspot-repo">main · Dockerfile · permisos COPY</div>
-          </div>
-          <span class="hotspot-status status-ok">✓ RESUELTO</span>
-        </div>
-        <div class="hotspot-row">
-          <div>
-            <div style="font-family:var(--mono);font-size:.72rem;color:var(--text);margin-bottom:.2rem">aupa-backend</div>
-            <div class="hotspot-repo">dev · src/index.ts · X-Powered-By</div>
-          </div>
-          <span class="hotspot-status status-ok">✓ RESUELTO HOY</span>
-        </div>
-        <div class="hotspot-row">
-          <div>
-            <div style="font-family:var(--mono);font-size:.72rem;color:var(--text);margin-bottom:.2rem">aupa-frontend</div>
-            <div class="hotspot-repo">dev · vite.config.ts:18 · http protocol</div>
-          </div>
-          <span class="hotspot-status status-warn">⚠ NUEVO · BAJA</span>
-        </div>
-        <div style="margin-top:1.2rem;display:grid;grid-template-columns:1fr 1fr 1fr;gap:.6rem;text-align:center">
-          <div style="padding:.8rem;background:var(--bg3);border:1px solid var(--border)">
-            <div style="font-family:var(--mono);font-size:1.4rem;color:var(--green)">2</div>
-            <div style="font-family:var(--mono);font-size:.6rem;color:var(--text2);margin-top:.2rem">RESUELTOS</div>
-          </div>
-          <div style="padding:.8rem;background:var(--bg3);border:1px solid var(--border)">
-            <div style="font-family:var(--mono);font-size:1.4rem;color:var(--yellow)">1</div>
-            <div style="font-family:var(--mono);font-size:.6rem;color:var(--text2);margin-top:.2rem">ACTIVOS</div>
-          </div>
-          <div style="padding:.8rem;background:var(--bg3);border:1px solid var(--border)">
-            <div style="font-family:var(--mono);font-size:1.4rem;color:var(--accent)">0</div>
-            <div style="font-family:var(--mono);font-size:.6rem;color:var(--text2);margin-top:.2rem">CRÍTICOS</div>
-          </div>
-        </div>
-      </div>
+      <div class="panel-body" id="repo-status-panel"><div class="loading">Cargando</div></div>
     </div>
 
-  </div><!-- /body-grid -->
+  </div>
 </main>
 
 <footer>
   <span>VERTICAL CIBERSEGURIDAD · EQUIPO 4 · DESAFÍO TRIPULACIONES · INETUM 2026</span>
   <span>SAST: SONARQUBE + SEMGREP · DEPS: PIP-AUDIT / NPM-AUDIT · SECRETS: GREP</span>
-  <span id="footer-time"></span>
+  <span id="footer-time">—</span>
 </footer>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
 <script>
-// ── DATE ────────────────────────────────────────────────────────────
-document.getElementById('live-date').textContent = '02/06/2026 · ANÁLISIS DÍA 3';
-document.getElementById('footer-time').textContent = 'GENERADO: 02/06/2026';
+const JSON_URL   = 'data.json';
+const REPO_KEYS  = ['repo-aupa-data','repo-aupa-backend','repo-aupa-frontend'];
+const REPO_LABEL = {'repo-aupa-data':'aupa-data','repo-aupa-backend':'aupa-backend','repo-aupa-frontend':'aupa-frontend'};
+const REPO_SHORT = {'repo-aupa-data':'data','repo-aupa-backend':'backend','repo-aupa-frontend':'frontend'};
+const REPO_COLOR = {
+  'repo-aupa-data':     ['#00ff88','rgba(0,255,136,.08)'],
+  'repo-aupa-backend':  ['#ff8c00','rgba(255,140,0,.06)'],
+  'repo-aupa-frontend': ['#00d4ff','rgba(0,212,255,.06)'],
+};
+const SEV_COLOR = {Critico:'red',Alto:'orange',Medio:'yellow',Bajo:'blue'};
+const SEV_LABEL = {Critico:'Crítico',Alto:'Alto',Medio:'Medio',Bajo:'Bajo'};
 
-// ── COUNTER ANIMATION ───────────────────────────────────────────────
-function animateCounter(el) {
-  const target = parseInt(el.dataset.target);
-  const duration = 1200;
-  const start = performance.now();
-  const update = (now) => {
-    const t = Math.min((now - start) / duration, 1);
-    const ease = 1 - Math.pow(1 - t, 3);
-    el.textContent = Math.round(ease * target);
-    if (t < 1) requestAnimationFrame(update);
+// ── UTILS ──────────────────────────────────────────────────────────────
+function animateCounter(el, target) {
+  const dur=1200, start=performance.now();
+  const tick=now=>{
+    const t=Math.min((now-start)/dur,1), ease=1-Math.pow(1-t,3);
+    el.textContent=Math.round(ease*target);
+    if(t<1) requestAnimationFrame(tick);
   };
-  requestAnimationFrame(update);
+  requestAnimationFrame(tick);
 }
 
-window.addEventListener('load', () => {
-  document.querySelectorAll('[data-target]').forEach(el => {
-    setTimeout(() => animateCounter(el), 400);
+function trendHtml(curr, prev, invert=false) {
+  if(prev===undefined||prev===null) return '<span class="trend-flat">— primer análisis</span>';
+  const diff=curr-prev;
+  if(diff===0) return '<span class="trend-flat">— sin cambios</span>';
+  const up=diff>0;
+  const cls=(up&&!invert)||(!up&&invert)?'trend-up':'trend-down';
+  return `<span class="${cls}">${up?'↑':'↓'} ${Math.abs(diff)} vs análisis anterior</span>`;
+}
+
+function healthInfo(repo) {
+  if(repo.issues.Critico>0) return ['🔴','CRÍTICO','health-critico'];
+  if(repo.issues.Alto>0)    return ['🟠','ALTOS','health-alto'];
+  if(repo.issues.total>0)   return ['🟡','REVISIÓN','health-medio'];
+  return ['🟢','LIMPIO','health-clean'];
+}
+
+function sevBadge(sev, type) {
+  const cls={Critico:'badge-critico',Alto:'badge-alto',Medio:'badge-medio',Bajo:'badge-bajo'}[sev]||'badge-bajo';
+  return `<span class="finding-badge ${cls}">${sev}${type==='BUG'?' · BUG':''}</span>`;
+}
+
+function sevBars(issues, total) {
+  return ['Critico','Alto','Medio','Bajo'].map(sev=>{
+    const n=issues[sev]||0, pct=total>0?Math.round(n/total*100):0, col=SEV_COLOR[sev];
+    return `<div class="sev-row">
+      <div class="sev-label ${col}">${SEV_LABEL[sev]}</div>
+      <div class="sev-bar-bg"><div class="sev-bar ${col}" data-w="${pct}"></div></div>
+      <div class="sev-count ${col}">${n}</div>
+    </div>`;
+  }).join('');
+}
+
+function findingCards(findings) {
+  if(!findings||!findings.length)
+    return '<p style="font-family:var(--mono);font-size:.72rem;color:var(--text2);padding:.5rem 0">Sin hallazgos activos.</p>';
+  return findings.map(f=>`
+    <div class="finding" onclick="this.querySelector('.finding-detail').classList.toggle('open')">
+      <div class="finding-header">
+        ${sevBadge(f.sev,f.type)}
+        <span class="finding-desc">${f.desc}</span>
+        <span class="finding-file">${f.file}:${f.line}</span>
+      </div>
+      <div class="finding-detail">
+        <div class="detail-row"><span class="detail-key">Tipo</span><span class="detail-val">${f.type}</span></div>
+        <div class="detail-row"><span class="detail-key">Impacto</span><span class="detail-val">${f.impacts}</span></div>
+        <div class="detail-row"><span class="detail-key">OWASP</span><span class="detail-val">${f.owasp}</span></div>
+        <div class="detail-row"><span class="detail-key">Prioridad</span><span class="detail-val">${f.priority}</span></div>
+      </div>
+    </div>`).join('');
+}
+
+function hotspotNote(repo) {
+  const hf=repo.hotspot_findings||[];
+  if(!hf.length) return `<div style="margin-top:1rem;padding:.7rem;background:rgba(0,255,136,.04);border:1px solid rgba(0,255,136,.15)">
+    <span style="font-family:var(--mono);font-size:.65rem;color:var(--green)">✓ Sin hotspots activos</span></div>`;
+  return hf.map(h=>`<div style="margin-top:.8rem;padding:.7rem;background:rgba(255,214,0,.04);border:1px solid rgba(255,214,0,.15)">
+    <span style="font-family:var(--mono);font-size:.65rem;color:var(--yellow)">⚠ Hotspot ${h.prob} · ${h.file}:${h.line}</span></div>`).join('');
+}
+
+function animateBars(tabId) {
+  setTimeout(()=>{
+    document.querySelectorAll(`#${tabId} .sev-bar`).forEach(b=>{
+      b.style.width='0'; setTimeout(()=>{ b.style.width=b.dataset.w+'%'; },50);
+    });
+  },10);
+}
+
+function countOwasp(data) {
+  const cats = new Set();
+  REPO_KEYS.forEach(k=>{
+    const r=data[k]; if(!r) return;
+    (r.issue_findings||[]).forEach(f=>{
+      if(f.owasp && !f.owasp.includes('Revisar manualmente')) cats.add(f.owasp);
+    });
+    (r.hotspot_findings||[]).forEach(h=>{
+      if(h.owasp && !h.owasp.includes('Revisar manualmente')) cats.add(h.owasp);
+    });
+  });
+  return cats.size;
+}
+
+// ── RENDER KPIs ────────────────────────────────────────────────────────
+function renderKPIs(data, history) {
+  let issues=0, hotspots=0;
+  let prevIssues=null, prevHotspots=null;
+
+  REPO_KEYS.forEach(k=>{
+    const r=data[k]; if(!r) return;
+    issues   += r.issues.total||0;
+    hotspots += r.hotspots.total||0;
   });
 
-  // Animar barras
-  setTimeout(() => {
-    document.querySelectorAll('.sev-bar').forEach(bar => {
-      bar.style.width = bar.dataset.w + '%';
+  if(history&&history.length>=2) {
+    const prev=history[history.length-2];
+    prevIssues=0; prevHotspots=0;
+    REPO_KEYS.forEach(k=>{
+      const p=prev[k]; if(!p) return;
+      prevIssues   += p.issues?.total||0;
+      prevHotspots += p.hotspots?.total||0;
     });
-  }, 600);
-});
+  }
 
-// ── TABS ─────────────────────────────────────────────────────────────
-function switchTab(repo) {
-  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-  document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+  const owasp = countOwasp(data);
+  const date  = data[REPO_KEYS[0]]?.date||'—';
+  const commits = REPO_KEYS.map(k=>data[k]?.commit?.substring(0,8)||'—').join(' · ');
 
-  event.target.classList.add('active');
-  document.getElementById('tab-' + repo).classList.add('active');
+  animateCounter(document.getElementById('kpi-issues'),   issues);
+  animateCounter(document.getElementById('kpi-hotspots'), hotspots);
+  animateCounter(document.getElementById('kpi-owasp'),    owasp);
 
-  // Reanimar barras del tab activo
-  setTimeout(() => {
-    document.querySelectorAll('#tab-' + repo + ' .sev-bar').forEach(bar => {
-      bar.style.width = '0';
-      setTimeout(() => { bar.style.width = bar.dataset.w + '%'; }, 50);
-    });
-  }, 10);
+  document.getElementById('kpi-date').textContent      = date;
+  document.getElementById('kpi-date-sub').textContent  = history ? history.length + ' análisis registrados' : '—';
+  document.getElementById('kpi-date-meta').textContent = commits;
+
+  document.getElementById('kpi-issues-trend').innerHTML   = trendHtml(issues,   prevIssues,   true);
+  document.getElementById('kpi-hotspots-trend').innerHTML = trendHtml(hotspots, prevHotspots, true);
+  document.getElementById('kpi-owasp-trend').innerHTML    = owasp===0
+    ? '<span class="trend-flat">— sin mapeo OWASP</span>'
+    : `<span style="color:var(--text2)">categorías distintas</span>`;
+
+  document.getElementById('live-date').textContent  = date;
+  document.getElementById('panel-date').textContent = date;
+  document.getElementById('footer-time').textContent = 'ACTUALIZADO: '+(data._meta?.last_updated?.substring(0,10)||date);
+  document.getElementById('live-badge').textContent  = '● ANÁLISIS ACTIVO · '+date;
 }
 
-// ── FINDING TOGGLE ───────────────────────────────────────────────────
-function toggleFinding(el) {
-  const detail = el.querySelector('.finding-detail');
-  detail.classList.toggle('open');
+// ── RENDER TABS ────────────────────────────────────────────────────────
+function renderTabs(data) {
+  const tabsEl=document.getElementById('repo-tabs');
+  const contEl=document.getElementById('tab-contents');
+  tabsEl.innerHTML=contEl.innerHTML='';
+
+  REPO_KEYS.forEach((key,idx)=>{
+    const repo=data[key]; if(!repo) return;
+    const total=repo.issues.total||0;
+
+    const btn=document.createElement('button');
+    btn.className='tab'+(idx===0?' active':'');
+    btn.dataset.repo=key; btn.textContent=REPO_LABEL[key];
+    btn.onclick=()=>{
+      document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+      document.querySelectorAll('.tab-content').forEach(c=>c.classList.remove('active'));
+      btn.classList.add('active');
+      document.getElementById('tab-'+key).classList.add('active');
+      animateBars('tab-'+key);
+    };
+    tabsEl.appendChild(btn);
+
+    const div=document.createElement('div');
+    div.className='tab-content'+(idx===0?' active':'');
+    div.id='tab-'+key;
+    div.innerHTML=`
+      <div style="margin-bottom:1.2rem">
+        <div style="font-family:var(--mono);font-size:.65rem;color:var(--text2);margin-bottom:.8rem;letter-spacing:.1em">DISTRIBUCIÓN DE SEVERIDAD</div>
+        ${sevBars(repo.issues,total)}
+      </div>
+      <div style="font-family:var(--mono);font-size:.65rem;color:var(--text2);margin-bottom:.8rem;letter-spacing:.1em">
+        HALLAZGOS ACTIVOS · ${repo.issue_findings?.length||0} ISSUES
+      </div>
+      ${findingCards(repo.issue_findings)}
+      ${hotspotNote(repo)}`;
+    contEl.appendChild(div);
+  });
+
+  animateBars('tab-'+REPO_KEYS[0]);
 }
 
-// ── CHART ────────────────────────────────────────────────────────────
-const ctx = document.getElementById('evolutionChart').getContext('2d');
+// ── RENDER REPO STATUS ─────────────────────────────────────────────────
+function renderRepoStatus(data) {
+  const panel=document.getElementById('repo-status-panel');
+  let html='';
 
-Chart.defaults.color = '#4a5568';
-Chart.defaults.font.family = "'Share Tech Mono', monospace";
-Chart.defaults.font.size = 10;
+  REPO_KEYS.forEach(key=>{
+    const repo=data[key]; if(!repo) return;
+    const [emoji, label, cls] = healthInfo(repo);
+    const totalIssues = repo.issues.total||0;
+    const totalHots   = repo.hotspots.total||0;
+    const issuesSub   = totalIssues===0 ? 'sin issues' : `${totalIssues} issue${totalIssues!==1?'s':''}`;
+    const hotsSub     = totalHots===0   ? 'sin hotspots' : `${totalHots} hotspot${totalHots!==1?'s':''}`;
 
-new Chart(ctx, {
-  type: 'line',
-  data: {
-    labels: ['Día 1', 'Día 2', 'Día 3'],
-    datasets: [
-      {
-        label: 'data',
-        data: [null, 3, 1],
-        borderColor: '#00ff88',
-        backgroundColor: 'rgba(0,255,136,.08)',
-        borderWidth: 2,
-        pointBackgroundColor: '#00ff88',
-        pointRadius: 5,
-        pointHoverRadius: 7,
-        tension: .3,
-        fill: true,
+    html+=`
+      <div class="repo-status-row">
+        <div class="repo-status-left">
+          <div class="repo-status-name">${REPO_LABEL[key]}</div>
+          <div class="repo-status-meta">${repo.branch} · ${repo.commit.substring(0,8)} · ${repo.date}</div>
+          <div class="repo-status-meta" style="margin-top:.2rem">${issuesSub} · ${hotsSub}</div>
+        </div>
+        <div class="repo-status-right">
+          <div class="repo-health">${emoji}</div>
+          <span class="repo-health-label ${cls}">${label}</span>
+        </div>
+      </div>`;
+  });
+
+  panel.innerHTML = html;
+}
+
+// ── RENDER CHART ───────────────────────────────────────────────────────
+function renderChart(data, history) {
+  if(!history||!history.length) return;
+  const labels   = history.map(h=>h.date);
+  const datasets = REPO_KEYS.map(key=>({
+    label: REPO_SHORT[key],
+    data:  history.map(h=>h[key]?.issues?.total??null),
+    borderColor:     REPO_COLOR[key][0],
+    backgroundColor: REPO_COLOR[key][1],
+    borderWidth:2, pointBackgroundColor:REPO_COLOR[key][0],
+    pointRadius:5, pointHoverRadius:7, tension:.3, fill:true,
+  }));
+
+  Chart.defaults.color='#4a5568';
+  Chart.defaults.font.family="'Share Tech Mono',monospace";
+  Chart.defaults.font.size=10;
+
+  new Chart(document.getElementById('evolutionChart').getContext('2d'),{
+    type:'line', data:{labels,datasets},
+    options:{
+      responsive:true, maintainAspectRatio:false,
+      animation:{duration:1400,easing:'easeOutQuart'},
+      plugins:{
+        legend:{position:'bottom',labels:{color:'#8b949e',boxWidth:10,padding:16}},
+        tooltip:{backgroundColor:'#0d1117',borderColor:'#1e2d3d',borderWidth:1,titleColor:'#00d4ff',bodyColor:'#c9d1d9'},
       },
-      {
-        label: 'backend',
-        data: [null, 12, 14],
-        borderColor: '#ff8c00',
-        backgroundColor: 'rgba(255,140,0,.06)',
-        borderWidth: 2,
-        pointBackgroundColor: '#ff8c00',
-        pointRadius: 5,
-        pointHoverRadius: 7,
-        tension: .3,
-        fill: true,
-      },
-      {
-        label: 'frontend',
-        data: [null, 4, 3],
-        borderColor: '#00d4ff',
-        backgroundColor: 'rgba(0,212,255,.06)',
-        borderWidth: 2,
-        pointBackgroundColor: '#00d4ff',
-        pointRadius: 5,
-        pointHoverRadius: 7,
-        tension: .3,
-        fill: true,
-      },
-    ],
-  },
-  options: {
-    responsive: true,
-    maintainAspectRatio: false,
-    animation: { duration: 1400, easing: 'easeOutQuart' },
-    plugins: {
-      legend: {
-        position: 'bottom',
-        labels: { color: '#8b949e', boxWidth: 10, padding: 16 },
-      },
-      tooltip: {
-        backgroundColor: '#0d1117',
-        borderColor: '#1e2d3d',
-        borderWidth: 1,
-        titleColor: '#00d4ff',
-        bodyColor: '#c9d1d9',
+      scales:{
+        x:{grid:{color:'rgba(30,45,61,.6)'},ticks:{color:'#4a5568'}},
+        y:{grid:{color:'rgba(30,45,61,.6)'},ticks:{color:'#4a5568'},beginAtZero:true},
       },
     },
-    scales: {
-      x: {
-        grid: { color: 'rgba(30,45,61,.6)' },
-        ticks: { color: '#4a5568' },
-      },
-      y: {
-        grid: { color: 'rgba(30,45,61,.6)' },
-        ticks: { color: '#4a5568' },
-        beginAtZero: true,
-      },
-    },
-  },
-});
+  });
+}
+
+// ── FETCH ──────────────────────────────────────────────────────────────
+fetch(JSON_URL+'?t='+Date.now())
+  .then(r=>{ if(!r.ok) throw new Error('HTTP '+r.status); return r.json(); })
+  .then(data=>{
+    const history=data.history||[];
+    renderKPIs(data, history);
+    renderTabs(data);
+    renderRepoStatus(data);
+    renderChart(data, history);
+  })
+  .catch(err=>{
+    console.error(err);
+    document.getElementById('live-badge').textContent='● ERROR · SIN DATOS';
+    document.getElementById('live-badge').style.cssText='color:var(--red);border-color:var(--red)';
+    document.getElementById('repo-tabs').innerHTML=
+      '<div style="padding:1.4rem;font-family:var(--mono);font-size:.75rem;color:var(--red)">No se pudo cargar data.json — abre desde un servidor local.</div>';
+  });
 </script>
 </body>
 </html>
