@@ -162,12 +162,15 @@ main {
   position: relative;
   overflow: hidden;
   cursor: default;
+  user-select: none;
   transition: border-color .3s, transform .2s;
+  display: flex;
+  flex-direction: column;
 }
 
 .kpi:hover {
-  border-color: var(--accent);
-  transform: translateY(-2px);
+  border-color: var(--border);
+  transform: none;
 }
 
 .kpi::before {
@@ -211,10 +214,10 @@ main {
 }
 
 .kpi-trend {
-  position: absolute;
-  top: 1.2rem; right: 1.2rem;
-  font-size: .75rem;
+  font-size: .68rem;
   font-family: var(--mono);
+  margin-top: .5rem;
+  display: block;
 }
 
 .trend-up   { color: var(--red); }
@@ -232,6 +235,13 @@ main {
 .panel {
   background: var(--bg2);
   border: 1px solid var(--border);
+  overflow: visible;
+}
+
+.panel .repo-tabs,
+.panel .tab-content,
+.panel-header,
+.panel-body {
   overflow: hidden;
 }
 
@@ -285,7 +295,7 @@ main {
   background: rgba(0,212,255,.04);
 }
 
-.tab-content { display: none; padding: 1.4rem; }
+.tab-content { display: none; padding: 1.4rem; overflow-y: auto; max-height: 520px; }
 .tab-content.active { display: block; }
 
 /* ── SEVERITY BARS ──────────────────────────────────────── */
@@ -525,7 +535,7 @@ footer {
     text-align: center;
   }
 
-  .repo-tabs { overflow-x: auto; }
+  .repo-tabs { overflow-x: auto; overflow-y: hidden; }
   .tab { white-space: nowrap; }
 }
 
@@ -544,11 +554,11 @@ footer {
     gap: .6rem;
   }
 
-  .kpi { padding: 1rem 1rem; }
+  .kpi { padding: 1rem; }
   .kpi-value { font-size: 2.2rem; }
   .kpi-label { font-size: .58rem; }
   .kpi-sub   { font-size: .62rem; }
-  .kpi-trend { font-size: .62rem; top: .8rem; right: .8rem; }
+  .kpi-trend { font-size: .6rem; margin-top: .3rem; }
 
   .panel-header { padding: .7rem 1rem; }
   .panel-title  { font-size: .62rem; }
