@@ -14,7 +14,7 @@
       "time": "18:00:00",
       "repo": "repo-aupa-data",
       "branch": "main",
-      "commit": "0336cc6d0e798a84c98ba1a65c397d9ddfcf666c",
+      "commit": "a1b25cd20671f2947add08aeaa90adba9cda6b68",
       "issues":   { "Critico": 2, "Alto": 1, "Medio": 0, "Bajo": 0, "total": 3 },
       "hotspots": { "Alta": 0, "Media": 1, "Baja": 0, "total": 1 }
     },
@@ -24,7 +24,7 @@
       "time": "18:02:00",
       "repo": "repo-aupa-backend",
       "branch": "dev",
-      "commit": "a2a89179a556b697a5dc1640f8946c3a11e058d6",
+      "commit": "b893203da0a1946181453e75d27be10a8702c6af",
       "issues":   { "Critico": 0, "Alto": 2, "Medio": 10, "Bajo": 0, "total": 12 },
       "hotspots": { "Alta": 0, "Media": 0, "Baja": 1, "total": 1 }
     },
@@ -34,7 +34,7 @@
       "time": "18:04:00",
       "repo": "repo-aupa-frontend",
       "branch": "dev",
-      "commit": "2cf9fcea34d204461d9faba3b241f8ff0f033c29",
+      "commit": "10385c0668ca1b7f45679c649234c3974dd380d7",
       "issues":   { "Critico": 0, "Alto": 2, "Medio": 2, "Bajo": 0, "total": 4 },
       "hotspots": { "Alta": 0, "Media": 0, "Baja": 0, "total": 0 }
     },
