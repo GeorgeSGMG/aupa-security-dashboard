@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "last_updated": "2026-06-03T20:00:00",
+    "last_updated": "2026-06-04T18:07:38.518510",
     "repos": [
       "repo-aupa-data",
       "repo-aupa-backend",
@@ -15,8 +15,19 @@
       "repo": "repo-aupa-data",
       "branch": "main",
       "commit": "a1b25cd20671f2947add08aeaa90adba9cda6b68",
-      "issues":   { "Critico": 2, "Alto": 1, "Medio": 0, "Bajo": 0, "total": 3 },
-      "hotspots": { "Alta": 0, "Media": 1, "Baja": 0, "total": 1 }
+      "issues": {
+        "Critico": 2,
+        "Alto": 1,
+        "Medio": 0,
+        "Bajo": 0,
+        "total": 3
+      },
+      "hotspots": {
+        "Alta": 0,
+        "Media": 1,
+        "Baja": 0,
+        "total": 1
+      }
     },
     {
       "run_id": "20260601_180200",
@@ -25,8 +36,19 @@
       "repo": "repo-aupa-backend",
       "branch": "dev",
       "commit": "b893203da0a1946181453e75d27be10a8702c6af",
-      "issues":   { "Critico": 0, "Alto": 2, "Medio": 10, "Bajo": 0, "total": 12 },
-      "hotspots": { "Alta": 0, "Media": 0, "Baja": 1, "total": 1 }
+      "issues": {
+        "Critico": 0,
+        "Alto": 2,
+        "Medio": 10,
+        "Bajo": 0,
+        "total": 12
+      },
+      "hotspots": {
+        "Alta": 0,
+        "Media": 0,
+        "Baja": 1,
+        "total": 1
+      }
     },
     {
       "run_id": "20260601_180400",
@@ -35,8 +57,19 @@
       "repo": "repo-aupa-frontend",
       "branch": "dev",
       "commit": "10385c0668ca1b7f45679c649234c3974dd380d7",
-      "issues":   { "Critico": 0, "Alto": 2, "Medio": 2, "Bajo": 0, "total": 4 },
-      "hotspots": { "Alta": 0, "Media": 0, "Baja": 0, "total": 0 }
+      "issues": {
+        "Critico": 0,
+        "Alto": 2,
+        "Medio": 2,
+        "Bajo": 0,
+        "total": 4
+      },
+      "hotspots": {
+        "Alta": 0,
+        "Media": 0,
+        "Baja": 0,
+        "total": 0
+      }
     },
     {
       "run_id": "20260602_180000",
@@ -45,8 +78,19 @@
       "repo": "repo-aupa-data",
       "branch": "main",
       "commit": "0336cc6d0e798a84c98ba1a65c397d9ddfcf666c",
-      "issues":   { "Critico": 0, "Alto": 0, "Medio": 1, "Bajo": 0, "total": 1 },
-      "hotspots": { "Alta": 0, "Media": 0, "Baja": 0, "total": 0 }
+      "issues": {
+        "Critico": 0,
+        "Alto": 0,
+        "Medio": 1,
+        "Bajo": 0,
+        "total": 1
+      },
+      "hotspots": {
+        "Alta": 0,
+        "Media": 0,
+        "Baja": 0,
+        "total": 0
+      }
     },
     {
       "run_id": "20260602_180200",
@@ -55,8 +99,19 @@
       "repo": "repo-aupa-backend",
       "branch": "dev",
       "commit": "a2a89179a556b697a5dc1640f8946c3a11e058d6",
-      "issues":   { "Critico": 0, "Alto": 2, "Medio": 12, "Bajo": 0, "total": 14 },
-      "hotspots": { "Alta": 0, "Media": 0, "Baja": 0, "total": 0 }
+      "issues": {
+        "Critico": 0,
+        "Alto": 2,
+        "Medio": 12,
+        "Bajo": 0,
+        "total": 14
+      },
+      "hotspots": {
+        "Alta": 0,
+        "Media": 0,
+        "Baja": 0,
+        "total": 0
+      }
     },
     {
       "run_id": "20260602_180400",
@@ -65,8 +120,19 @@
       "repo": "repo-aupa-frontend",
       "branch": "dev",
       "commit": "2cf9fcea34d204461d9faba3b241f8ff0f033c29",
-      "issues":   { "Critico": 0, "Alto": 2, "Medio": 1, "Bajo": 0, "total": 3 },
-      "hotspots": { "Alta": 0, "Media": 0, "Baja": 1, "total": 1 }
+      "issues": {
+        "Critico": 0,
+        "Alto": 2,
+        "Medio": 1,
+        "Bajo": 0,
+        "total": 3
+      },
+      "hotspots": {
+        "Alta": 0,
+        "Media": 0,
+        "Baja": 1,
+        "total": 1
+      }
     },
     {
       "run_id": "20260603_180000",
@@ -75,8 +141,19 @@
       "repo": "repo-aupa-data",
       "branch": "main",
       "commit": "214e8d015d591852d892c478ef0f2c5d8ad0542d",
-      "issues":   { "Critico": 0, "Alto": 0, "Medio": 1, "Bajo": 0, "total": 1 },
-      "hotspots": { "Alta": 0, "Media": 0, "Baja": 0, "total": 0 }
+      "issues": {
+        "Critico": 0,
+        "Alto": 0,
+        "Medio": 1,
+        "Bajo": 0,
+        "total": 1
+      },
+      "hotspots": {
+        "Alta": 0,
+        "Media": 0,
+        "Baja": 0,
+        "total": 0
+      }
     },
     {
       "run_id": "20260603_180200",
@@ -85,8 +162,19 @@
       "repo": "repo-aupa-backend",
       "branch": "dev",
       "commit": "a2a89179a556b697a5dc1640f8946c3a11e058d6",
-      "issues":   { "Critico": 0, "Alto": 2, "Medio": 12, "Bajo": 0, "total": 14 },
-      "hotspots": { "Alta": 0, "Media": 0, "Baja": 0, "total": 0 }
+      "issues": {
+        "Critico": 0,
+        "Alto": 2,
+        "Medio": 12,
+        "Bajo": 0,
+        "total": 14
+      },
+      "hotspots": {
+        "Alta": 0,
+        "Media": 0,
+        "Baja": 0,
+        "total": 0
+      }
     },
     {
       "run_id": "20260603_180400",
@@ -95,64 +183,688 @@
       "repo": "repo-aupa-frontend",
       "branch": "dev",
       "commit": "25fd6b27dc8b5729dbc0acfc4d05d9e64cb2b680",
-      "issues":   { "Critico": 0, "Alto": 2, "Medio": 1, "Bajo": 0, "total": 3 },
-      "hotspots": { "Alta": 0, "Media": 0, "Baja": 1, "total": 1 }
+      "issues": {
+        "Critico": 0,
+        "Alto": 2,
+        "Medio": 1,
+        "Bajo": 0,
+        "total": 3
+      },
+      "hotspots": {
+        "Alta": 0,
+        "Media": 0,
+        "Baja": 1,
+        "total": 1
+      }
+    },
+    {
+      "run_id": "20260604_180626",
+      "date": "04/06/2026",
+      "time": "18:06:26",
+      "repo": "repo-aupa-data",
+      "branch": "main",
+      "commit": "1217981a23316e2f6c5da08a81b6743ea92a50f8",
+      "issues": {
+        "Critico": 1,
+        "Alto": 0,
+        "Medio": 1,
+        "Bajo": 0,
+        "total": 2
+      },
+      "hotspots": {
+        "Alta": 0,
+        "Media": 0,
+        "Baja": 0,
+        "total": 0
+      }
+    },
+    {
+      "run_id": "20260604_180709",
+      "date": "04/06/2026",
+      "time": "18:07:09",
+      "repo": "repo-aupa-backend",
+      "branch": "dev",
+      "commit": "265361e76d319059d6b1d85a2a6c2a5bfb2d1a1f",
+      "issues": {
+        "Critico": 0,
+        "Alto": 2,
+        "Medio": 19,
+        "Bajo": 0,
+        "total": 21
+      },
+      "hotspots": {
+        "Alta": 0,
+        "Media": 0,
+        "Baja": 0,
+        "total": 0
+      }
+    },
+    {
+      "run_id": "20260604_180738",
+      "date": "04/06/2026",
+      "time": "18:07:38",
+      "repo": "repo-aupa-frontend",
+      "branch": "dev",
+      "commit": "9dffc6d1802e2671260e7e594ce8f23c87bfb543",
+      "issues": {
+        "Critico": 1,
+        "Alto": 21,
+        "Medio": 3,
+        "Bajo": 0,
+        "total": 25
+      },
+      "hotspots": {
+        "Alta": 0,
+        "Media": 0,
+        "Baja": 1,
+        "total": 1
+      }
     }
   ],
   "repo-aupa-data": {
     "project_key": "repo-aupa-data",
-    "date": "03/06/2026",
+    "date": "04/06/2026",
     "branch": "main",
-    "commit": "214e8d015d591852d892c478ef0f2c5d8ad0542d",
-    "issues":   { "Critico": 0, "Alto": 0, "Medio": 1, "Bajo": 0, "total": 1 },
-    "hotspots": { "Alta": 0, "Media": 0, "Baja": 0, "total": 0 },
+    "commit": "1217981a23316e2f6c5da08a81b6743ea92a50f8",
+    "issues": {
+      "Critico": 1,
+      "Alto": 0,
+      "Medio": 1,
+      "Bajo": 0,
+      "total": 2
+    },
+    "hotspots": {
+      "Alta": 0,
+      "Media": 0,
+      "Baja": 0,
+      "total": 0
+    },
     "issue_findings": [
-      { "desc": "Merge this RUN instruction with the consecutive ones.", "file": "Dockerfile", "line": 78, "sev": "Medio", "sev_raw": "MINOR", "type": "CODE_SMELL", "owasp": "Revisar manualmente en SonarQube", "priority": "Backlog", "impacts": "MAINTAINABILITY (LOW)" }
+      {
+        "desc": "Use \"Annotated\" type hints for FastAPI dependency injection",
+        "file": "src/app/main.py",
+        "line": 23,
+        "sev": "Critico",
+        "sev_raw": "BLOCKER",
+        "type": "CODE_SMELL",
+        "owasp": "Revisar manualmente en SonarQube",
+        "priority": "Inmediata",
+        "impacts": "MAINTAINABILITY (BLOCKER)"
+      },
+      {
+        "desc": "Merge this RUN instruction with the consecutive ones.",
+        "file": "Dockerfile",
+        "line": 78,
+        "sev": "Medio",
+        "sev_raw": "MINOR",
+        "type": "CODE_SMELL",
+        "owasp": "Revisar manualmente en SonarQube",
+        "priority": "Backlog",
+        "impacts": "MAINTAINABILITY (LOW)"
+      }
     ],
     "hotspot_findings": [],
-    "updated_at": "2026-06-03T20:00:00"
+    "updated_at": "2026-06-04T18:06:26.621229"
   },
   "repo-aupa-backend": {
     "project_key": "repo-aupa-backend",
-    "date": "03/06/2026",
+    "date": "04/06/2026",
     "branch": "dev",
-    "commit": "a2a89179a556b697a5dc1640f8946c3a11e058d6",
-    "issues":   { "Critico": 0, "Alto": 2, "Medio": 12, "Bajo": 0, "total": 14 },
-    "hotspots": { "Alta": 0, "Media": 0, "Baja": 0, "total": 0 },
+    "commit": "265361e76d319059d6b1d85a2a6c2a5bfb2d1a1f",
+    "issues": {
+      "Critico": 0,
+      "Alto": 2,
+      "Medio": 19,
+      "Bajo": 0,
+      "total": 21
+    },
+    "hotspots": {
+      "Alta": 0,
+      "Media": 0,
+      "Baja": 0,
+      "total": 0
+    },
     "issue_findings": [
-      { "desc": "Prefer `node:http` over `http`.", "file": "src/index.ts", "line": 3, "sev": "Medio", "sev_raw": "MINOR", "type": "CODE_SMELL", "owasp": "Revisar manualmente en SonarQube", "priority": "Backlog", "impacts": "MAINTAINABILITY (MEDIUM)" },
-      { "desc": "Prefer `node:http` over `http`.", "file": "src/socket.ts", "line": 2, "sev": "Medio", "sev_raw": "MINOR", "type": "CODE_SMELL", "owasp": "Revisar manualmente en SonarQube", "priority": "Backlog", "impacts": "MAINTAINABILITY (MEDIUM)" },
-      { "desc": "Prefer using an optional chain expression instead, as it's more concise and easier to read.", "file": "src/middlewares/auth.middleware.ts", "line": 56, "sev": "Alto", "sev_raw": "MAJOR", "type": "CODE_SMELL", "owasp": "Revisar manualmente en SonarQube", "priority": "Esta semana", "impacts": "MAINTAINABILITY (MEDIUM)" },
-      { "desc": "Remove this unused import of 'seedAll'.", "file": "src/config/db.ts", "line": 3, "sev": "Medio", "sev_raw": "MINOR", "type": "CODE_SMELL", "owasp": "Revisar manualmente en SonarQube", "priority": "Backlog", "impacts": "MAINTAINABILITY (LOW)" },
-      { "desc": "Remove this useless assignment to variable \"cultura\".", "file": "src/config/seed.ts", "line": 112, "sev": "Alto", "sev_raw": "MAJOR", "type": "CODE_SMELL", "owasp": "Revisar manualmente en SonarQube", "priority": "Esta semana", "impacts": "MAINTAINABILITY (MEDIUM)" },
-      { "desc": "Use `export…from` to re-export `User`.", "file": "src/models/index.ts", "line": 25, "sev": "Medio", "sev_raw": "MINOR", "type": "CODE_SMELL", "owasp": "Revisar manualmente en SonarQube", "priority": "Backlog", "impacts": "MAINTAINABILITY (LOW)" },
-      { "desc": "Use `export…from` to re-export `Category`.", "file": "src/models/index.ts", "line": 26, "sev": "Medio", "sev_raw": "MINOR", "type": "CODE_SMELL", "owasp": "Revisar manualmente en SonarQube", "priority": "Backlog", "impacts": "MAINTAINABILITY (LOW)" },
-      { "desc": "Use `export…from` to re-export `Event`.", "file": "src/models/index.ts", "line": 27, "sev": "Medio", "sev_raw": "MINOR", "type": "CODE_SMELL", "owasp": "Revisar manualmente en SonarQube", "priority": "Backlog", "impacts": "MAINTAINABILITY (LOW)" },
-      { "desc": "Use `export…from` to re-export `Favorite`.", "file": "src/models/index.ts", "line": 28, "sev": "Medio", "sev_raw": "MINOR", "type": "CODE_SMELL", "owasp": "Revisar manualmente en SonarQube", "priority": "Backlog", "impacts": "MAINTAINABILITY (LOW)" },
-      { "desc": "Use `export…from` to re-export `Local`.", "file": "src/models/index.ts", "line": 29, "sev": "Medio", "sev_raw": "MINOR", "type": "CODE_SMELL", "owasp": "Revisar manualmente en SonarQube", "priority": "Backlog", "impacts": "MAINTAINABILITY (LOW)" },
-      { "desc": "Use `export…from` to re-export `Notification`.", "file": "src/models/index.ts", "line": 30, "sev": "Medio", "sev_raw": "MINOR", "type": "CODE_SMELL", "owasp": "Revisar manualmente en SonarQube", "priority": "Backlog", "impacts": "MAINTAINABILITY (LOW)" },
-      { "desc": "Use `export…from` to re-export `Preference`.", "file": "src/models/index.ts", "line": 31, "sev": "Medio", "sev_raw": "MINOR", "type": "CODE_SMELL", "owasp": "Revisar manualmente en SonarQube", "priority": "Backlog", "impacts": "MAINTAINABILITY (LOW)" },
-      { "desc": "Use `export…from` to re-export `Comment`.", "file": "src/models/index.ts", "line": 32, "sev": "Medio", "sev_raw": "MINOR", "type": "CODE_SMELL", "owasp": "Revisar manualmente en SonarQube", "priority": "Backlog", "impacts": "MAINTAINABILITY (LOW)" },
-      { "desc": "Use `export…from` to re-export `Incident`.", "file": "src/models/index.ts", "line": 33, "sev": "Medio", "sev_raw": "MINOR", "type": "CODE_SMELL", "owasp": "Revisar manualmente en SonarQube", "priority": "Backlog", "impacts": "MAINTAINABILITY (LOW)" }
+      {
+        "desc": "'@/services' imported multiple times.",
+        "file": "src/controllers/preference.controller.ts",
+        "line": 9,
+        "sev": "Medio",
+        "sev_raw": "MINOR",
+        "type": "CODE_SMELL",
+        "owasp": "Revisar manualmente en SonarQube",
+        "priority": "Backlog",
+        "impacts": "MAINTAINABILITY (LOW)"
+      },
+      {
+        "desc": "'@/services' imported multiple times.",
+        "file": "src/controllers/preference.controller.ts",
+        "line": 10,
+        "sev": "Medio",
+        "sev_raw": "MINOR",
+        "type": "CODE_SMELL",
+        "owasp": "Revisar manualmente en SonarQube",
+        "priority": "Backlog",
+        "impacts": "MAINTAINABILITY (LOW)"
+      },
+      {
+        "desc": "Prefer `Number.parseFloat` over `parseFloat`.",
+        "file": "src/controllers/preference.controller.ts",
+        "line": 63,
+        "sev": "Medio",
+        "sev_raw": "MINOR",
+        "type": "CODE_SMELL",
+        "owasp": "Revisar manualmente en SonarQube",
+        "priority": "Backlog",
+        "impacts": "RELIABILITY (MEDIUM), MAINTAINABILITY (LOW)"
+      },
+      {
+        "desc": "Prefer `Number.parseFloat` over `parseFloat`.",
+        "file": "src/controllers/preference.controller.ts",
+        "line": 64,
+        "sev": "Medio",
+        "sev_raw": "MINOR",
+        "type": "CODE_SMELL",
+        "owasp": "Revisar manualmente en SonarQube",
+        "priority": "Backlog",
+        "impacts": "RELIABILITY (MEDIUM), MAINTAINABILITY (LOW)"
+      },
+      {
+        "desc": "Prefer `Number.isNaN` over `isNaN`.",
+        "file": "src/controllers/preference.controller.ts",
+        "line": 66,
+        "sev": "Medio",
+        "sev_raw": "MINOR",
+        "type": "CODE_SMELL",
+        "owasp": "Revisar manualmente en SonarQube",
+        "priority": "Backlog",
+        "impacts": "RELIABILITY (MEDIUM), MAINTAINABILITY (LOW)"
+      },
+      {
+        "desc": "Prefer `Number.isNaN` over `isNaN`.",
+        "file": "src/controllers/preference.controller.ts",
+        "line": 66,
+        "sev": "Medio",
+        "sev_raw": "MINOR",
+        "type": "CODE_SMELL",
+        "owasp": "Revisar manualmente en SonarQube",
+        "priority": "Backlog",
+        "impacts": "RELIABILITY (MEDIUM), MAINTAINABILITY (LOW)"
+      },
+      {
+        "desc": "This assertion is unnecessary since it does not change the type of the expression.",
+        "file": "src/services/category.service.ts",
+        "line": 17,
+        "sev": "Medio",
+        "sev_raw": "MINOR",
+        "type": "CODE_SMELL",
+        "owasp": "Revisar manualmente en SonarQube",
+        "priority": "Backlog",
+        "impacts": "MAINTAINABILITY (LOW)"
+      },
+      {
+        "desc": "Prefer `node:http` over `http`.",
+        "file": "src/index.ts",
+        "line": 3,
+        "sev": "Medio",
+        "sev_raw": "MINOR",
+        "type": "CODE_SMELL",
+        "owasp": "Revisar manualmente en SonarQube",
+        "priority": "Backlog",
+        "impacts": "MAINTAINABILITY (MEDIUM)"
+      },
+      {
+        "desc": "Prefer `node:http` over `http`.",
+        "file": "src/socket.ts",
+        "line": 2,
+        "sev": "Medio",
+        "sev_raw": "MINOR",
+        "type": "CODE_SMELL",
+        "owasp": "Revisar manualmente en SonarQube",
+        "priority": "Backlog",
+        "impacts": "MAINTAINABILITY (MEDIUM)"
+      },
+      {
+        "desc": "Prefer using an optional chain expression instead, as it's more concise and easier to read.",
+        "file": "src/middlewares/auth.middleware.ts",
+        "line": 56,
+        "sev": "Alto",
+        "sev_raw": "MAJOR",
+        "type": "CODE_SMELL",
+        "owasp": "Revisar manualmente en SonarQube",
+        "priority": "Esta semana",
+        "impacts": "MAINTAINABILITY (MEDIUM)"
+      },
+      {
+        "desc": "Remove this unused import of 'seedAll'.",
+        "file": "src/config/db.ts",
+        "line": 3,
+        "sev": "Medio",
+        "sev_raw": "MINOR",
+        "type": "CODE_SMELL",
+        "owasp": "Revisar manualmente en SonarQube",
+        "priority": "Backlog",
+        "impacts": "MAINTAINABILITY (LOW)"
+      },
+      {
+        "desc": "Remove this useless assignment to variable \"cultura\".",
+        "file": "src/config/seed.ts",
+        "line": 112,
+        "sev": "Alto",
+        "sev_raw": "MAJOR",
+        "type": "CODE_SMELL",
+        "owasp": "Revisar manualmente en SonarQube",
+        "priority": "Esta semana",
+        "impacts": "MAINTAINABILITY (MEDIUM)"
+      },
+      {
+        "desc": "Use `export…from` to re-export `User`.",
+        "file": "src/models/index.ts",
+        "line": 25,
+        "sev": "Medio",
+        "sev_raw": "MINOR",
+        "type": "CODE_SMELL",
+        "owasp": "Revisar manualmente en SonarQube",
+        "priority": "Backlog",
+        "impacts": "MAINTAINABILITY (LOW)"
+      },
+      {
+        "desc": "Use `export…from` to re-export `Category`.",
+        "file": "src/models/index.ts",
+        "line": 26,
+        "sev": "Medio",
+        "sev_raw": "MINOR",
+        "type": "CODE_SMELL",
+        "owasp": "Revisar manualmente en SonarQube",
+        "priority": "Backlog",
+        "impacts": "MAINTAINABILITY (LOW)"
+      },
+      {
+        "desc": "Use `export…from` to re-export `Event`.",
+        "file": "src/models/index.ts",
+        "line": 27,
+        "sev": "Medio",
+        "sev_raw": "MINOR",
+        "type": "CODE_SMELL",
+        "owasp": "Revisar manualmente en SonarQube",
+        "priority": "Backlog",
+        "impacts": "MAINTAINABILITY (LOW)"
+      },
+      {
+        "desc": "Use `export…from` to re-export `Favorite`.",
+        "file": "src/models/index.ts",
+        "line": 28,
+        "sev": "Medio",
+        "sev_raw": "MINOR",
+        "type": "CODE_SMELL",
+        "owasp": "Revisar manualmente en SonarQube",
+        "priority": "Backlog",
+        "impacts": "MAINTAINABILITY (LOW)"
+      },
+      {
+        "desc": "Use `export…from` to re-export `Local`.",
+        "file": "src/models/index.ts",
+        "line": 29,
+        "sev": "Medio",
+        "sev_raw": "MINOR",
+        "type": "CODE_SMELL",
+        "owasp": "Revisar manualmente en SonarQube",
+        "priority": "Backlog",
+        "impacts": "MAINTAINABILITY (LOW)"
+      },
+      {
+        "desc": "Use `export…from` to re-export `Notification`.",
+        "file": "src/models/index.ts",
+        "line": 30,
+        "sev": "Medio",
+        "sev_raw": "MINOR",
+        "type": "CODE_SMELL",
+        "owasp": "Revisar manualmente en SonarQube",
+        "priority": "Backlog",
+        "impacts": "MAINTAINABILITY (LOW)"
+      },
+      {
+        "desc": "Use `export…from` to re-export `Preference`.",
+        "file": "src/models/index.ts",
+        "line": 31,
+        "sev": "Medio",
+        "sev_raw": "MINOR",
+        "type": "CODE_SMELL",
+        "owasp": "Revisar manualmente en SonarQube",
+        "priority": "Backlog",
+        "impacts": "MAINTAINABILITY (LOW)"
+      },
+      {
+        "desc": "Use `export…from` to re-export `Comment`.",
+        "file": "src/models/index.ts",
+        "line": 32,
+        "sev": "Medio",
+        "sev_raw": "MINOR",
+        "type": "CODE_SMELL",
+        "owasp": "Revisar manualmente en SonarQube",
+        "priority": "Backlog",
+        "impacts": "MAINTAINABILITY (LOW)"
+      },
+      {
+        "desc": "Use `export…from` to re-export `Incident`.",
+        "file": "src/models/index.ts",
+        "line": 33,
+        "sev": "Medio",
+        "sev_raw": "MINOR",
+        "type": "CODE_SMELL",
+        "owasp": "Revisar manualmente en SonarQube",
+        "priority": "Backlog",
+        "impacts": "MAINTAINABILITY (LOW)"
+      }
     ],
     "hotspot_findings": [],
-    "updated_at": "2026-06-03T20:00:00"
+    "updated_at": "2026-06-04T18:07:09.606974"
   },
   "repo-aupa-frontend": {
     "project_key": "repo-aupa-frontend",
-    "date": "03/06/2026",
+    "date": "04/06/2026",
     "branch": "dev",
-    "commit": "25fd6b27dc8b5729dbc0acfc4d05d9e64cb2b680",
-    "issues":   { "Critico": 0, "Alto": 2, "Medio": 1, "Bajo": 0, "total": 3 },
-    "hotspots": { "Alta": 0, "Media": 0, "Baja": 1, "total": 1 },
+    "commit": "9dffc6d1802e2671260e7e594ce8f23c87bfb543",
+    "issues": {
+      "Critico": 1,
+      "Alto": 21,
+      "Medio": 3,
+      "Bajo": 0,
+      "total": 25
+    },
+    "hotspots": {
+      "Alta": 0,
+      "Media": 0,
+      "Baja": 1,
+      "total": 1
+    },
     "issue_findings": [
-      { "desc": "Remove this commented out code.", "file": "src/main.tsx", "line": 3, "sev": "Alto", "sev_raw": "MAJOR", "type": "CODE_SMELL", "owasp": "Revisar manualmente en SonarQube", "priority": "Esta semana", "impacts": "MAINTAINABILITY (MEDIUM)" },
-      { "desc": "Do not use \"Error\" to declare a variable - use another name.", "file": "src/pages/Error.tsx", "line": 1, "sev": "Alto", "sev_raw": "MAJOR", "type": "BUG", "owasp": "Revisar manualmente en SonarQube", "priority": "Esta semana", "impacts": "RELIABILITY (MEDIUM)" },
-      { "desc": "Remove this unused import of 'Link'.", "file": "src/pages/Home.tsx", "line": 1, "sev": "Medio", "sev_raw": "MINOR", "type": "CODE_SMELL", "owasp": "Revisar manualmente en SonarQube", "priority": "Backlog", "impacts": "MAINTAINABILITY (LOW)" }
+      {
+        "desc": "Text does not meet the minimal contrast requirement with its background.",
+        "file": "src/assets/styles/index.css",
+        "line": 257,
+        "sev": "Alto",
+        "sev_raw": "MAJOR",
+        "type": "CODE_SMELL",
+        "owasp": "Revisar manualmente en SonarQube",
+        "priority": "Esta semana",
+        "impacts": "MAINTAINABILITY (MEDIUM)"
+      },
+      {
+        "desc": "Text does not meet the minimal contrast requirement with its background.",
+        "file": "src/assets/styles/index.css",
+        "line": 302,
+        "sev": "Alto",
+        "sev_raw": "MAJOR",
+        "type": "CODE_SMELL",
+        "owasp": "Revisar manualmente en SonarQube",
+        "priority": "Esta semana",
+        "impacts": "MAINTAINABILITY (MEDIUM)"
+      },
+      {
+        "desc": "Text does not meet the minimal contrast requirement with its background.",
+        "file": "src/assets/styles/index.css",
+        "line": 497,
+        "sev": "Alto",
+        "sev_raw": "MAJOR",
+        "type": "CODE_SMELL",
+        "owasp": "Revisar manualmente en SonarQube",
+        "priority": "Esta semana",
+        "impacts": "MAINTAINABILITY (MEDIUM)"
+      },
+      {
+        "desc": "Text does not meet the minimal contrast requirement with its background.",
+        "file": "src/assets/styles/index.css",
+        "line": 577,
+        "sev": "Alto",
+        "sev_raw": "MAJOR",
+        "type": "CODE_SMELL",
+        "owasp": "Revisar manualmente en SonarQube",
+        "priority": "Esta semana",
+        "impacts": "MAINTAINABILITY (MEDIUM)"
+      },
+      {
+        "desc": "Text does not meet the minimal contrast requirement with its background.",
+        "file": "src/assets/styles/index.css",
+        "line": 844,
+        "sev": "Alto",
+        "sev_raw": "MAJOR",
+        "type": "CODE_SMELL",
+        "owasp": "Revisar manualmente en SonarQube",
+        "priority": "Esta semana",
+        "impacts": "MAINTAINABILITY (MEDIUM)"
+      },
+      {
+        "desc": "Text does not meet the minimal contrast requirement with its background.",
+        "file": "src/assets/styles/index.css",
+        "line": 1127,
+        "sev": "Alto",
+        "sev_raw": "MAJOR",
+        "type": "CODE_SMELL",
+        "owasp": "Revisar manualmente en SonarQube",
+        "priority": "Esta semana",
+        "impacts": "MAINTAINABILITY (MEDIUM)"
+      },
+      {
+        "desc": "Text does not meet the minimal contrast requirement with its background.",
+        "file": "src/assets/styles/index.css",
+        "line": 1258,
+        "sev": "Alto",
+        "sev_raw": "MAJOR",
+        "type": "CODE_SMELL",
+        "owasp": "Revisar manualmente en SonarQube",
+        "priority": "Esta semana",
+        "impacts": "MAINTAINABILITY (MEDIUM)"
+      },
+      {
+        "desc": "Text does not meet the minimal contrast requirement with its background.",
+        "file": "src/assets/styles/index.css",
+        "line": 1636,
+        "sev": "Alto",
+        "sev_raw": "MAJOR",
+        "type": "CODE_SMELL",
+        "owasp": "Revisar manualmente en SonarQube",
+        "priority": "Esta semana",
+        "impacts": "MAINTAINABILITY (MEDIUM)"
+      },
+      {
+        "desc": "Text does not meet the minimal contrast requirement with its background.",
+        "file": "src/assets/styles/index.css",
+        "line": 1718,
+        "sev": "Alto",
+        "sev_raw": "MAJOR",
+        "type": "CODE_SMELL",
+        "owasp": "Revisar manualmente en SonarQube",
+        "priority": "Esta semana",
+        "impacts": "MAINTAINABILITY (MEDIUM)"
+      },
+      {
+        "desc": "Text does not meet the minimal contrast requirement with its background.",
+        "file": "src/assets/styles/index.css",
+        "line": 1759,
+        "sev": "Alto",
+        "sev_raw": "MAJOR",
+        "type": "CODE_SMELL",
+        "owasp": "Revisar manualmente en SonarQube",
+        "priority": "Esta semana",
+        "impacts": "MAINTAINABILITY (MEDIUM)"
+      },
+      {
+        "desc": "Text does not meet the minimal contrast requirement with its background.",
+        "file": "src/assets/styles/index.css",
+        "line": 1777,
+        "sev": "Alto",
+        "sev_raw": "MAJOR",
+        "type": "CODE_SMELL",
+        "owasp": "Revisar manualmente en SonarQube",
+        "priority": "Esta semana",
+        "impacts": "MAINTAINABILITY (MEDIUM)"
+      },
+      {
+        "desc": "Text does not meet the minimal contrast requirement with its background.",
+        "file": "src/assets/styles/index.css",
+        "line": 1987,
+        "sev": "Alto",
+        "sev_raw": "MAJOR",
+        "type": "CODE_SMELL",
+        "owasp": "Revisar manualmente en SonarQube",
+        "priority": "Esta semana",
+        "impacts": "MAINTAINABILITY (MEDIUM)"
+      },
+      {
+        "desc": "Ambiguous spacing after previous element img",
+        "file": "src/pages/Login.tsx",
+        "line": 30,
+        "sev": "Alto",
+        "sev_raw": "MAJOR",
+        "type": "CODE_SMELL",
+        "owasp": "Revisar manualmente en SonarQube",
+        "priority": "Esta semana",
+        "impacts": "RELIABILITY (LOW), MAINTAINABILITY (MEDIUM)"
+      },
+      {
+        "desc": "Refactor this code to not nest functions more than 4 levels deep.",
+        "file": "src/pages/Profile.tsx",
+        "line": 94,
+        "sev": "Critico",
+        "sev_raw": "CRITICAL",
+        "type": "CODE_SMELL",
+        "owasp": "Revisar manualmente en SonarQube",
+        "priority": "Inmediata",
+        "impacts": "MAINTAINABILITY (HIGH)"
+      },
+      {
+        "desc": "Use <details>, <fieldset>, <optgroup>, or <address> instead of the \"group\" role to ensure accessibility across all devices.",
+        "file": "src/pages/Profile.tsx",
+        "line": 169,
+        "sev": "Alto",
+        "sev_raw": "MAJOR",
+        "type": "CODE_SMELL",
+        "owasp": "Revisar manualmente en SonarQube",
+        "priority": "Esta semana",
+        "impacts": "MAINTAINABILITY (MEDIUM)"
+      },
+      {
+        "desc": "Ambiguous spacing before next element small",
+        "file": "src/pages/Profile.tsx",
+        "line": 196,
+        "sev": "Alto",
+        "sev_raw": "MAJOR",
+        "type": "CODE_SMELL",
+        "owasp": "Revisar manualmente en SonarQube",
+        "priority": "Esta semana",
+        "impacts": "RELIABILITY (LOW), MAINTAINABILITY (MEDIUM)"
+      },
+      {
+        "desc": "Visible, non-interactive elements with click handlers must have at least one keyboard listener.",
+        "file": "src/components/saved/ContextMenu.tsx",
+        "line": 9,
+        "sev": "Medio",
+        "sev_raw": "MINOR",
+        "type": "BUG",
+        "owasp": "Revisar manualmente en SonarQube",
+        "priority": "Backlog",
+        "impacts": "RELIABILITY (LOW)"
+      },
+      {
+        "desc": "Avoid non-native interactive elements. If using native HTML is not possible, add an appropriate role and support for tabbing, mouse, keyboard, and touch inputs to an interactive content element.",
+        "file": "src/components/saved/ContextMenu.tsx",
+        "line": 9,
+        "sev": "Alto",
+        "sev_raw": "MAJOR",
+        "type": "CODE_SMELL",
+        "owasp": "Revisar manualmente en SonarQube",
+        "priority": "Esta semana",
+        "impacts": "RELIABILITY (MEDIUM), MAINTAINABILITY (LOW)"
+      },
+      {
+        "desc": "Visible, non-interactive elements with click handlers must have at least one keyboard listener.",
+        "file": "src/components/saved/TripListItem.tsx",
+        "line": 15,
+        "sev": "Medio",
+        "sev_raw": "MINOR",
+        "type": "BUG",
+        "owasp": "Revisar manualmente en SonarQube",
+        "priority": "Backlog",
+        "impacts": "RELIABILITY (LOW)"
+      },
+      {
+        "desc": "Non-interactive elements should not be assigned mouse or keyboard event listeners.",
+        "file": "src/components/saved/TripListItem.tsx",
+        "line": 15,
+        "sev": "Alto",
+        "sev_raw": "MAJOR",
+        "type": "CODE_SMELL",
+        "owasp": "Revisar manualmente en SonarQube",
+        "priority": "Esta semana",
+        "impacts": "RELIABILITY (LOW), MAINTAINABILITY (MEDIUM)"
+      },
+      {
+        "desc": "Refactor this code to not use nested template literals.",
+        "file": "src/components/experiences/SectionHeader.tsx",
+        "line": 11,
+        "sev": "Alto",
+        "sev_raw": "MAJOR",
+        "type": "CODE_SMELL",
+        "owasp": "Revisar manualmente en SonarQube",
+        "priority": "Esta semana",
+        "impacts": "MAINTAINABILITY (MEDIUM)"
+      },
+      {
+        "desc": "Ambiguous spacing after previous element strong",
+        "file": "src/components/home/RecommendationCard.tsx",
+        "line": 13,
+        "sev": "Alto",
+        "sev_raw": "MAJOR",
+        "type": "CODE_SMELL",
+        "owasp": "Revisar manualmente en SonarQube",
+        "priority": "Esta semana",
+        "impacts": "RELIABILITY (LOW), MAINTAINABILITY (MEDIUM)"
+      },
+      {
+        "desc": "The object passed as the value prop to the Context provider changes every render. To fix this consider wrapping it in a useMemo hook.",
+        "file": "src/context/AuthContext.tsx",
+        "line": 70,
+        "sev": "Alto",
+        "sev_raw": "MAJOR",
+        "type": "CODE_SMELL",
+        "owasp": "Revisar manualmente en SonarQube",
+        "priority": "Esta semana",
+        "impacts": "MAINTAINABILITY (MEDIUM)"
+      },
+      {
+        "desc": "Prefer `globalThis` over `window`.",
+        "file": "src/services/http/apiClient.ts",
+        "line": 25,
+        "sev": "Medio",
+        "sev_raw": "MINOR",
+        "type": "CODE_SMELL",
+        "owasp": "Revisar manualmente en SonarQube",
+        "priority": "Backlog",
+        "impacts": "MAINTAINABILITY (LOW)"
+      },
+      {
+        "desc": "Do not use \"Error\" to declare a variable - use another name.",
+        "file": "src/pages/ErrorPage.tsx",
+        "line": 1,
+        "sev": "Alto",
+        "sev_raw": "MAJOR",
+        "type": "BUG",
+        "owasp": "Revisar manualmente en SonarQube",
+        "priority": "Esta semana",
+        "impacts": "RELIABILITY (MEDIUM)"
+      }
     ],
     "hotspot_findings": [
-      { "desc": "Using http protocol is insecure. Use https instead.", "file": "vite.config.ts", "line": 18, "prob": "Baja", "cat": "encrypt-data", "priority": "Esta semana" }
+      {
+        "desc": "Using http protocol is insecure. Use https instead.",
+        "file": "vite.config.ts",
+        "line": 18,
+        "prob": "Baja",
+        "cat": "encrypt-data",
+        "priority": "Esta semana"
+      }
     ],
-    "updated_at": "2026-06-03T20:00:00"
+    "updated_at": "2026-06-04T18:07:38.518482"
   }
 }
