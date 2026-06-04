@@ -346,12 +346,15 @@ function renderKPIs(data, history) {
   });
 
   if(history&&history.length>=2) {
-    const prev=history[history.length-2];
+    // Comparar con la sesión anterior: último run de cada repo antes del actual
     prevIssues=0; prevHotspots=0;
     REPO_KEYS.forEach(k=>{
-      const p=prev[k]; if(!p) return;
-      prevIssues   += p.issues?.total||0;
-      prevHotspots += p.hotspots?.total||0;
+      const runs=history.filter(h=>h.repo===k);
+      if(runs.length>=2){
+        const prev=runs[runs.length-2];
+        prevIssues   += prev.issues?.total||0;
+        prevHotspots += prev.hotspots?.total||0;
+      }
     });
   }
 
@@ -453,15 +456,31 @@ function renderRepoStatus(data) {
 // ── RENDER CHART ───────────────────────────────────────────────────────
 function renderChart(data, history) {
   if(!history||!history.length) return;
-  const labels   = history.map(h=>h.date);
-  const datasets = REPO_KEYS.map(key=>({
-    label: REPO_SHORT[key],
-    data:  history.map(h=>h[key]?.issues?.total??null),
-    borderColor:     REPO_COLOR[key][0],
-    backgroundColor: REPO_COLOR[key][1],
-    borderWidth:2, pointBackgroundColor:REPO_COLOR[key][0],
-    pointRadius:5, pointHoverRadius:7, tension:.3, fill:true,
-  }));
+
+  // Cada entrada del histórico es un run individual (un repo + timestamp)
+  // Una línea por repo; el eje X es el índice de run de ese repo (0,1,2...)
+  // Los runs de repos distintos se alinean por índice (sesiones paralelas)
+  const maxRuns = Math.max(...REPO_KEYS.map(k=>history.filter(h=>h.repo===k).length));
+  const labels  = Array.from({length:maxRuns},(_,i)=>'#'+(i+1));
+
+  // Guardamos los runs por repo para el tooltip
+  const runsByRepo = {};
+  REPO_KEYS.forEach(k=>{ runsByRepo[k]=history.filter(h=>h.repo===k); });
+
+  const datasets = REPO_KEYS.map(key=>{
+    const runs = runsByRepo[key];
+    // Array simple de valores — índice = posición en labels
+    const values = Array(maxRuns).fill(null);
+    runs.forEach((h,i)=>{ values[i]=h.issues?.total??null; });
+    return {
+      label: REPO_SHORT[key],
+      data:  values,
+      borderColor:     REPO_COLOR[key][0],
+      backgroundColor: REPO_COLOR[key][1],
+      borderWidth:2, pointBackgroundColor:REPO_COLOR[key][0],
+      pointRadius:5, pointHoverRadius:7, tension:.3, fill:true,
+    };
+  });
 
   Chart.defaults.color='#4a5568';
   Chart.defaults.font.family="'Share Tech Mono',monospace";
@@ -474,10 +493,32 @@ function renderChart(data, history) {
       animation:{duration:1400,easing:'easeOutQuart'},
       plugins:{
         legend:{position:'bottom',labels:{color:'#8b949e',boxWidth:10,padding:16}},
-        tooltip:{backgroundColor:'#0d1117',borderColor:'#1e2d3d',borderWidth:1,titleColor:'#00d4ff',bodyColor:'#c9d1d9'},
+        tooltip:{
+          backgroundColor:'#0d1117',borderColor:'#1e2d3d',borderWidth:1,
+          titleColor:'#00d4ff',bodyColor:'#c9d1d9',
+          callbacks:{
+            title(items){
+              const idx=items[0]?.dataIndex;
+              const key=REPO_KEYS[items[0]?.datasetIndex??0];
+              const run=runsByRepo[key]?.[idx];
+              return run ? run.date+' '+run.time.substring(0,5) : '';
+            },
+            label(item){
+              const idx=item.dataIndex;
+              const key=REPO_KEYS[item.datasetIndex??0];
+              const run=runsByRepo[key]?.[idx];
+              const commit=run?.commit?.substring(0,8)||'—';
+              return ` Issues: ${item.raw??'—'}  ·  ${commit}`;
+            },
+          },
+        },
       },
       scales:{
-        x:{grid:{color:'rgba(30,45,61,.6)'},ticks:{color:'#4a5568'}},
+        x:{
+          grid:{color:'rgba(30,45,61,.6)'},
+          ticks:{color:'#4a5568',callback:(_,i)=>'#'+(i+1)},
+          title:{display:true,text:'run',color:'#4a5568',font:{size:9}},
+        },
         y:{grid:{color:'rgba(30,45,61,.6)'},ticks:{color:'#4a5568'},beginAtZero:true},
       },
     },
