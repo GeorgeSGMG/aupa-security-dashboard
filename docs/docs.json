@@ -1,67 +1,12 @@
 [
   {
-    "name": "Análisis y gestión de riesgos - MAGERIT",
+    "name": "Etapa 1 - 3 MAGERIT",
     "desc": "Análisis de riesgos metodología MAGERIT",
     "file": "etapa1_3_magerit.pdf"
   },
   {
-    "name": "Marco normativo",
-    "desc": "Normativa y regulación aplicable al proyecto",
-    "file": "etapa1_3_magerit.pdf"
-  },
-  {
-    "name": "Threat Model basado en MITRE ATT&CK",
-    "desc": "Modelado de amenazas usando el framework MITRE ATT&CK",
-    "file": "etapa1_3_magerit.pdf"
-  },
-  {
-    "name": "Análisis OWASP Top 10",
-    "desc": "Evaluación de vulnerabilidades según OWASP Top 10 2025",
-    "file": "etapa1_3_magerit.pdf"
-  },
-  {
-    "name": "Análisis GAP",
-    "desc": "Análisis de brechas entre el estado actual y el objetivo de seguridad",
-    "file": "etapa1_3_magerit.pdf"
-  },
-  {
-    "name": "Playbook de incidentes",
+    "name": "Etapa 3 - 1 Playbook de incidentes",
     "desc": "Plan de respuesta ante incidentes de seguridad",
-    "file": "etapa3_1_playbook_incidentes.pdf"
-  },
-  {
-    "name": "Marco de seguridad del proyecto - SSDLC",
-    "desc": "Ciclo de vida de desarrollo software seguro aplicado al proyecto",
-    "file": "etapa3_1_playbook_incidentes.pdf"
-  },
-  {
-    "name": "Informe de hardening",
-    "desc": "Medidas de bastionado aplicadas al sistema operativo y servicios",
-    "file": "etapa3_1_playbook_incidentes.pdf"
-  },
-  {
-    "name": "Sistema de back-up",
-    "desc": "Política y procedimiento de copias de seguridad",
-    "file": "etapa3_1_playbook_incidentes.pdf"
-  },
-  {
-    "name": "Reglas SIEM",
-    "desc": "Reglas de detección y correlación de eventos de seguridad",
-    "file": "etapa3_1_playbook_incidentes.pdf"
-  },
-  {
-    "name": "Procedimiento DFIR",
-    "desc": "Procedimiento de respuesta y análisis forense ante incidentes",
-    "file": "etapa3_1_playbook_incidentes.pdf"
-  },
-  {
-    "name": "Plan de Continuidad de Negocio y Recuperación ante Desastres (BCP/DRP)",
-    "desc": "Plan de continuidad operativa y recuperación ante desastres",
-    "file": "etapa3_1_playbook_incidentes.pdf"
-  },
-  {
-    "name": "SBOM",
-    "desc": "Inventario de componentes software y dependencias del proyecto",
     "file": "etapa3_1_playbook_incidentes.pdf"
   }
 ]
