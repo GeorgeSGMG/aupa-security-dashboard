@@ -81,7 +81,7 @@ main{position:relative;z-index:10;padding:2rem 3rem;display:flex;flex-direction:
 .tab{font-family:var(--mono);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;padding:.75rem 1.4rem;cursor:pointer;border:none;background:transparent;color:var(--text2);border-bottom:2px solid transparent;transition:all .2s;position:relative;top:1px;white-space:nowrap;flex-shrink:0;}
 .tab:hover{color:var(--text);}
 .tab.active{color:var(--accent);border-bottom-color:var(--accent);background:rgba(0,212,255,.04);}
-.tab-content{display:none;padding:1.4rem;overflow-y:auto;max-height:560px;}
+.tab-content{display:none;padding:1.4rem;overflow-y:auto;overflow-x:hidden;max-height:560px;}
 .tab-content.active{display:block;}
 
 /* SEVERITY BARS */
@@ -105,8 +105,8 @@ main{position:relative;z-index:10;padding:2rem 3rem;display:flex;flex-direction:
 .badge-alto{background:rgba(255,140,0,.15);color:var(--orange);border:1px solid rgba(255,140,0,.3);}
 .badge-medio{background:rgba(255,214,0,.1);color:var(--yellow);border:1px solid rgba(255,214,0,.3);}
 .badge-bajo{background:rgba(41,121,255,.1);color:var(--blue);border:1px solid rgba(41,121,255,.3);}
-.finding-desc{font-size:.8rem;color:var(--text);flex:1;line-height:1.3;font-family:var(--mono);}
-.finding-file{font-size:.65rem;color:var(--text2);font-family:var(--mono);flex-shrink:0;}
+.finding-desc{font-size:.8rem;color:var(--text);flex:1;line-height:1.3;font-family:var(--mono);word-break:break-word;min-width:0;}
+.finding-file{font-size:.65rem;color:var(--text2);font-family:var(--mono);flex-shrink:0;word-break:break-all;}
 .finding-detail{display:none;padding:.75rem 1rem;border-top:1px solid var(--border);background:var(--bg3);}
 .finding-detail.open{display:block;}
 .detail-row{display:flex;gap:1rem;margin-bottom:.35rem;font-size:.72rem;}
@@ -158,7 +158,10 @@ footer{position:relative;z-index:10;padding:1rem 3rem;border-top:1px solid var(-
   .kpi-label{font-size:.58rem;}.kpi-sub{font-size:.62rem;}.kpi-trend{font-size:.6rem;margin-top:.3rem;}
   .panel-header{padding:.7rem 1rem;}.panel-title{font-size:.62rem;}.panel-body{padding:1rem;}
   .tab{font-size:.6rem;padding:.6rem 1rem;}
-  .finding-header{flex-wrap:wrap;gap:.4rem;}.finding-file{width:100%;font-size:.6rem;}
+  .finding-header{flex-wrap:wrap;gap:.4rem;}.finding-file{width:100%;font-size:.6rem;word-break:break-all;}
+  .finding-desc{font-size:.72rem;word-break:break-word;}
+  .tab-content{padding:.8rem;overflow-x:hidden;}
+  .finding{max-width:100%;overflow:hidden;}
   .detail-key{width:80px;font-size:.65rem;}.detail-val{font-size:.65rem;}
   .sev-label{font-size:.6rem;width:58px;}.chart-wrap{height:140px;}
   footer{font-size:.55rem;}
