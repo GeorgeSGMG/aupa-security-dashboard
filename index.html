@@ -315,6 +315,11 @@ function sevBars(issues, total) {
   }).join('');
 }
 
+function escapeHtml(str) {
+  if (!str) return '';
+  return str.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;');
+}
+
 function findingCards(findings) {
   if(!findings||!findings.length)
     return '<p style="font-family:var(--mono);font-size:.72rem;color:var(--text2);padding:.5rem 0">Sin hallazgos activos.</p>';
@@ -322,14 +327,14 @@ function findingCards(findings) {
     <div class="finding" onclick="this.querySelector('.finding-detail').classList.toggle('open')">
       <div class="finding-header">
         ${sevBadge(f.sev,f.type)}
-        <span class="finding-desc">${f.desc}</span>
-        <span class="finding-file">${f.file}:${f.line}</span>
+        <span class="finding-desc">${escapeHtml(f.desc)}</span>
+        <span class="finding-file">${escapeHtml(f.file)}:${f.line}</span>
       </div>
       <div class="finding-detail">
-        <div class="detail-row"><span class="detail-key">Tipo</span><span class="detail-val">${f.type}</span></div>
-        <div class="detail-row"><span class="detail-key">Impacto</span><span class="detail-val">${f.impacts}</span></div>
-        <div class="detail-row"><span class="detail-key">OWASP</span><span class="detail-val">${f.owasp}</span></div>
-        <div class="detail-row"><span class="detail-key">Prioridad</span><span class="detail-val">${f.priority}</span></div>
+        <div class="detail-row"><span class="detail-key">Tipo</span><span class="detail-val">${escapeHtml(f.type)}</span></div>
+        <div class="detail-row"><span class="detail-key">Impacto</span><span class="detail-val">${escapeHtml(f.impacts)}</span></div>
+        <div class="detail-row"><span class="detail-key">OWASP</span><span class="detail-val">${escapeHtml(f.owasp)}</span></div>
+        <div class="detail-row"><span class="detail-key">Prioridad</span><span class="detail-val">${escapeHtml(f.priority)}</span></div>
       </div>
     </div>`).join('');
 }
@@ -339,7 +344,7 @@ function hotspotNote(repo) {
   if(!hf.length) return `<div style="margin-top:1rem;padding:.7rem;background:rgba(0,255,136,.04);border:1px solid rgba(0,255,136,.15)">
     <span style="font-family:var(--mono);font-size:.65rem;color:var(--green)">✓ Sin hotspots activos</span></div>`;
   return hf.map(h=>`<div style="margin-top:.8rem;padding:.7rem;background:rgba(255,214,0,.04);border:1px solid rgba(255,214,0,.15)">
-    <span style="font-family:var(--mono);font-size:.65rem;color:var(--yellow)">⚠ Hotspot ${h.prob} · ${h.file}:${h.line}</span></div>`).join('');
+    <span style="font-family:var(--mono);font-size:.65rem;color:var(--yellow)">⚠ Hotspot ${h.prob} · ${escapeHtml(h.file)}:${h.line}</span></div>`).join('');
 }
 
 function animateBars(tabId) {
@@ -478,8 +483,8 @@ async function loadDocs() {
     grid.innerHTML = docs.map(d => `
       <div class="doc-card">
         <div>
-          <div class="doc-name">${d.name}</div>
-          ${d.desc ? `<div class="doc-desc">${d.desc}</div>` : ''}
+          <div class="doc-name">${escapeHtml(d.name)}</div>
+          ${d.desc ? `<div class="doc-desc">${escapeHtml(d.desc)}</div>` : ''}
         </div>
         <a class="doc-open" href="docs/${d.file}" target="_blank">ABRIR ↗</a>
       </div>`).join('');
