@@ -291,9 +291,9 @@
       "issues": {
         "Critico": 0,
         "Alto": 10,
-        "Medio": 40,
+        "Medio": 49,
         "Bajo": 0,
-        "total": 50
+        "total": 59
       },
       "hotspots": {
         "Alta": 0,
@@ -311,10 +311,10 @@
       "commit": "2a98c9c678558e516e59ebcda0cd68007ea2eef5",
       "issues": {
         "Critico": 0,
-        "Alto": 23,
-        "Medio": 27,
+        "Alto": 57,
+        "Medio": 37,
         "Bajo": 0,
-        "total": 50
+        "total": 94
       },
       "hotspots": {
         "Alta": 0,
@@ -354,9 +354,9 @@
       "issues": {
         "Critico": 0,
         "Alto": 10,
-        "Medio": 40,
+        "Medio": 49,
         "Bajo": 0,
-        "total": 50
+        "total": 59
       },
       "hotspots": {
         "Alta": 0,
@@ -374,10 +374,10 @@
       "commit": "29e57eb2c924c487d07766dce5a385395c467db3",
       "issues": {
         "Critico": 0,
-        "Alto": 21,
-        "Medio": 29,
+        "Alto": 59,
+        "Medio": 42,
         "Bajo": 0,
-        "total": 50
+        "total": 101
       },
       "hotspots": {
         "Alta": 0,
@@ -417,9 +417,9 @@
       "issues": {
         "Critico": 0,
         "Alto": 10,
-        "Medio": 40,
+        "Medio": 49,
         "Bajo": 0,
-        "total": 50
+        "total": 59
       },
       "hotspots": {
         "Alta": 0,
@@ -437,10 +437,10 @@
       "commit": "55e18046dcffe5bdd02b0261209ba5fd1faf600c",
       "issues": {
         "Critico": 0,
-        "Alto": 33,
-        "Medio": 17,
+        "Alto": 94,
+        "Medio": 51,
         "Bajo": 0,
-        "total": 50
+        "total": 145
       },
       "hotspots": {
         "Alta": 0,
@@ -480,9 +480,9 @@
       "issues": {
         "Critico": 0,
         "Alto": 10,
-        "Medio": 40,
+        "Medio": 49,
         "Bajo": 0,
-        "total": 50
+        "total": 59
       },
       "hotspots": {
         "Alta": 0,
@@ -500,10 +500,10 @@
       "commit": "627b571b52ccf56e2f9955b7a9b9e9b4c7dc660c",
       "issues": {
         "Critico": 0,
-        "Alto": 26,
-        "Medio": 24,
+        "Alto": 82,
+        "Medio": 51,
         "Bajo": 0,
-        "total": 50
+        "total": 133
       },
       "hotspots": {
         "Alta": 0,
@@ -577,9 +577,9 @@
     "issues": {
       "Critico": 0,
       "Alto": 10,
-      "Medio": 40,
+      "Medio": 49,
       "Bajo": 0,
-      "total": 50
+      "total": 59
     },
     "hotspots": {
       "Alta": 0,
@@ -806,7 +806,7 @@
         "type": "CODE_SMELL",
         "owasp": "A05:2025 — Security Misconfiguration",
         "priority": "Backlog",
-        "impacts": "RELIABILITY (MEDIUM), MAINTAINABILITY (LOW)"
+        "impacts": "MAINTAINABILITY (LOW), RELIABILITY (MEDIUM)"
       },
       {
         "desc": "Prefer `Number.parseInt` over `parseInt`.",
@@ -817,7 +817,7 @@
         "type": "CODE_SMELL",
         "owasp": "A05:2025 — Security Misconfiguration",
         "priority": "Backlog",
-        "impacts": "RELIABILITY (MEDIUM), MAINTAINABILITY (LOW)"
+        "impacts": "MAINTAINABILITY (LOW), RELIABILITY (MEDIUM)"
       },
       {
         "desc": "Prefer `Number.parseInt` over `parseInt`.",
@@ -828,7 +828,7 @@
         "type": "CODE_SMELL",
         "owasp": "A05:2025 — Security Misconfiguration",
         "priority": "Backlog",
-        "impacts": "RELIABILITY (MEDIUM), MAINTAINABILITY (LOW)"
+        "impacts": "MAINTAINABILITY (LOW), RELIABILITY (MEDIUM)"
       },
       {
         "desc": "Prefer `Number.parseInt` over `parseInt`.",
@@ -839,7 +839,7 @@
         "type": "CODE_SMELL",
         "owasp": "A05:2025 — Security Misconfiguration",
         "priority": "Backlog",
-        "impacts": "RELIABILITY (MEDIUM), MAINTAINABILITY (LOW)"
+        "impacts": "MAINTAINABILITY (LOW), RELIABILITY (MEDIUM)"
       },
       {
         "desc": "Prefer `Number.parseInt` over `parseInt`.",
@@ -850,7 +850,7 @@
         "type": "CODE_SMELL",
         "owasp": "A05:2025 — Security Misconfiguration",
         "priority": "Backlog",
-        "impacts": "RELIABILITY (MEDIUM), MAINTAINABILITY (LOW)"
+        "impacts": "MAINTAINABILITY (LOW), RELIABILITY (MEDIUM)"
       },
       {
         "desc": "Prefer `Number.parseInt` over `parseInt`.",
@@ -861,7 +861,7 @@
         "type": "CODE_SMELL",
         "owasp": "A05:2025 — Security Misconfiguration",
         "priority": "Backlog",
-        "impacts": "RELIABILITY (MEDIUM), MAINTAINABILITY (LOW)"
+        "impacts": "MAINTAINABILITY (LOW), RELIABILITY (MEDIUM)"
       },
       {
         "desc": "Prefer `Number.parseInt` over `parseInt`.",
@@ -872,7 +872,7 @@
         "type": "CODE_SMELL",
         "owasp": "A05:2025 — Security Misconfiguration",
         "priority": "Backlog",
-        "impacts": "RELIABILITY (MEDIUM), MAINTAINABILITY (LOW)"
+        "impacts": "MAINTAINABILITY (LOW), RELIABILITY (MEDIUM)"
       },
       {
         "desc": "Prefer `Number.parseInt` over `parseInt`.",
@@ -883,7 +883,7 @@
         "type": "CODE_SMELL",
         "owasp": "A05:2025 — Security Misconfiguration",
         "priority": "Backlog",
-        "impacts": "RELIABILITY (MEDIUM), MAINTAINABILITY (LOW)"
+        "impacts": "MAINTAINABILITY (LOW), RELIABILITY (MEDIUM)"
       },
       {
         "desc": "Prefer `Number.parseInt` over `parseInt`.",
@@ -894,7 +894,7 @@
         "type": "CODE_SMELL",
         "owasp": "A05:2025 — Security Misconfiguration",
         "priority": "Backlog",
-        "impacts": "RELIABILITY (MEDIUM), MAINTAINABILITY (LOW)"
+        "impacts": "MAINTAINABILITY (LOW), RELIABILITY (MEDIUM)"
       },
       {
         "desc": "Prefer `Number.parseInt` over `parseInt`.",
@@ -905,7 +905,7 @@
         "type": "CODE_SMELL",
         "owasp": "A05:2025 — Security Misconfiguration",
         "priority": "Backlog",
-        "impacts": "RELIABILITY (MEDIUM), MAINTAINABILITY (LOW)"
+        "impacts": "MAINTAINABILITY (LOW), RELIABILITY (MEDIUM)"
       },
       {
         "desc": "Prefer `Number.parseInt` over `parseInt`.",
@@ -916,7 +916,7 @@
         "type": "CODE_SMELL",
         "owasp": "A05:2025 — Security Misconfiguration",
         "priority": "Backlog",
-        "impacts": "RELIABILITY (MEDIUM), MAINTAINABILITY (LOW)"
+        "impacts": "MAINTAINABILITY (LOW), RELIABILITY (MEDIUM)"
       },
       {
         "desc": "Prefer `Number.parseInt` over `parseInt`.",
@@ -927,7 +927,7 @@
         "type": "CODE_SMELL",
         "owasp": "A05:2025 — Security Misconfiguration",
         "priority": "Backlog",
-        "impacts": "RELIABILITY (MEDIUM), MAINTAINABILITY (LOW)"
+        "impacts": "MAINTAINABILITY (LOW), RELIABILITY (MEDIUM)"
       },
       {
         "desc": "Prefer `Number.parseInt` over `parseInt`.",
@@ -938,7 +938,7 @@
         "type": "CODE_SMELL",
         "owasp": "A05:2025 — Security Misconfiguration",
         "priority": "Backlog",
-        "impacts": "RELIABILITY (MEDIUM), MAINTAINABILITY (LOW)"
+        "impacts": "MAINTAINABILITY (LOW), RELIABILITY (MEDIUM)"
       },
       {
         "desc": "Prefer `Number.parseInt` over `parseInt`.",
@@ -949,7 +949,7 @@
         "type": "CODE_SMELL",
         "owasp": "A05:2025 — Security Misconfiguration",
         "priority": "Backlog",
-        "impacts": "RELIABILITY (MEDIUM), MAINTAINABILITY (LOW)"
+        "impacts": "MAINTAINABILITY (LOW), RELIABILITY (MEDIUM)"
       },
       {
         "desc": "Prefer `Number.parseInt` over `parseInt`.",
@@ -960,7 +960,7 @@
         "type": "CODE_SMELL",
         "owasp": "A05:2025 — Security Misconfiguration",
         "priority": "Backlog",
-        "impacts": "RELIABILITY (MEDIUM), MAINTAINABILITY (LOW)"
+        "impacts": "MAINTAINABILITY (LOW), RELIABILITY (MEDIUM)"
       },
       {
         "desc": "Prefer `Number.parseInt` over `parseInt`.",
@@ -971,7 +971,7 @@
         "type": "CODE_SMELL",
         "owasp": "A05:2025 — Security Misconfiguration",
         "priority": "Backlog",
-        "impacts": "RELIABILITY (MEDIUM), MAINTAINABILITY (LOW)"
+        "impacts": "MAINTAINABILITY (LOW), RELIABILITY (MEDIUM)"
       },
       {
         "desc": "Prefer `Number.parseInt` over `parseInt`.",
@@ -982,7 +982,7 @@
         "type": "CODE_SMELL",
         "owasp": "A05:2025 — Security Misconfiguration",
         "priority": "Backlog",
-        "impacts": "RELIABILITY (MEDIUM), MAINTAINABILITY (LOW)"
+        "impacts": "MAINTAINABILITY (LOW), RELIABILITY (MEDIUM)"
       },
       {
         "desc": "Prefer `Number.parseInt` over `parseInt`.",
@@ -993,7 +993,7 @@
         "type": "CODE_SMELL",
         "owasp": "A05:2025 — Security Misconfiguration",
         "priority": "Backlog",
-        "impacts": "RELIABILITY (MEDIUM), MAINTAINABILITY (LOW)"
+        "impacts": "MAINTAINABILITY (LOW), RELIABILITY (MEDIUM)"
       },
       {
         "desc": "Prefer `Number.parseInt` over `parseInt`.",
@@ -1004,7 +1004,7 @@
         "type": "CODE_SMELL",
         "owasp": "A05:2025 — Security Misconfiguration",
         "priority": "Backlog",
-        "impacts": "RELIABILITY (MEDIUM), MAINTAINABILITY (LOW)"
+        "impacts": "MAINTAINABILITY (LOW), RELIABILITY (MEDIUM)"
       },
       {
         "desc": "Prefer `Number.parseInt` over `parseInt`.",
@@ -1015,7 +1015,7 @@
         "type": "CODE_SMELL",
         "owasp": "A05:2025 — Security Misconfiguration",
         "priority": "Backlog",
-        "impacts": "RELIABILITY (MEDIUM), MAINTAINABILITY (LOW)"
+        "impacts": "MAINTAINABILITY (LOW), RELIABILITY (MEDIUM)"
       },
       {
         "desc": "'@/services' imported multiple times.",
@@ -1048,7 +1048,7 @@
         "type": "CODE_SMELL",
         "owasp": "A05:2025 — Security Misconfiguration",
         "priority": "Backlog",
-        "impacts": "RELIABILITY (MEDIUM), MAINTAINABILITY (LOW)"
+        "impacts": "MAINTAINABILITY (LOW), RELIABILITY (MEDIUM)"
       },
       {
         "desc": "Prefer `Number.parseFloat` over `parseFloat`.",
@@ -1059,7 +1059,7 @@
         "type": "CODE_SMELL",
         "owasp": "A05:2025 — Security Misconfiguration",
         "priority": "Backlog",
-        "impacts": "RELIABILITY (MEDIUM), MAINTAINABILITY (LOW)"
+        "impacts": "MAINTAINABILITY (LOW), RELIABILITY (MEDIUM)"
       },
       {
         "desc": "Prefer `Number.isNaN` over `isNaN`.",
@@ -1070,7 +1070,7 @@
         "type": "CODE_SMELL",
         "owasp": "A05:2025 — Security Misconfiguration",
         "priority": "Backlog",
-        "impacts": "RELIABILITY (MEDIUM), MAINTAINABILITY (LOW)"
+        "impacts": "MAINTAINABILITY (LOW), RELIABILITY (MEDIUM)"
       },
       {
         "desc": "Prefer `Number.isNaN` over `isNaN`.",
@@ -1081,7 +1081,7 @@
         "type": "CODE_SMELL",
         "owasp": "A05:2025 — Security Misconfiguration",
         "priority": "Backlog",
-        "impacts": "RELIABILITY (MEDIUM), MAINTAINABILITY (LOW)"
+        "impacts": "MAINTAINABILITY (LOW), RELIABILITY (MEDIUM)"
       },
       {
         "desc": "This assertion is unnecessary since it does not change the type of the expression.",
@@ -1137,6 +1137,105 @@
         "owasp": "A05:2025 — Security Misconfiguration",
         "priority": "Backlog",
         "impacts": "MAINTAINABILITY (LOW)"
+      },
+      {
+        "desc": "Use `export…from` to re-export `User`.",
+        "file": "src/models/index.ts",
+        "line": 25,
+        "sev": "Medio",
+        "sev_raw": "MINOR",
+        "type": "CODE_SMELL",
+        "owasp": "A05:2025 — Security Misconfiguration",
+        "priority": "Backlog",
+        "impacts": "MAINTAINABILITY (LOW)"
+      },
+      {
+        "desc": "Use `export…from` to re-export `Category`.",
+        "file": "src/models/index.ts",
+        "line": 26,
+        "sev": "Medio",
+        "sev_raw": "MINOR",
+        "type": "CODE_SMELL",
+        "owasp": "A05:2025 — Security Misconfiguration",
+        "priority": "Backlog",
+        "impacts": "MAINTAINABILITY (LOW)"
+      },
+      {
+        "desc": "Use `export…from` to re-export `Event`.",
+        "file": "src/models/index.ts",
+        "line": 27,
+        "sev": "Medio",
+        "sev_raw": "MINOR",
+        "type": "CODE_SMELL",
+        "owasp": "A05:2025 — Security Misconfiguration",
+        "priority": "Backlog",
+        "impacts": "MAINTAINABILITY (LOW)"
+      },
+      {
+        "desc": "Use `export…from` to re-export `Favorite`.",
+        "file": "src/models/index.ts",
+        "line": 28,
+        "sev": "Medio",
+        "sev_raw": "MINOR",
+        "type": "CODE_SMELL",
+        "owasp": "A05:2025 — Security Misconfiguration",
+        "priority": "Backlog",
+        "impacts": "MAINTAINABILITY (LOW)"
+      },
+      {
+        "desc": "Use `export…from` to re-export `Local`.",
+        "file": "src/models/index.ts",
+        "line": 29,
+        "sev": "Medio",
+        "sev_raw": "MINOR",
+        "type": "CODE_SMELL",
+        "owasp": "A05:2025 — Security Misconfiguration",
+        "priority": "Backlog",
+        "impacts": "MAINTAINABILITY (LOW)"
+      },
+      {
+        "desc": "Use `export…from` to re-export `Notification`.",
+        "file": "src/models/index.ts",
+        "line": 30,
+        "sev": "Medio",
+        "sev_raw": "MINOR",
+        "type": "CODE_SMELL",
+        "owasp": "A05:2025 — Security Misconfiguration",
+        "priority": "Backlog",
+        "impacts": "MAINTAINABILITY (LOW)"
+      },
+      {
+        "desc": "Use `export…from` to re-export `Preference`.",
+        "file": "src/models/index.ts",
+        "line": 31,
+        "sev": "Medio",
+        "sev_raw": "MINOR",
+        "type": "CODE_SMELL",
+        "owasp": "A05:2025 — Security Misconfiguration",
+        "priority": "Backlog",
+        "impacts": "MAINTAINABILITY (LOW)"
+      },
+      {
+        "desc": "Use `export…from` to re-export `Comment`.",
+        "file": "src/models/index.ts",
+        "line": 32,
+        "sev": "Medio",
+        "sev_raw": "MINOR",
+        "type": "CODE_SMELL",
+        "owasp": "A05:2025 — Security Misconfiguration",
+        "priority": "Backlog",
+        "impacts": "MAINTAINABILITY (LOW)"
+      },
+      {
+        "desc": "Use `export…from` to re-export `Incident`.",
+        "file": "src/models/index.ts",
+        "line": 33,
+        "sev": "Medio",
+        "sev_raw": "MINOR",
+        "type": "CODE_SMELL",
+        "owasp": "A05:2025 — Security Misconfiguration",
+        "priority": "Backlog",
+        "impacts": "MAINTAINABILITY (LOW)"
       }
     ],
     "hotspot_findings": [],
@@ -1149,10 +1248,10 @@
     "commit": "627b571b52ccf56e2f9955b7a9b9e9b4c7dc660c",
     "issues": {
       "Critico": 0,
-      "Alto": 26,
-      "Medio": 24,
+      "Alto": 82,
+      "Medio": 51,
       "Bajo": 0,
-      "total": 50
+      "total": 133
     },
     "hotspots": {
       "Alta": 0,
@@ -1379,7 +1478,7 @@
         "type": "CODE_SMELL",
         "owasp": "A05:2025 — Security Misconfiguration",
         "priority": "Esta semana",
-        "impacts": "RELIABILITY (MEDIUM), MAINTAINABILITY (LOW)"
+        "impacts": "MAINTAINABILITY (LOW), RELIABILITY (MEDIUM)"
       },
       {
         "desc": "Visible, non-interactive elements with click handlers must have at least one keyboard listener.",
@@ -1401,7 +1500,7 @@
         "type": "CODE_SMELL",
         "owasp": "A05:2025 — Security Misconfiguration",
         "priority": "Esta semana",
-        "impacts": "RELIABILITY (MEDIUM), MAINTAINABILITY (LOW)"
+        "impacts": "MAINTAINABILITY (LOW), RELIABILITY (MEDIUM)"
       },
       {
         "desc": "Visible, non-interactive elements with click handlers must have at least one keyboard listener.",
@@ -1423,7 +1522,7 @@
         "type": "CODE_SMELL",
         "owasp": "A05:2025 — Security Misconfiguration",
         "priority": "Esta semana",
-        "impacts": "RELIABILITY (MEDIUM), MAINTAINABILITY (LOW)"
+        "impacts": "MAINTAINABILITY (LOW), RELIABILITY (MEDIUM)"
       },
       {
         "desc": "Visible, non-interactive elements with click handlers must have at least one keyboard listener.",
@@ -1445,7 +1544,7 @@
         "type": "CODE_SMELL",
         "owasp": "A05:2025 — Security Misconfiguration",
         "priority": "Esta semana",
-        "impacts": "RELIABILITY (MEDIUM), MAINTAINABILITY (LOW)"
+        "impacts": "MAINTAINABILITY (LOW), RELIABILITY (MEDIUM)"
       },
       {
         "desc": "Visible, non-interactive elements with click handlers must have at least one keyboard listener.",
@@ -1544,7 +1643,7 @@
         "type": "CODE_SMELL",
         "owasp": "A05:2025 — Security Misconfiguration",
         "priority": "Esta semana",
-        "impacts": "RELIABILITY (MEDIUM), MAINTAINABILITY (LOW)"
+        "impacts": "MAINTAINABILITY (LOW), RELIABILITY (MEDIUM)"
       },
       {
         "desc": "Visible, non-interactive elements with click handlers must have at least one keyboard listener.",
@@ -1566,7 +1665,7 @@
         "type": "CODE_SMELL",
         "owasp": "A05:2025 — Security Misconfiguration",
         "priority": "Esta semana",
-        "impacts": "RELIABILITY (MEDIUM), MAINTAINABILITY (LOW)"
+        "impacts": "MAINTAINABILITY (LOW), RELIABILITY (MEDIUM)"
       },
       {
         "desc": "Visible, non-interactive elements with click handlers must have at least one keyboard listener.",
@@ -1588,7 +1687,7 @@
         "type": "CODE_SMELL",
         "owasp": "A05:2025 — Security Misconfiguration",
         "priority": "Esta semana",
-        "impacts": "RELIABILITY (MEDIUM), MAINTAINABILITY (LOW)"
+        "impacts": "MAINTAINABILITY (LOW), RELIABILITY (MEDIUM)"
       },
       {
         "desc": "Visible, non-interactive elements with click handlers must have at least one keyboard listener.",
@@ -1665,7 +1764,7 @@
         "type": "CODE_SMELL",
         "owasp": "A05:2025 — Security Misconfiguration",
         "priority": "Esta semana",
-        "impacts": "RELIABILITY (MEDIUM), MAINTAINABILITY (LOW)"
+        "impacts": "MAINTAINABILITY (LOW), RELIABILITY (MEDIUM)"
       },
       {
         "desc": "Text does not meet the minimal contrast requirement with its background.",
@@ -1687,7 +1786,7 @@
         "type": "CODE_SMELL",
         "owasp": "A05:2025 — Security Misconfiguration",
         "priority": "Backlog",
-        "impacts": "RELIABILITY (MEDIUM), MAINTAINABILITY (LOW)"
+        "impacts": "MAINTAINABILITY (LOW), RELIABILITY (MEDIUM)"
       },
       {
         "desc": "Prefer `globalThis` over `window`.",
@@ -1709,7 +1808,920 @@
         "type": "CODE_SMELL",
         "owasp": "A05:2025 — Security Misconfiguration",
         "priority": "Backlog",
-        "impacts": "RELIABILITY (MEDIUM), MAINTAINABILITY (LOW)"
+        "impacts": "MAINTAINABILITY (LOW), RELIABILITY (MEDIUM)"
+      },
+      {
+        "desc": "Prefer `Number.parseFloat` over `parseFloat`.",
+        "file": "src/pages/MapView.tsx",
+        "line": 12,
+        "sev": "Medio",
+        "sev_raw": "MINOR",
+        "type": "CODE_SMELL",
+        "owasp": "A05:2025 — Security Misconfiguration",
+        "priority": "Backlog",
+        "impacts": "MAINTAINABILITY (LOW), RELIABILITY (MEDIUM)"
+      },
+      {
+        "desc": "Use <input type=\"button\">, <input type=\"image\">, <input type=\"reset\">, <input type=\"submit\">, or <button> instead of the \"button\" role to ensure accessibility across all devices.",
+        "file": "src/components/localpartner/StepVerify.tsx",
+        "line": 32,
+        "sev": "Alto",
+        "sev_raw": "MAJOR",
+        "type": "CODE_SMELL",
+        "owasp": "A05:2025 — Security Misconfiguration",
+        "priority": "Esta semana",
+        "impacts": "MAINTAINABILITY (MEDIUM)"
+      },
+      {
+        "desc": "Remove this unused import of 'TopLogo'.",
+        "file": "src/pages/Onboarding.tsx",
+        "line": 5,
+        "sev": "Medio",
+        "sev_raw": "MINOR",
+        "type": "CODE_SMELL",
+        "owasp": "A05:2025 — Security Misconfiguration",
+        "priority": "Backlog",
+        "impacts": "MAINTAINABILITY (LOW)"
+      },
+      {
+        "desc": "`selectedCategoryIds` should be a `Set`, and use `selectedCategoryIds.has()` to check existence or non-existence.",
+        "file": "src/pages/Onboarding.tsx",
+        "line": 75,
+        "sev": "Medio",
+        "sev_raw": "MINOR",
+        "type": "CODE_SMELL",
+        "owasp": "A04:2025 — Insecure Design",
+        "priority": "Backlog",
+        "impacts": "MAINTAINABILITY (MEDIUM)"
+      },
+      {
+        "desc": "Text does not meet the minimal contrast requirement with its background.",
+        "file": "src/assets/styles/dashboard.css",
+        "line": 291,
+        "sev": "Alto",
+        "sev_raw": "MAJOR",
+        "type": "CODE_SMELL",
+        "owasp": "A05:2025 — Security Misconfiguration",
+        "priority": "Esta semana",
+        "impacts": "MAINTAINABILITY (MEDIUM)"
+      },
+      {
+        "desc": "Extract this nested ternary operation into an independent statement.",
+        "file": "src/components/layout/NotificationPanel.tsx",
+        "line": 31,
+        "sev": "Alto",
+        "sev_raw": "MAJOR",
+        "type": "CODE_SMELL",
+        "owasp": "A04:2025 — Insecure Design",
+        "priority": "Esta semana",
+        "impacts": "MAINTAINABILITY (MEDIUM)"
+      },
+      {
+        "desc": "Extract this nested ternary operation into an independent statement.",
+        "file": "src/components/layout/NotificationPanel.tsx",
+        "line": 32,
+        "sev": "Alto",
+        "sev_raw": "MAJOR",
+        "type": "CODE_SMELL",
+        "owasp": "A04:2025 — Insecure Design",
+        "priority": "Esta semana",
+        "impacts": "MAINTAINABILITY (MEDIUM)"
+      },
+      {
+        "desc": "Extract this nested ternary operation into an independent statement.",
+        "file": "src/components/layout/NotificationPanel.tsx",
+        "line": 152,
+        "sev": "Alto",
+        "sev_raw": "MAJOR",
+        "type": "CODE_SMELL",
+        "owasp": "A04:2025 — Insecure Design",
+        "priority": "Esta semana",
+        "impacts": "MAINTAINABILITY (MEDIUM)"
+      },
+      {
+        "desc": "Remove this unused import of 'Search'.",
+        "file": "src/pages/Dashboard/Categories/DashboardCategories.tsx",
+        "line": 3,
+        "sev": "Medio",
+        "sev_raw": "MINOR",
+        "type": "CODE_SMELL",
+        "owasp": "A05:2025 — Security Misconfiguration",
+        "priority": "Backlog",
+        "impacts": "MAINTAINABILITY (LOW)"
+      },
+      {
+        "desc": "Extract this nested ternary operation into an independent statement.",
+        "file": "src/pages/Dashboard/Categories/DashboardCategories.tsx",
+        "line": 40,
+        "sev": "Alto",
+        "sev_raw": "MAJOR",
+        "type": "CODE_SMELL",
+        "owasp": "A04:2025 — Insecure Design",
+        "priority": "Esta semana",
+        "impacts": "MAINTAINABILITY (MEDIUM)"
+      },
+      {
+        "desc": "Non-interactive elements should not be assigned mouse or keyboard event listeners.",
+        "file": "src/pages/Dashboard/Categories/DashboardCategories.tsx",
+        "line": 59,
+        "sev": "Alto",
+        "sev_raw": "MAJOR",
+        "type": "CODE_SMELL",
+        "owasp": "A05:2025 — Security Misconfiguration",
+        "priority": "Esta semana",
+        "impacts": "MAINTAINABILITY (MEDIUM), RELIABILITY (LOW)"
+      },
+      {
+        "desc": "Visible, non-interactive elements with click handlers must have at least one keyboard listener.",
+        "file": "src/pages/Dashboard/Categories/DashboardCategories.tsx",
+        "line": 59,
+        "sev": "Medio",
+        "sev_raw": "MINOR",
+        "type": "BUG",
+        "owasp": "A04:2025 — Insecure Design",
+        "priority": "Backlog",
+        "impacts": "RELIABILITY (LOW)"
+      },
+      {
+        "desc": "Remove this unused import of 'TrendingUp'.",
+        "file": "src/pages/Dashboard/DashboardHome.tsx",
+        "line": 5,
+        "sev": "Medio",
+        "sev_raw": "MINOR",
+        "type": "CODE_SMELL",
+        "owasp": "A05:2025 — Security Misconfiguration",
+        "priority": "Backlog",
+        "impacts": "MAINTAINABILITY (LOW)"
+      },
+      {
+        "desc": "Extract this nested ternary operation into an independent statement.",
+        "file": "src/pages/Dashboard/DashboardHome.tsx",
+        "line": 36,
+        "sev": "Alto",
+        "sev_raw": "MAJOR",
+        "type": "CODE_SMELL",
+        "owasp": "A04:2025 — Insecure Design",
+        "priority": "Esta semana",
+        "impacts": "MAINTAINABILITY (MEDIUM)"
+      },
+      {
+        "desc": "Extract this nested ternary operation into an independent statement.",
+        "file": "src/pages/Dashboard/DashboardHome.tsx",
+        "line": 37,
+        "sev": "Alto",
+        "sev_raw": "MAJOR",
+        "type": "CODE_SMELL",
+        "owasp": "A04:2025 — Insecure Design",
+        "priority": "Esta semana",
+        "impacts": "MAINTAINABILITY (MEDIUM)"
+      },
+      {
+        "desc": "Visible, non-interactive elements with click handlers must have at least one keyboard listener.",
+        "file": "src/pages/Dashboard/DashboardHome.tsx",
+        "line": 112,
+        "sev": "Medio",
+        "sev_raw": "MINOR",
+        "type": "BUG",
+        "owasp": "A04:2025 — Insecure Design",
+        "priority": "Backlog",
+        "impacts": "RELIABILITY (LOW)"
+      },
+      {
+        "desc": "Avoid non-native interactive elements. If using native HTML is not possible, add an appropriate role and support for tabbing, mouse, keyboard, and touch inputs to an interactive content element.",
+        "file": "src/pages/Dashboard/DashboardHome.tsx",
+        "line": 112,
+        "sev": "Alto",
+        "sev_raw": "MAJOR",
+        "type": "CODE_SMELL",
+        "owasp": "A05:2025 — Security Misconfiguration",
+        "priority": "Esta semana",
+        "impacts": "MAINTAINABILITY (LOW), RELIABILITY (MEDIUM)"
+      },
+      {
+        "desc": "Unexpected negated condition.",
+        "file": "src/pages/Dashboard/DashboardHome.tsx",
+        "line": 126,
+        "sev": "Medio",
+        "sev_raw": "MINOR",
+        "type": "CODE_SMELL",
+        "owasp": "A05:2025 — Security Misconfiguration",
+        "priority": "Backlog",
+        "impacts": "MAINTAINABILITY (LOW)"
+      },
+      {
+        "desc": "Unexpected negated condition.",
+        "file": "src/pages/Dashboard/DashboardHome.tsx",
+        "line": 126,
+        "sev": "Medio",
+        "sev_raw": "MINOR",
+        "type": "CODE_SMELL",
+        "owasp": "A05:2025 — Security Misconfiguration",
+        "priority": "Backlog",
+        "impacts": "MAINTAINABILITY (LOW)"
+      },
+      {
+        "desc": "Extract this nested ternary operation into an independent statement.",
+        "file": "src/pages/Dashboard/DashboardHome.tsx",
+        "line": 174,
+        "sev": "Alto",
+        "sev_raw": "MAJOR",
+        "type": "CODE_SMELL",
+        "owasp": "A04:2025 — Insecure Design",
+        "priority": "Esta semana",
+        "impacts": "MAINTAINABILITY (MEDIUM)"
+      },
+      {
+        "desc": "Extract this nested ternary operation into an independent statement.",
+        "file": "src/pages/Dashboard/DashboardHome.tsx",
+        "line": 210,
+        "sev": "Alto",
+        "sev_raw": "MAJOR",
+        "type": "CODE_SMELL",
+        "owasp": "A04:2025 — Insecure Design",
+        "priority": "Esta semana",
+        "impacts": "MAINTAINABILITY (MEDIUM)"
+      },
+      {
+        "desc": "Remove this unused import of 'Clock'.",
+        "file": "src/pages/Dashboard/Events/DashboardEvents.tsx",
+        "line": 3,
+        "sev": "Medio",
+        "sev_raw": "MINOR",
+        "type": "CODE_SMELL",
+        "owasp": "A05:2025 — Security Misconfiguration",
+        "priority": "Backlog",
+        "impacts": "MAINTAINABILITY (LOW)"
+      },
+      {
+        "desc": "Extract this nested ternary operation into an independent statement.",
+        "file": "src/pages/Dashboard/Events/DashboardEvents.tsx",
+        "line": 37,
+        "sev": "Alto",
+        "sev_raw": "MAJOR",
+        "type": "CODE_SMELL",
+        "owasp": "A04:2025 — Insecure Design",
+        "priority": "Esta semana",
+        "impacts": "MAINTAINABILITY (MEDIUM)"
+      },
+      {
+        "desc": "Extract this nested ternary operation into an independent statement.",
+        "file": "src/pages/Dashboard/Events/DashboardEvents.tsx",
+        "line": 63,
+        "sev": "Alto",
+        "sev_raw": "MAJOR",
+        "type": "CODE_SMELL",
+        "owasp": "A04:2025 — Insecure Design",
+        "priority": "Esta semana",
+        "impacts": "MAINTAINABILITY (MEDIUM)"
+      },
+      {
+        "desc": "Visible, non-interactive elements with click handlers must have at least one keyboard listener.",
+        "file": "src/pages/Dashboard/Events/DashboardEvents.tsx",
+        "line": 82,
+        "sev": "Medio",
+        "sev_raw": "MINOR",
+        "type": "BUG",
+        "owasp": "A04:2025 — Insecure Design",
+        "priority": "Backlog",
+        "impacts": "RELIABILITY (LOW)"
+      },
+      {
+        "desc": "Non-interactive elements should not be assigned mouse or keyboard event listeners.",
+        "file": "src/pages/Dashboard/Events/DashboardEvents.tsx",
+        "line": 82,
+        "sev": "Alto",
+        "sev_raw": "MAJOR",
+        "type": "CODE_SMELL",
+        "owasp": "A05:2025 — Security Misconfiguration",
+        "priority": "Esta semana",
+        "impacts": "MAINTAINABILITY (MEDIUM), RELIABILITY (LOW)"
+      },
+      {
+        "desc": "Extract this nested ternary operation into an independent statement.",
+        "file": "src/pages/Dashboard/Events/components/EventCommentsModal.tsx",
+        "line": 24,
+        "sev": "Alto",
+        "sev_raw": "MAJOR",
+        "type": "CODE_SMELL",
+        "owasp": "A04:2025 — Insecure Design",
+        "priority": "Esta semana",
+        "impacts": "MAINTAINABILITY (MEDIUM)"
+      },
+      {
+        "desc": "Avoid non-native interactive elements. If using native HTML is not possible, add an appropriate role and support for tabbing, mouse, keyboard, and touch inputs to an interactive content element.",
+        "file": "src/pages/Dashboard/Events/components/EventCommentsModal.tsx",
+        "line": 43,
+        "sev": "Alto",
+        "sev_raw": "MAJOR",
+        "type": "CODE_SMELL",
+        "owasp": "A05:2025 — Security Misconfiguration",
+        "priority": "Esta semana",
+        "impacts": "MAINTAINABILITY (LOW), RELIABILITY (MEDIUM)"
+      },
+      {
+        "desc": "Visible, non-interactive elements with click handlers must have at least one keyboard listener.",
+        "file": "src/pages/Dashboard/Events/components/EventCommentsModal.tsx",
+        "line": 43,
+        "sev": "Medio",
+        "sev_raw": "MINOR",
+        "type": "BUG",
+        "owasp": "A04:2025 — Insecure Design",
+        "priority": "Backlog",
+        "impacts": "RELIABILITY (LOW)"
+      },
+      {
+        "desc": "Unexpected negated condition.",
+        "file": "src/pages/Dashboard/Events/components/EventDetail.tsx",
+        "line": 36,
+        "sev": "Medio",
+        "sev_raw": "MINOR",
+        "type": "CODE_SMELL",
+        "owasp": "A05:2025 — Security Misconfiguration",
+        "priority": "Backlog",
+        "impacts": "MAINTAINABILITY (LOW)"
+      },
+      {
+        "desc": "Unexpected negated condition.",
+        "file": "src/pages/Dashboard/Events/components/EventDetail.tsx",
+        "line": 37,
+        "sev": "Medio",
+        "sev_raw": "MINOR",
+        "type": "CODE_SMELL",
+        "owasp": "A05:2025 — Security Misconfiguration",
+        "priority": "Backlog",
+        "impacts": "MAINTAINABILITY (LOW)"
+      },
+      {
+        "desc": "Extract this nested ternary operation into an independent statement.",
+        "file": "src/pages/Dashboard/Events/components/EventIncidentsModal.tsx",
+        "line": 25,
+        "sev": "Alto",
+        "sev_raw": "MAJOR",
+        "type": "CODE_SMELL",
+        "owasp": "A04:2025 — Insecure Design",
+        "priority": "Esta semana",
+        "impacts": "MAINTAINABILITY (MEDIUM)"
+      },
+      {
+        "desc": "Avoid non-native interactive elements. If using native HTML is not possible, add an appropriate role and support for tabbing, mouse, keyboard, and touch inputs to an interactive content element.",
+        "file": "src/pages/Dashboard/Events/components/EventIncidentsModal.tsx",
+        "line": 56,
+        "sev": "Alto",
+        "sev_raw": "MAJOR",
+        "type": "CODE_SMELL",
+        "owasp": "A05:2025 — Security Misconfiguration",
+        "priority": "Esta semana",
+        "impacts": "MAINTAINABILITY (LOW), RELIABILITY (MEDIUM)"
+      },
+      {
+        "desc": "Visible, non-interactive elements with click handlers must have at least one keyboard listener.",
+        "file": "src/pages/Dashboard/Events/components/EventIncidentsModal.tsx",
+        "line": 56,
+        "sev": "Medio",
+        "sev_raw": "MINOR",
+        "type": "BUG",
+        "owasp": "A04:2025 — Insecure Design",
+        "priority": "Backlog",
+        "impacts": "RELIABILITY (LOW)"
+      },
+      {
+        "desc": "Remove this useless assignment to variable \"fetchLocals\".",
+        "file": "src/pages/Dashboard/Local/DashboardLocals.tsx",
+        "line": 50,
+        "sev": "Alto",
+        "sev_raw": "MAJOR",
+        "type": "CODE_SMELL",
+        "owasp": "A05:2025 — Security Misconfiguration",
+        "priority": "Esta semana",
+        "impacts": "MAINTAINABILITY (MEDIUM)"
+      },
+      {
+        "desc": "Non-interactive elements should not be assigned mouse or keyboard event listeners.",
+        "file": "src/pages/Dashboard/Local/DashboardLocals.tsx",
+        "line": 58,
+        "sev": "Alto",
+        "sev_raw": "MAJOR",
+        "type": "CODE_SMELL",
+        "owasp": "A05:2025 — Security Misconfiguration",
+        "priority": "Esta semana",
+        "impacts": "MAINTAINABILITY (MEDIUM), RELIABILITY (LOW)"
+      },
+      {
+        "desc": "Visible, non-interactive elements with click handlers must have at least one keyboard listener.",
+        "file": "src/pages/Dashboard/Local/DashboardLocals.tsx",
+        "line": 58,
+        "sev": "Medio",
+        "sev_raw": "MINOR",
+        "type": "BUG",
+        "owasp": "A04:2025 — Insecure Design",
+        "priority": "Backlog",
+        "impacts": "RELIABILITY (LOW)"
+      },
+      {
+        "desc": "Remove this unused import of 'LocalStatus'.",
+        "file": "src/pages/Dashboard/Local/components/LocalEditModal.tsx",
+        "line": 3,
+        "sev": "Medio",
+        "sev_raw": "MINOR",
+        "type": "CODE_SMELL",
+        "owasp": "A05:2025 — Security Misconfiguration",
+        "priority": "Backlog",
+        "impacts": "MAINTAINABILITY (LOW)"
+      },
+      {
+        "desc": "Remove this unused import of 'Search'.",
+        "file": "src/pages/Dashboard/Preferences/DashboardPreferences.tsx",
+        "line": 3,
+        "sev": "Medio",
+        "sev_raw": "MINOR",
+        "type": "CODE_SMELL",
+        "owasp": "A05:2025 — Security Misconfiguration",
+        "priority": "Backlog",
+        "impacts": "MAINTAINABILITY (LOW)"
+      },
+      {
+        "desc": "Remove this unused import of 'Eye'.",
+        "file": "src/pages/Dashboard/Preferences/DashboardPreferences.tsx",
+        "line": 3,
+        "sev": "Medio",
+        "sev_raw": "MINOR",
+        "type": "CODE_SMELL",
+        "owasp": "A05:2025 — Security Misconfiguration",
+        "priority": "Backlog",
+        "impacts": "MAINTAINABILITY (LOW)"
+      },
+      {
+        "desc": "Extract this nested ternary operation into an independent statement.",
+        "file": "src/pages/Dashboard/Preferences/components/UserPreferencesModal.tsx",
+        "line": 28,
+        "sev": "Alto",
+        "sev_raw": "MAJOR",
+        "type": "CODE_SMELL",
+        "owasp": "A04:2025 — Insecure Design",
+        "priority": "Esta semana",
+        "impacts": "MAINTAINABILITY (MEDIUM)"
+      },
+      {
+        "desc": "Extract this nested ternary operation into an independent statement.",
+        "file": "src/pages/Dashboard/Preferences/components/UserPreferencesModal.tsx",
+        "line": 29,
+        "sev": "Alto",
+        "sev_raw": "MAJOR",
+        "type": "CODE_SMELL",
+        "owasp": "A04:2025 — Insecure Design",
+        "priority": "Esta semana",
+        "impacts": "MAINTAINABILITY (MEDIUM)"
+      },
+      {
+        "desc": "Extract this nested ternary operation into an independent statement.",
+        "file": "src/pages/Dashboard/Preferences/components/UserPreferencesModal.tsx",
+        "line": 34,
+        "sev": "Alto",
+        "sev_raw": "MAJOR",
+        "type": "CODE_SMELL",
+        "owasp": "A04:2025 — Insecure Design",
+        "priority": "Esta semana",
+        "impacts": "MAINTAINABILITY (MEDIUM)"
+      },
+      {
+        "desc": "Extract this nested ternary operation into an independent statement.",
+        "file": "src/pages/Dashboard/Preferences/components/UserPreferencesModal.tsx",
+        "line": 35,
+        "sev": "Alto",
+        "sev_raw": "MAJOR",
+        "type": "CODE_SMELL",
+        "owasp": "A04:2025 — Insecure Design",
+        "priority": "Esta semana",
+        "impacts": "MAINTAINABILITY (MEDIUM)"
+      },
+      {
+        "desc": "Visible, non-interactive elements with click handlers must have at least one keyboard listener.",
+        "file": "src/pages/Dashboard/Preferences/components/UserPreferencesModal.tsx",
+        "line": 51,
+        "sev": "Medio",
+        "sev_raw": "MINOR",
+        "type": "BUG",
+        "owasp": "A04:2025 — Insecure Design",
+        "priority": "Backlog",
+        "impacts": "RELIABILITY (LOW)"
+      },
+      {
+        "desc": "Avoid non-native interactive elements. If using native HTML is not possible, add an appropriate role and support for tabbing, mouse, keyboard, and touch inputs to an interactive content element.",
+        "file": "src/pages/Dashboard/Preferences/components/UserPreferencesModal.tsx",
+        "line": 51,
+        "sev": "Alto",
+        "sev_raw": "MAJOR",
+        "type": "CODE_SMELL",
+        "owasp": "A05:2025 — Security Misconfiguration",
+        "priority": "Esta semana",
+        "impacts": "MAINTAINABILITY (LOW), RELIABILITY (MEDIUM)"
+      },
+      {
+        "desc": "Extract this nested ternary operation into an independent statement.",
+        "file": "src/pages/Dashboard/Preferences/components/UserPreferencesModal.tsx",
+        "line": 62,
+        "sev": "Alto",
+        "sev_raw": "MAJOR",
+        "type": "CODE_SMELL",
+        "owasp": "A04:2025 — Insecure Design",
+        "priority": "Esta semana",
+        "impacts": "MAINTAINABILITY (MEDIUM)"
+      },
+      {
+        "desc": "Text does not meet the minimal contrast requirement with its background.",
+        "file": "src/assets/styles/index.css",
+        "line": 345,
+        "sev": "Alto",
+        "sev_raw": "MAJOR",
+        "type": "CODE_SMELL",
+        "owasp": "A05:2025 — Security Misconfiguration",
+        "priority": "Esta semana",
+        "impacts": "MAINTAINABILITY (MEDIUM)"
+      },
+      {
+        "desc": "Text does not meet the minimal contrast requirement with its background.",
+        "file": "src/assets/styles/index.css",
+        "line": 1087,
+        "sev": "Alto",
+        "sev_raw": "MAJOR",
+        "type": "CODE_SMELL",
+        "owasp": "A05:2025 — Security Misconfiguration",
+        "priority": "Esta semana",
+        "impacts": "MAINTAINABILITY (MEDIUM)"
+      },
+      {
+        "desc": "Text does not meet the minimal contrast requirement with its background.",
+        "file": "src/assets/styles/index.css",
+        "line": 2671,
+        "sev": "Alto",
+        "sev_raw": "MAJOR",
+        "type": "CODE_SMELL",
+        "owasp": "A05:2025 — Security Misconfiguration",
+        "priority": "Esta semana",
+        "impacts": "MAINTAINABILITY (MEDIUM)"
+      },
+      {
+        "desc": "Text does not meet the minimal contrast requirement with its background.",
+        "file": "src/assets/styles/index.css",
+        "line": 2811,
+        "sev": "Alto",
+        "sev_raw": "MAJOR",
+        "type": "CODE_SMELL",
+        "owasp": "A05:2025 — Security Misconfiguration",
+        "priority": "Esta semana",
+        "impacts": "MAINTAINABILITY (MEDIUM)"
+      },
+      {
+        "desc": "Ambiguous spacing after previous element img",
+        "file": "src/pages/Login.tsx",
+        "line": 30,
+        "sev": "Alto",
+        "sev_raw": "MAJOR",
+        "type": "CODE_SMELL",
+        "owasp": "A04:2025 — Insecure Design",
+        "priority": "Esta semana",
+        "impacts": "MAINTAINABILITY (MEDIUM), RELIABILITY (LOW)"
+      },
+      {
+        "desc": "Extract this nested ternary operation into an independent statement.",
+        "file": "src/components/common/DataTable.tsx",
+        "line": 51,
+        "sev": "Alto",
+        "sev_raw": "MAJOR",
+        "type": "CODE_SMELL",
+        "owasp": "A04:2025 — Insecure Design",
+        "priority": "Esta semana",
+        "impacts": "MAINTAINABILITY (MEDIUM)"
+      },
+      {
+        "desc": "Visible, non-interactive elements with click handlers must have at least one keyboard listener.",
+        "file": "src/components/saved/ContextMenu.tsx",
+        "line": 11,
+        "sev": "Medio",
+        "sev_raw": "MINOR",
+        "type": "BUG",
+        "owasp": "A04:2025 — Insecure Design",
+        "priority": "Backlog",
+        "impacts": "RELIABILITY (LOW)"
+      },
+      {
+        "desc": "Avoid non-native interactive elements. If using native HTML is not possible, add an appropriate role and support for tabbing, mouse, keyboard, and touch inputs to an interactive content element.",
+        "file": "src/components/saved/ContextMenu.tsx",
+        "line": 11,
+        "sev": "Alto",
+        "sev_raw": "MAJOR",
+        "type": "CODE_SMELL",
+        "owasp": "A05:2025 — Security Misconfiguration",
+        "priority": "Esta semana",
+        "impacts": "MAINTAINABILITY (LOW), RELIABILITY (MEDIUM)"
+      },
+      {
+        "desc": "Visible, non-interactive elements with click handlers must have at least one keyboard listener.",
+        "file": "src/components/saved/TripListItem.tsx",
+        "line": 15,
+        "sev": "Medio",
+        "sev_raw": "MINOR",
+        "type": "BUG",
+        "owasp": "A04:2025 — Insecure Design",
+        "priority": "Backlog",
+        "impacts": "RELIABILITY (LOW)"
+      },
+      {
+        "desc": "Non-interactive elements should not be assigned mouse or keyboard event listeners.",
+        "file": "src/components/saved/TripListItem.tsx",
+        "line": 15,
+        "sev": "Alto",
+        "sev_raw": "MAJOR",
+        "type": "CODE_SMELL",
+        "owasp": "A05:2025 — Security Misconfiguration",
+        "priority": "Esta semana",
+        "impacts": "MAINTAINABILITY (MEDIUM), RELIABILITY (LOW)"
+      },
+      {
+        "desc": "Refactor this code to not use nested template literals.",
+        "file": "src/components/experiences/SectionHeader.tsx",
+        "line": 11,
+        "sev": "Alto",
+        "sev_raw": "MAJOR",
+        "type": "CODE_SMELL",
+        "owasp": "A04:2025 — Insecure Design",
+        "priority": "Esta semana",
+        "impacts": "MAINTAINABILITY (MEDIUM)"
+      },
+      {
+        "desc": "Text does not meet the minimal contrast requirement with its background.",
+        "file": "src/assets/styles/dashboard.css",
+        "line": 153,
+        "sev": "Alto",
+        "sev_raw": "MAJOR",
+        "type": "CODE_SMELL",
+        "owasp": "A05:2025 — Security Misconfiguration",
+        "priority": "Esta semana",
+        "impacts": "MAINTAINABILITY (MEDIUM)"
+      },
+      {
+        "desc": "Text does not meet the minimal contrast requirement with its background.",
+        "file": "src/assets/styles/dashboard.css",
+        "line": 205,
+        "sev": "Alto",
+        "sev_raw": "MAJOR",
+        "type": "CODE_SMELL",
+        "owasp": "A05:2025 — Security Misconfiguration",
+        "priority": "Esta semana",
+        "impacts": "MAINTAINABILITY (MEDIUM)"
+      },
+      {
+        "desc": "Text does not meet the minimal contrast requirement with its background.",
+        "file": "src/assets/styles/dashboard.css",
+        "line": 281,
+        "sev": "Alto",
+        "sev_raw": "MAJOR",
+        "type": "CODE_SMELL",
+        "owasp": "A05:2025 — Security Misconfiguration",
+        "priority": "Esta semana",
+        "impacts": "MAINTAINABILITY (MEDIUM)"
+      },
+      {
+        "desc": "Text does not meet the minimal contrast requirement with its background.",
+        "file": "src/assets/styles/dashboard.css",
+        "line": 286,
+        "sev": "Alto",
+        "sev_raw": "MAJOR",
+        "type": "CODE_SMELL",
+        "owasp": "A05:2025 — Security Misconfiguration",
+        "priority": "Esta semana",
+        "impacts": "MAINTAINABILITY (MEDIUM)"
+      },
+      {
+        "desc": "Text does not meet the minimal contrast requirement with its background.",
+        "file": "src/assets/styles/dashboard.css",
+        "line": 435,
+        "sev": "Alto",
+        "sev_raw": "MAJOR",
+        "type": "CODE_SMELL",
+        "owasp": "A05:2025 — Security Misconfiguration",
+        "priority": "Esta semana",
+        "impacts": "MAINTAINABILITY (MEDIUM)"
+      },
+      {
+        "desc": "Text does not meet the minimal contrast requirement with its background.",
+        "file": "src/assets/styles/dashboard.css",
+        "line": 478,
+        "sev": "Alto",
+        "sev_raw": "MAJOR",
+        "type": "CODE_SMELL",
+        "owasp": "A05:2025 — Security Misconfiguration",
+        "priority": "Esta semana",
+        "impacts": "MAINTAINABILITY (MEDIUM)"
+      },
+      {
+        "desc": "Text does not meet the minimal contrast requirement with its background.",
+        "file": "src/assets/styles/dashboard.css",
+        "line": 823,
+        "sev": "Alto",
+        "sev_raw": "MAJOR",
+        "type": "CODE_SMELL",
+        "owasp": "A05:2025 — Security Misconfiguration",
+        "priority": "Esta semana",
+        "impacts": "MAINTAINABILITY (MEDIUM)"
+      },
+      {
+        "desc": "Text does not meet the minimal contrast requirement with its background.",
+        "file": "src/assets/styles/dashboard.css",
+        "line": 895,
+        "sev": "Alto",
+        "sev_raw": "MAJOR",
+        "type": "CODE_SMELL",
+        "owasp": "A05:2025 — Security Misconfiguration",
+        "priority": "Esta semana",
+        "impacts": "MAINTAINABILITY (MEDIUM)"
+      },
+      {
+        "desc": "Avoid non-native interactive elements. If using native HTML is not possible, add an appropriate role and support for tabbing, mouse, keyboard, and touch inputs to an interactive content element.",
+        "file": "src/components/common/DashboardConfirm.tsx",
+        "line": 26,
+        "sev": "Alto",
+        "sev_raw": "MAJOR",
+        "type": "CODE_SMELL",
+        "owasp": "A05:2025 — Security Misconfiguration",
+        "priority": "Esta semana",
+        "impacts": "MAINTAINABILITY (LOW), RELIABILITY (MEDIUM)"
+      },
+      {
+        "desc": "Visible, non-interactive elements with click handlers must have at least one keyboard listener.",
+        "file": "src/components/common/DashboardConfirm.tsx",
+        "line": 26,
+        "sev": "Medio",
+        "sev_raw": "MINOR",
+        "type": "BUG",
+        "owasp": "A04:2025 — Insecure Design",
+        "priority": "Backlog",
+        "impacts": "RELIABILITY (LOW)"
+      },
+      {
+        "desc": "Visible, non-interactive elements with click handlers must have at least one keyboard listener.",
+        "file": "src/components/common/DashboardDetail.tsx",
+        "line": 18,
+        "sev": "Medio",
+        "sev_raw": "MINOR",
+        "type": "BUG",
+        "owasp": "A04:2025 — Insecure Design",
+        "priority": "Backlog",
+        "impacts": "RELIABILITY (LOW)"
+      },
+      {
+        "desc": "Avoid non-native interactive elements. If using native HTML is not possible, add an appropriate role and support for tabbing, mouse, keyboard, and touch inputs to an interactive content element.",
+        "file": "src/components/common/DashboardDetail.tsx",
+        "line": 18,
+        "sev": "Alto",
+        "sev_raw": "MAJOR",
+        "type": "CODE_SMELL",
+        "owasp": "A05:2025 — Security Misconfiguration",
+        "priority": "Esta semana",
+        "impacts": "MAINTAINABILITY (LOW), RELIABILITY (MEDIUM)"
+      },
+      {
+        "desc": "Avoid non-native interactive elements. If using native HTML is not possible, add an appropriate role and support for tabbing, mouse, keyboard, and touch inputs to an interactive content element.",
+        "file": "src/components/common/DashboardForm.tsx",
+        "line": 49,
+        "sev": "Alto",
+        "sev_raw": "MAJOR",
+        "type": "CODE_SMELL",
+        "owasp": "A05:2025 — Security Misconfiguration",
+        "priority": "Esta semana",
+        "impacts": "MAINTAINABILITY (LOW), RELIABILITY (MEDIUM)"
+      },
+      {
+        "desc": "Visible, non-interactive elements with click handlers must have at least one keyboard listener.",
+        "file": "src/components/common/DashboardForm.tsx",
+        "line": 49,
+        "sev": "Medio",
+        "sev_raw": "MINOR",
+        "type": "BUG",
+        "owasp": "A04:2025 — Insecure Design",
+        "priority": "Backlog",
+        "impacts": "RELIABILITY (LOW)"
+      },
+      {
+        "desc": "Extract this nested ternary operation into an independent statement.",
+        "file": "src/components/common/DashboardForm.tsx",
+        "line": 78,
+        "sev": "Alto",
+        "sev_raw": "MAJOR",
+        "type": "CODE_SMELL",
+        "owasp": "A04:2025 — Insecure Design",
+        "priority": "Esta semana",
+        "impacts": "MAINTAINABILITY (MEDIUM)"
+      },
+      {
+        "desc": "Avoid non-native interactive elements. If using native HTML is not possible, add an appropriate role and support for tabbing, mouse, keyboard, and touch inputs to an interactive content element.",
+        "file": "src/components/common/Tooltip.tsx",
+        "line": 12,
+        "sev": "Alto",
+        "sev_raw": "MAJOR",
+        "type": "CODE_SMELL",
+        "owasp": "A05:2025 — Security Misconfiguration",
+        "priority": "Esta semana",
+        "impacts": "MAINTAINABILITY (LOW), RELIABILITY (MEDIUM)"
+      },
+      {
+        "desc": "Visible, non-interactive elements with click handlers must have at least one keyboard listener.",
+        "file": "src/pages/Dashboard/Users/DashboardUsers.tsx",
+        "line": 66,
+        "sev": "Medio",
+        "sev_raw": "MINOR",
+        "type": "BUG",
+        "owasp": "A04:2025 — Insecure Design",
+        "priority": "Backlog",
+        "impacts": "RELIABILITY (LOW)"
+      },
+      {
+        "desc": "Non-interactive elements should not be assigned mouse or keyboard event listeners.",
+        "file": "src/pages/Dashboard/Users/DashboardUsers.tsx",
+        "line": 66,
+        "sev": "Alto",
+        "sev_raw": "MAJOR",
+        "type": "CODE_SMELL",
+        "owasp": "A05:2025 — Security Misconfiguration",
+        "priority": "Esta semana",
+        "impacts": "MAINTAINABILITY (MEDIUM), RELIABILITY (LOW)"
+      },
+      {
+        "desc": "Extract this nested ternary operation into an independent statement.",
+        "file": "src/pages/Dashboard/Users/DashboardUsers.tsx",
+        "line": 96,
+        "sev": "Alto",
+        "sev_raw": "MAJOR",
+        "type": "CODE_SMELL",
+        "owasp": "A04:2025 — Insecure Design",
+        "priority": "Esta semana",
+        "impacts": "MAINTAINABILITY (MEDIUM)"
+      },
+      {
+        "desc": "Extract this nested ternary operation into an independent statement.",
+        "file": "src/pages/Dashboard/Users/components/UserDetail.tsx",
+        "line": 32,
+        "sev": "Alto",
+        "sev_raw": "MAJOR",
+        "type": "CODE_SMELL",
+        "owasp": "A04:2025 — Insecure Design",
+        "priority": "Esta semana",
+        "impacts": "MAINTAINABILITY (MEDIUM)"
+      },
+      {
+        "desc": "Ambiguous spacing after previous element strong",
+        "file": "src/components/home/RecommendationCard.tsx",
+        "line": 13,
+        "sev": "Alto",
+        "sev_raw": "MAJOR",
+        "type": "CODE_SMELL",
+        "owasp": "A04:2025 — Insecure Design",
+        "priority": "Esta semana",
+        "impacts": "MAINTAINABILITY (MEDIUM), RELIABILITY (LOW)"
+      },
+      {
+        "desc": "The object passed as the value prop to the Context provider changes every render. To fix this consider wrapping it in a useMemo hook.",
+        "file": "src/context/AuthContext.tsx",
+        "line": 91,
+        "sev": "Alto",
+        "sev_raw": "MAJOR",
+        "type": "CODE_SMELL",
+        "owasp": "A05:2025 — Security Misconfiguration",
+        "priority": "Esta semana",
+        "impacts": "MAINTAINABILITY (MEDIUM)"
+      },
+      {
+        "desc": "Prefer `globalThis` over `window`.",
+        "file": "src/services/http/apiClient.ts",
+        "line": 40,
+        "sev": "Medio",
+        "sev_raw": "MINOR",
+        "type": "CODE_SMELL",
+        "owasp": "A05:2025 — Security Misconfiguration",
+        "priority": "Backlog",
+        "impacts": "MAINTAINABILITY (LOW)"
+      },
+      {
+        "desc": "Do not use Array index in keys",
+        "file": "src/components/common/DataTable.tsx",
+        "line": 58,
+        "sev": "Alto",
+        "sev_raw": "MAJOR",
+        "type": "CODE_SMELL",
+        "owasp": "A05:2025 — Security Misconfiguration",
+        "priority": "Esta semana",
+        "impacts": "MAINTAINABILITY (MEDIUM)"
+      },
+      {
+        "desc": "Do not use \"Error\" to declare a variable - use another name.",
+        "file": "src/pages/ErrorPage.tsx",
+        "line": 1,
+        "sev": "Alto",
+        "sev_raw": "MAJOR",
+        "type": "BUG",
+        "owasp": "A04:2025 — Insecure Design",
+        "priority": "Esta semana",
+        "impacts": "RELIABILITY (MEDIUM)"
       }
     ],
     "hotspot_findings": [
