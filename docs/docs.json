@@ -1,12 +1,52 @@
 [
   {
-    "name": "Etapa 1 - 3 MAGERIT",
-    "desc": "Análisis de riesgos metodología MAGERIT",
-    "file": "etapa1_3_magerit.pdf"
+    "name": "Marco de seguridad del proyecto - SSDLC",
+    "desc": "Ciclo de vida de desarrollo software seguro aplicado al proyecto",
+    "file": "transversal_marco_seguridad_ssdlc.pdf"
   },
   {
-    "name": "Etapa 3 - 1 Playbook de incidentes",
+    "name": "Marco normativo",
+    "desc": "Normativa y regulación aplicable al proyecto",
+    "file": "etapa2_3_marco_normativo.pdf"
+  },
+  {
+    "name": "Análisis y gestión de riesgos - MAGERIT",
+    "desc": "Análisis de riesgos metodología MAGERIT",
+    "file": "etapa1_2_magerit.pdf"
+  },
+  {
+    "name": "Threat Model basado en MITRE ATT&CK",
+    "desc": "Modelado de amenazas usando el framework MITRE ATT&CK",
+    "file": "etapa1_3_threat_model.pdf"
+  },
+  {
+    "name": "Análisis OWASP Top 10",
+    "desc": "Evaluación de vulnerabilidades según OWASP Top 10 2025",
+    "file": "etapa2_1_owasp_top10.pdf"
+  },
+  {
+    "name": "Informe de hardening",
+    "desc": "Medidas de bastionado aplicadas al sistema operativo y servicios",
+    "file": "etapa2_2_informe_hardening.pdf"
+  },
+  {
+    "name": "Playbook de incidentes",
     "desc": "Plan de respuesta ante incidentes de seguridad",
-    "file": "etapa3_1_playbook_incidentes.pdf"
+    "file": "etapa3_1_respuesta_incidentes.pdf"
+  },
+  {
+    "name": "Sistema de back-up",
+    "desc": "Política y procedimiento de copias de seguridad",
+    "file": "etapa3_2_sistema_backup.pdf"
+  },
+  {
+    "name": "Procedimiento DFIR",
+    "desc": "Procedimiento de respuesta y análisis forense ante incidentes",
+    "file": "etapa3_4_procedimiento_dfir.pdf"
+  },
+  {
+    "name": "Plan de Continuidad de Negocio y Recuperación ante Desastres (BCP/DRP)",
+    "desc": "Plan de continuidad operativa y recuperación ante desastres",
+    "file": "etapa3_5_plan_continuidad_bcpdrp.pdf"
   }
 ]
