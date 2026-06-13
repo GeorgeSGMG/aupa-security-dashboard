@@ -1,0 +1,3 @@
+# repo-aupa-example/.sonar-config
+PROJECT_KEY="repo-aupa-example"
+SONAR_TOKEN="sqp_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
